@@ -23,10 +23,7 @@
 
 \addtocontents{toc}{\protect\thispagestyle{empty}} %odstraní číslování na stránce obsahu
 
-%\bibliographystyle{plainnat}
 \begin{document}
-	
-	
 	\pagestyle{empty} 
 	\selectlanguage{english}
 	\include{title}
@@ -42,7 +39,9 @@
 	\pagestyle{plain}
     \setlength{\baselineskip}{1.5\baselineskip}
 	\setcounter{page}{0}
+	
 	\include{review}
-	\normalsize
+	\normalsize{}
+	%\setlength{\bibhang}{0pt} odsazen prvního řádku bibliografie
 	\include{bibliography}
 \end{document}
