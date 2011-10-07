@@ -5,6 +5,8 @@
 \usepackage{hyperref} %pro kliknutelné linky
 %\usepackage{sectsty} % pro jednoduché přestylování nadpisů
 \usepackage[round,comma]{natbib}
+\usepackage{tabularx}
+\usepackage{siunitx} %pro sazbu fyzikálních jednotek
 \usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2cm]{geometry} %nastaveni okraju a vzdalenosti cislovani
 
 %vypne vypisovani Kapitola u \chapter
@@ -14,6 +16,17 @@
   {\parindent \z@ \raggedright \normalfont
     \interlinepenalty\@M
      \fontsize{21pt}{1.5}\selectfont \bfseries \thechapter\ \hspace{10pt} #1\par\nobreak
+    \vskip 22\p@
+  }}
+\makeatother{}
+
+%aby stejne vypadala i chapter*
+\makeatletter
+\def\@makeschapterhead#1{%
+  \vspace*{\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \interlinepenalty\@M
+     \fontsize{21pt}{1.5}\selectfont \bfseries #1\par\nobreak
     \vskip 22\p@
   }}
 \makeatother{}
@@ -41,6 +54,7 @@
 	\setcounter{page}{0}
 	
 	\include{review}
+    \include{symbols}
 	\normalsize{}
 	%\setlength{\bibhang}{0pt} odsazen prvního řádku bibliografie
 	\include{bibliography}
