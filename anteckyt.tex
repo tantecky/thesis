@@ -2,9 +2,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[czech,english]{babel}
 \usepackage[pdftex]{graphicx} %pro vkládání obrázků v eps
-\usepackage{hyperref} %pro kliknutelné linky
+%\usepackage{hyperref} %pro kliknutelné linky
 %\usepackage{sectsty} % pro jednoduché přestylování nadpisů
-\usepackage[round,comma]{natbib}
+\usepackage[round]{natbib}
 \usepackage{tabularx}
 \usepackage{siunitx} %pro sazbu fyzikálních jednotek
 \usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2cm]{geometry} %nastaveni okraju a vzdalenosti cislovani
@@ -50,11 +50,11 @@
 	\selectlanguage{english}
 	\tableofcontents
 	\pagestyle{plain}
-    \setlength{\baselineskip}{1.5\baselineskip}
+  \setlength{\baselineskip}{1.5\baselineskip}
 	\setcounter{page}{0}
 	
 	\include{review}
-    \include{symbols}
+  \include{symbols}
 	\normalsize{}
 	%\setlength{\bibhang}{0pt} odsazen prvního řádku bibliografie
 	\include{bibliography}
