@@ -39,7 +39,14 @@ dynamická viskozita PVP 7.5 & 7.615 & \milli\pascal\second \\ \hline
 \end{center}
 \end{table}
 
-K měření doby homogenizace byla využita vodivostní metoda při které je do nádoby ponoře sonda snímající okamžitou hodnotu napětí. Na počátku experimentu byla do nádoby nadávkována indikační látka (NaCl) a sledována hodnota její koncentrace respektive napětí. Doba po které dosáhla fluktuace okamžité bezrozměrné koncentrace hodnoty menší než \SI{5}{\percent}, byla považována za dobu homogenizace. 
+K měření doby homogenizace byla využita vodivostní metoda při které je do nádoby ponoře sonda snímající okamžitou hodnotu napětí. Zjištěná hodnota napětí byla  následně přepočítána na bezrozměrnou koncentraci $c^{*}(t)$ podle rovnice \ref{eq:bezkonc}, kde $c(t)$ a $U(t)$ je koncentrace respektive napětí v daném čase $t$.   
+
+\begin{equation}
+	c^{*}(t) = \frac{c(t) - c(0)}{c(\infty) - c(0)} \approx \frac{U(t) - U(0)}{U(\infty) - U(0)}
+	\label{eq:bezkonc}
+\end{equation}
+
+Na počátku experimentu byla do nádoby nadávkována indikační látka (NaCl) a sledována hodnota její koncentrace respektive napětí. Doba po které dosáhla fluktuace bezrozměrné koncentrace hodnoty menší než \SI{5}{\percent}, byla považována za dobu homogenizace. 
 
 
 
