@@ -6,11 +6,13 @@
 \usepackage[small,bf,belowskip=-20pt,aboveskip=15pt]{caption} %změna stylu popisku a mezery před a za
 %\usepackage{sectsty} % pro jednoduché přestylování nadpisů
 \usepackage{booktabs} % kvuli siunitx v tabulkach
+\usepackage{enumitem} %pro umravnění mezer v enumerate + změnu popisků
 
 \usepackage[round]{natbib}
 \usepackage{tabularx}
 \usepackage{siunitx} %pro sazbu fyzikálních jednotek
 \usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2cm]{geometry} %nastaveni okraju a vzdalenosti cislovani
+
 
 %nastaveni zobrazovani cisel jak je u nas zvykem :)
 \sisetup{output-decimal-marker={,},exponent-product = \cdot, list-final-separator = { a }  }
@@ -46,6 +48,12 @@
 \addtocontents{toc}{\protect\thispagestyle{empty}} %odstraní číslování na stránce obsahu
 
 \begin{document}
+    \abovedisplayshortskip=-15pt %vertikální mezera před rovnicí
+    \belowdisplayshortskip=8pt  %vertikální mezera za rovnicí
+    
+    \abovedisplayskip=-10pt %vertikální mezera před rovnicí \noindent
+    %\belowdisplayskip=0pt
+	
 	\pagestyle{empty} 
 	\selectlanguage{czech}
 	\include{title}

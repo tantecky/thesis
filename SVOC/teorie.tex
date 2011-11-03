@@ -1,15 +1,58 @@
 \chapter{Teoretická část}
 
+
+
 \section{Počítačová dynamika tekutin}
 
 \section{Vícefázové modely}
 V současnosti existuje řada matematických modelů, které popisují vícefázové proudění. Následující kapitola obsahuje přehled modelů, které jsou vhodné k simulaci suspendace v mechanicky míchaných nádobách.
 
-\subsection{Euler-Lagrange}
-Tento typ modelu uvažuje primární kapalnou fází jako kontinuum s dispergovanou sekundární fází. Pro primární fázi je řešena rovnice kontinuity spolu s Navierovými-Stokesovými rovnicemi, zatímco pro dispergovanou fázi je řešena trajektorie každé částice separátně. Jednotlivé fáze si mohou mezi sebou vyměňovat hmotu, hybnost a energii, avšak vzájemné interakce částic nebo jejich rozpad jsou zanedbány. Model Euler-Lagrange je především vhodný pokud objemový zlomek dispergované fáze nepřesáhne \SI{10}{\percent}. 
+\subsection{Eulerian-Lagrangian}
+Tento typ modelu uvažuje primární tekutou fází jako kontinuum s dispergovanou sekundární fází. Pro primární fázi je řešena rovnice kontinuity spolu s Navierovými-Stokesovými rovnicemi, zatímco pro dispergovanou fázi je řešena trajektorie každé částice separátně. Jednotlivé fáze si mohou mezi sebou vyměňovat hmotu, hybnost a energii, avšak vzájemné interakce částic nebo jejich rozpad jsou zanedbány. Model Eulerian-Lagrangian je především vhodný pro systémy, kde objemový zlomek dispergované fáze nepřesáhne \SI{10}{\percent} např: rozprašovací sušárny, cyklóny nebo spalování uhlí či kapalného paliva. 
 
+Řešením bilance sil působící na částici (rov. \ref{eq:dpm}) je získána její trajektorie v daném časovém okamžiku.
 
-\subsection{Euler-Euler}
+\begin{equation}
+	\frac{d\vec{v}_{p}}{dt} = \vec{F}_{D}(\vec{v}_{f} - \vec{v}_{p}) + \frac{\vec{g}(\rho_{p} - \rho_{f})}{\rho_{p}} + \frac{\vec{F}_{ad}}{\rho_{p}}
+	\label{eq:dpm}
+\end{equation} 
 
-\subsection{Euler-Granular}
+\noindent Kde jednotlivé členy značí:
+
+\begin{itemize}[itemsep=0pt,parsep=0pt,partopsep=0pt,topsep=0pt]
+  \item $\vec{v}_{p}$ vektor rychlosti dané částice
+  \item $\vec{v}_{f}$ vektor rychlosti tekutiny
+  \item $\rho_{p}$, $\rho_{f}$ hustotu částice resp. tekutiny
+  \item $\vec{g}$ gravitační zrychlení
+  \item $\vec{F}_{D}$ odporová síla
+  \item $\vec{F}_{ad}$ další síly (např: tlaková, zdánlivá síla, síla zahrnující vliv rotace atd.)
+\end{itemize}
+
+\subsection{Eulerian-Eulerian}
+U modelu Eulerian-Eulerian jsou jednotlivé fáze považovány za prostupující se kontinua a každý bod v systému obsahuje informaci o objemovém zlomku dané fáze. Z tohoto popisu je zřejmé, že suma objemových zlomků přes všechny fáze v libovolném bodě se vždy musí rovnat jedné. 
+
+\begin{equation}
+	\sum_{i=1}^n \alpha_{i} = 1
+	\label{eq:volfrac}
+\end{equation} 
+
+\noindent Jednotlivé fáze mohou být kapalné, plynné nebo pevné a jejich celkový počet není teoreticky limitován. Pro každou fázi se řeší rovnice kontinuity a sada momentových (Navierových-Stokesových) rovnic a k výměně hybnosti mezi jednotlivými fázemi slouží mezifázové členy v těchto rovnicích. Pokud dochází k přenosu tepla nebo hmoty je třeba tuto skutečnost zohlednit v bilanci energie a hmoty.    
+
+Pokud nedochází k výměně hmoty mezi jednotnými fázemi tak rovnice kontinuity pro $i$-tou fázi má tvar:
+
+\begin{equation}
+	\frac{\partial}{\partial t} (\alpha_{i}\rho_{i}) +  \nabla \cdot (\alpha_{i}\rho_{i}\vec{v}_{i}) = 0
+	\label{eq:conti}
+\end{equation}
+
+\noindent Momentovou rovnici pro $i$-tou fázi za stejných předpokladů lze zapsat jako:
+
+\begin{equation}
+	\frac{\partial}{\partial t} (\alpha_{i}\rho_{i}\vec{v}_{i}) + \nabla \cdot (\alpha_{i}\rho_{i} \vec{v}_{i} \otimes \vec{v}_{i}) = -\alpha_{i} \nabla p + \nabla \cdot \bar{\tau} + \alpha_{i}\rho_{i}\vec{g} + \sum_{j=1}^n \vec{R}_{ji} + \vec{F}_{ext} + \vec{F}_{int}
+	\label{eq:conti}
+\end{equation}
+
+\noindent kde $p$ je tlak, $\bar{\tau}$ je tenzor napětí, jehož konkretní tvar závisí na typu uvažované fáze. Člen $\vec{R}_{ji}$ představuje mezifázovou odporovou sílu, $\vec{F}_{ext}$ má význam vnější objemové síly a $\vec{F}_{int}$ zahrnuje 
+
+\subsection{Eulerian-Granular}
 
