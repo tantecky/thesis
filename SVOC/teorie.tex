@@ -50,7 +50,7 @@ Když probíhá výměna hmoty mezi jednotnými fázemi tak rovnice kontinuity p
 	\label{eq:moml}
 \end{equation}
 
-\noindent kde $p$ je tlak, $\bar{\tau}_{i}$ je deviátor tenzoru napětí, jehož konkretní tvar závisí na typu uvažované fáze, a $\alpha_{i}\rho_{i}\vec{g}$ má význam gravitační síly působící na objemový element. Člen $\vec{R}_{ji}$ představuje mezifázovou odporovou sílu mezi $i$-tou a $j-tou$ fází, $\vec{F}_{ext}$ má význam dalších objemových sil a $\vec{F}_{int}$ zahrnuje povrchové síly působící na $i$-tou fázi vlivem ostatních fází. 
+\noindent kde $p$ je tlak, $\bar{\tau}_{i}$ je deviátor tenzoru napětí, jehož konkretní tvar závisí na typu uvažované fáze, a $\alpha_{i}\rho_{i}\vec{g}$ má význam gravitační síly působící na objemový element. Člen $\vec{R}_{ji}$ představuje mezifázovou odporovou sílu mezi $i$-tou a $j$-tou fází, $\vec{F}_{ext}$ má význam dalších objemových sil a $\vec{F}_{int}$ zahrnuje povrchové síly působící na $i$-tou fázi vlivem ostatních fází. 
 
 \subsection{Eulerian-Granular}
 Model Eulerian-Granular se liší od předchozího tím, že  popis chování pevné fáze byl odvozen s využitím kinetické teorie, která je například známá ze statistického popisu plynů. U tohoto modelu se viskozita pevné fáze mění v závislosti na interakcích s ostatními částice a primární fází. Na rozdíl od modelu Eulerian-Eulerian model Eulerian-Granular umožňuje nastavit maximální hodnotu objemového zlomku pevné fáze, která je pro sférické částice typicky kolem hodnoty \num{0.6}. Mezi nejčastější aplikace patří simulace fluidních loží nebo suspendace v mechanicky míchaných nádobách.
@@ -82,6 +82,40 @@ Tuto sílu lze rozepsat jakou součin koeficientu mezifázového sdílení hybno
 	\label{eq:kfs}
 \end{equation}
   
-\noindent Symbol $d_{s}$ značí průměr pevných částic a $C_{D}$ koeficient odpor, kterým se právě ovlivňuje chování odporové síly. 
- 
+\noindent Symbol $d_{s}$ značí průměr pevných částic a $C_{D}$ koeficient odpor, kterým se právě ovlivňuje chování odporové síly. Tento koeficient může být obecně složitou funkcí relativní rychlosti pohybu částice, její velikosti, hustotou a viskozitou tekutiny případně dalších veličin.   
 
+V současnosti existuje řada modelů pro koeficient odporů, které se liší podle toho, pro jaký účel byly navrženy. Jedním z nejznámějších je model, který navrhli \citet{schi32}. Autoři získali vztah \ref{eq:schlneu} pro výpočet koeficientu odporu na základě experimentálního měření rychlosti usazování sférické částice ve stagnantním sloupci kapaliny.    
+ 
+\begin{equation}
+	\label{eq:schlneu}
+  C_{D} = \left\{ \begin{array}{ll}
+  \frac{24}{Re_{p}}(1 + \num{0.15}Re_{p}^{\num{0.687}}) & Re_{p} \le 1000\\
+  \num{0.44} & Re_{p} > 1000\\
+  \end{array} \right.
+\end{equation}
+
+\noindent Ze vztahu \ref{eq:schlneu} je patrné, že Schillerova-Naumannova korelace je funkcí Reynoldsova kritéria pro částici, které je definováno jako:
+
+\begin{equation}
+	Re_{p}= \frac{\rho_{f}d_{s}|\vec{v}_{s} - \vec{v}_{f}|}{\eta_{f}}
+	\label{eq:reyp}
+\end{equation}
+
+Bohužel odporový koeficient navržený Schillerem a Naumannem se ukázal jako nepříliš vhodný k popisu odporové síly v systémech s plně vyvinutým turbulentním prouděním. Proto řada autorů navrhl úpravu této korelace a některé z nich jsou uvedeny v tab.
+
+\begin{table}[h!]
+\begin{center}
+  
+
+		\caption{Stanovené vlastnosti kapalné a pevné fáze}
+		\label{tab:cds}
+\begin{tabular}{|c|c|c|}
+  \hline
+  
+{\textbf{Autor}} & {\textbf{Koeficient odporu}} & {\textbf{Poznámky}} \\ \hline
+\citet{mag90} & $C_{D} = C_{D}(\num{0.4}\tanh(\frac{16\lambda}{d_{s}}))^{-2}$ & 5 \\ \hline{}
+  
+\end{tabular}
+
+\end{center}
+\end{table}
