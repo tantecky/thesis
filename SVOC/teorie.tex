@@ -71,7 +71,7 @@ Bilanci hybnosti pro pevnou fázi $s$ má tvar:
 Tuto sílu lze rozepsat jakou součin koeficientu mezifázového sdílení hybnosti a relativní rychlosti $i$-té a $j$-té fáze.
 
 \begin{equation}
-	\sum_{j=1}^n \vec{R}_{ji} = K_{ji}(\vec{v}_{j} - \vec{v}_{i})
+	\sum_{j=1}^n \vec{R}_{ji} = K_{ji} \left( \vec{v}_{j} - \vec{v}_{i} \right)
 	\label{eq:kij}
 \end{equation}
 
@@ -88,8 +88,8 @@ V současnosti existuje řada modelů pro koeficient odporů, které se liší p
  
 \begin{equation}
 	\label{eq:schlneu}
-  C_{D} = \left\{ \begin{array}{ll}
-  \frac{24}{Re_{p}}(1 + \num{0.15}Re_{p}^{\num{0.687}}) & Re_{p} \le 1000\\
+  C_{D0} = \left\{ \begin{array}{ll}
+  \frac{24}{Re_{p}}  \left( 1 + \num{0.15}Re_{p}^{\num{0.687}} \right) & Re_{p} \le 1000\\
   \num{0.44} & Re_{p} > 1000\\
   \end{array} \right.
 \end{equation}
@@ -101,21 +101,33 @@ V současnosti existuje řada modelů pro koeficient odporů, které se liší p
 	\label{eq:reyp}
 \end{equation}
 
-Bohužel odporový koeficient navržený Schillerem a Naumannem se ukázal jako nepříliš vhodný k popisu odporové síly v systémech s plně vyvinutým turbulentním prouděním. Proto řada autorů navrhl úpravu této korelace a některé z nich jsou uvedeny v tab.
+Bohužel odporový koeficient navržený Schillerem a Naumannem se ukázal jako nepříliš vhodný k popisu odporové síly v systémech s plně vyvinutým turbulentním prouděním. Proto řada autorů navrhl úpravu této korelace a některé z nich jsou uvedeny v tab. \ref{tab:cds}. Člen $\lambda$ se nazývá Kolmogorovo mikroměřítko je funkcí kinematické viskozity a disipace energie a určuje nejmenší velikost turbulentní vírů přítomných v systému. 
 
 \begin{table}[h!]
 \begin{center}
   
 
-		\caption{Stanovené vlastnosti kapalné a pevné fáze}
+		\caption{Modely pro odporový koeficient v turbulentní oblasti proudění}
 		\label{tab:cds}
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c|c|>{\centering\arraybackslash}p{5cm}|}
   \hline
   
-{\textbf{Autor}} & {\textbf{Koeficient odporu}} & {\textbf{Poznámky}} \\ \hline
-\citet{mag90} & $C_{D} = C_{D}(\num{0.4}\tanh(\frac{16\lambda}{d_{s}}))^{-2}$ & 5 \\ \hline{}
-  
-\end{tabular}
+{\textbf{Autor}} & {\textbf{Koeficient odporu}} & {\textbf{Stanoveno na základě}} \\ \hline{}
 
+\citet{pin01} & $C_{D} = C_{D0} \left( \num{0.4}\tanh\left(  \frac{16\lambda}{d_{s}} - 1  \right) \right) ^{-2}$ & měření rychlosti usazování v míchací nádobě \\ \hline
+ 
+\citet{bru98} & $C_{D} = C_{D0} \left( 1 + \num{8.76e-4} \left( \frac{\lambda}{d_{s}} \right)^{3} \right)$ & experimentální studie Taylorova–Couetteova toku \\ \hline 
+
+\citet{kho06} & $C_{D} = C_{D0} \left( 1 + \num{8.76e-5} \left( \frac{\lambda}{d_{s}} \right)^{3} \right)$ & úpravy Brucatova vztahu pro míchací nádoby  \\ \hline 
+
+\end{tabular}
 \end{center}
 \end{table}
+
+
+
+
+
+
+
+
