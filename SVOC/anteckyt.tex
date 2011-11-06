@@ -4,15 +4,26 @@
 \usepackage[pdftex]{graphicx} %pro vkládání obrázků v eps
 \usepackage{hyperref} %pro kliknutelné linky
 \usepackage[small,bf,belowskip=0.2cm]{caption} %změna stylu popisku a mezery před a za
-%\usepackage{sectsty} % pro jednoduché přestylování nadpisů
+\usepackage{sectsty} % pro jednoduché přestylování nadpisů
 \usepackage{booktabs} % kvuli siunitx v tabulkach
-\usepackage{array}
+\usepackage{array} %siunitx a centrovani tabulek
 \usepackage{enumitem} %pro umravnění mezer v enumerate + změnu popisků
+
+%pro zdrojaky
+\usepackage{listingsutf8}
+\lstset{language=C,basicstyle=\footnotesize,numbers=left,showspaces=false,showstringspaces=false,numberstyle=\footnotesize,frame=single,title=\lstname,breaklines=true,inputencoding=utf8/latin2
+} 
 
 \usepackage[round]{natbib}
 \usepackage{tabularx}
 \usepackage{siunitx} %pro sazbu fyzikálních jednotek
 \usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2cm]{geometry} %nastaveni okraju a vzdalenosti cislovani
+
+%pro vertikalni mezery u nadpisu
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{0pt}{*3}{*0}
+\titlespacing{\subsection}{0pt}{*3}{*0}
+%\titlespacing{\subsubsection}{0pt}{*1}{*0}
 
 \setlength{\textfloatsep}{0cm} %mezera za tabulkami
 
@@ -26,8 +37,8 @@
   \vspace*{\p@}%
   {\parindent \z@ \raggedright \normalfont
     \interlinepenalty\@M
-     \fontsize{21pt}{1.5}\selectfont \bfseries \thechapter\ \hspace{10pt} #1\par\nobreak
-    \vskip 22\p@
+     \fontsize{17pt}{1}\selectfont \bfseries \thechapter\ \hspace{10pt} #1\par\nobreak
+    \vskip 10\p@
   }}
 \makeatother{}
 
@@ -37,27 +48,30 @@
   \vspace*{\p@}%
   {\parindent \z@ \raggedright \normalfont
     \interlinepenalty\@M
-     \fontsize{21pt}{1.5}\selectfont \bfseries #1\par\nobreak
-    \vskip 22\p@
+     \fontsize{17pt}{1}\selectfont \bfseries #1\par\nobreak
+    \vskip 10\p@
   }}
 \makeatother{}
 
 %chapter ted nedelani \newpage + pridana vspace
 \makeatletter
-\renewcommand\chapter{\vspace{1.5cm}\par%
+\renewcommand\chapter{\vspace{0.7cm}\par%
   \thispagestyle{plain}%
   \global\@topnum\z@
   \@afterindentfalse
   \secdef\@chapter\@schapter}
 \makeatother
+{}
 
-%\sectionfont{\fontsize{14pt}{1.5}\selectfont}
-%\subsectionfont{\fontsize{12pt}{1.5}\selectfont}
+%velikost nadpisu
+\sectionfont{\vspace{2mm}\fontsize{14pt}{1}\selectfont}
+\subsectionfont{\vspace{2mm}\fontsize{12pt}{1}\selectfont}
 
 %vlastni prikazy
 \newcommand{\flu}{ANSYS FLUENT}
 
 \addtocontents{toc}{\protect\thispagestyle{empty}} %odstraní číslování na stránce obsahu
+\setcounter{tocdepth}{1}
 
 \begin{document}
     \abovedisplayshortskip=-12pt %vertikální mezera před rovnicí
@@ -70,10 +84,11 @@
 	\selectlanguage{czech}
 	\include{title}
   \include{summary}
-	\tableofcontents
+	\tableofcontents{}
 	\pagestyle{plain}
+  \newpage
   \setlength{\baselineskip}{1.5\baselineskip}
-	\setcounter{page}{0}
+	\setcounter{page}{1}
 	
   \input{uvod}
   \input{teorie}
@@ -87,4 +102,6 @@
 	\normalsize{}
 	%\setlength{\bibhang}{0pt} odsazen prvního řádku bibliografie
 	\include{bibliography}
+  \include{priloha}
+  
 \end{document}
