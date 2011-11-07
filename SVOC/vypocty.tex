@@ -2,6 +2,16 @@
 
 \section{Tvorba geometrie}
 
+Výpočetní doména byla vytvořena v programu Ansys DesignModeler podle geometrie uvedené v kapitole \ref{chap:exp}. Výsledná nestrukturovaná síť byla tvořena šestistěnnými a čtyřstěnnými buňkami o celkovém počtu \num{264398}. Průměrný objem buňky činil \SI{0.07}{\milli\litre} a průměrný skewness faktor \num{0.162}. Výpočetní doména je znázorněna na obr. \ref{fig:geo}, kde zelenou barvou je znázorněna rotační zóna kolem míchadla. 
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.3]{images/geo.eps}
+\caption{Výpočetní doména}
+\label{fig:geo}
+\end{center}
+\end{figure} 
+
 \section{Uživatelsky definové funkce}
 Uživatelem definované funkce (UDF) jsou moduly načítané do softwaru \flu, jenž rozšiřují nebo upravují schopnosti řešiče. Například může se jednat o definovaní vlastních počátečních a okrajových podmínek, změnu materiálových vlastností a modifikaci simulačních modelů. Pro tvorbu zdrojových souborů se využívá programovací jazyk C, které jsou následně zkompilovaný do dynamické knihovny.
 
