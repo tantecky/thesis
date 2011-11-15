@@ -10,6 +10,7 @@
 \usepackage{enumitem} %pro umravnění mezer v enumerate + změnu popisků
 \usepackage{subfig}
 
+
 %pro zdrojaky
 \usepackage{listingsutf8}
 \lstset{language=C,basicstyle=\footnotesize,numbers=left,showspaces=false,showstringspaces=false,numberstyle=\footnotesize,frame=single,title=\lstname,breaklines=true,inputencoding=utf8/latin2
@@ -22,7 +23,7 @@
 
 %pro vertikalni mezery u nadpisu
 \usepackage[compact]{titlesec}
-\titlespacing{\section}{0pt}{*3}{*0}
+\titlespacing{\section}{0pt}{*3}{*0} %před a za
 \titlespacing{\subsection}{0pt}{*3}{*0}
 %\titlespacing{\subsubsection}{0pt}{*1}{*0}
 
@@ -97,7 +98,7 @@
   
   \input{vypocty}
   \input{vysledky}
-  \input{zaver}
+  \include{zaver}
 
   \include{symbols}
 	\normalsize{}
