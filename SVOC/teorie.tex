@@ -84,6 +84,7 @@ Tuto sílu lze rozepsat jakou součin koeficientu mezifázového sdílení hybno
 
 V současnosti existuje řada modelů pro koeficient odporů, které se liší podle toho, pro jaký účel byly navrženy. Jedním z nejznámějších je model, který navrhli \citet{schi32}. Autoři získali vztah \ref{eq:schlneu} pro výpočet koeficientu odporu na základě experimentálního měření rychlosti usazování sférické částice ve stagnantním sloupci kapaliny.    
  
+	\hypertarget{hyp:schlneu}{} 
 \begin{equation}
 	\label{eq:schlneu}
   C_{D0} = \left\{ \begin{array}{ll}
@@ -104,7 +105,7 @@ Bohužel odporový koeficient navržený Schillerem a Naumannem se ukázal jako 
 \begin{table}[h!]
 \begin{center}
   
-
+		\hypertarget{hyp:cds}{}
 		\caption{Modely pro odporový koeficient v turbulentní oblasti proudění}
 		\label{tab:cds}
 \begin{tabular}{|c|c|>{\centering\arraybackslash}p{5cm}|}
@@ -112,11 +113,11 @@ Bohužel odporový koeficient navržený Schillerem a Naumannem se ukázal jako 
   
 {\textbf{Autor}} & {\textbf{Koeficient odporu}} & {\textbf{Stanoveno na základě}} \\ \hline{}
 
-\citet{pin01} & \label{eq:pin} $C_{D} = C_{D0} \left( \num{0.4}\tanh\left(  \frac{16\lambda}{d_{s}} - 1  \right) \right) ^{-2}$ & měření rychlosti usazování v míchací nádobě \\ \hline
+\citet{pin01} & $C_{D} = C_{D0} \left( \num{0.4}\tanh\left(  \frac{16\lambda}{d_{s}} - 1  \right) \right) ^{-2}$ & měření rychlosti usazování v míchací nádobě \\ \hline
  
-\citet{bru98} & \label{eq:bru} $C_{D} = C_{D0} \left( 1 + \num{8.76e-4} \left( \frac{\lambda}{d_{s}} \right)^{3} \right)$ & experimentální studie Taylorova–Couetteova toku \\ \hline 
+\citet{bru98} & $C_{D} = C_{D0} \left( 1 + \num{8.76e-4} \left( \frac{\lambda}{d_{s}} \right)^{3} \right)$ & experimentální studie Taylorova–Couetteova toku \\ \hline 
 
-\citet{kho06} & \label{eq:kho} $C_{D} = C_{D0} \left( 1 + \num{8.76e-5} \left( \frac{\lambda}{d_{s}} \right)^{3} \right)$ & úpravy Brucatova vztahu pro míchací nádoby  \\ \hline 
+\citet{kho06} & $C_{D} = C_{D0} \left( 1 + \num{8.76e-5} \left( \frac{\lambda}{d_{s}} \right)^{3} \right)$ & úpravy Brucatova vztahu pro míchací nádoby  \\ \hline 
 
 \end{tabular}
 \end{center}
