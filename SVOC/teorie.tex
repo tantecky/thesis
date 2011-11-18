@@ -32,9 +32,9 @@ U~modelu Eulerian-Eulerian jsou jednotlivé fáze považovány za prostupující
 	\label{eq:volfrac}
 \end{equation} 
 
-\noindent Jednotlivé fáze mohou být kapalné, plynné nebo pevné a jejich celkový počet není teoreticky limitován. Pro každou fázi se řeší rovnice kontinuity (\ref{eq:conti}) a sada rovnic pro hybnost. (\ref{eq:moml}). K~výměně hybnosti mezi jednotlivými fázemi slouží mezifázové členy v~těchto rovnicích. Pokud dochází k~přenosu tepla nebo hmoty je třeba tuto skutečnost zohlednit v~bilanci energie a hmoty.    
+\noindent Jednotlivé fáze mohou být kapalné, plynné nebo pevné a jejich celkový počet není teoreticky limitován. Pro každou fázi se řeší rovnice kontinuity (\ref{eq:conti}) a sada rovnic pro hybnost (\ref{eq:moml}). K~výměně hybnosti mezi jednotlivými fázemi slouží mezifázové členy v~těchto rovnicích. Pokud dochází k~přenosu tepla nebo hmoty je třeba tuto skutečnost zohlednit v~bilanci energie a hmoty.    
 
-Když probíhá výměna hmoty mezi jednotnými fázemi tak rovnice kontinuity pro $i$-tou fázi má tvar:
+Když probíhá výměna hmoty mezi jednotnými fázemi, tak rovnice kontinuity pro $i$-tou fázi má tvar:
 
 \begin{equation}
 	\frac{\partial}{\partial t} (\alpha_{i}\rho_{i}) +  \nabla \cdot (\alpha_{i}\rho_{i}\vec{v}_{i}) = 0
@@ -44,20 +44,20 @@ Když probíhá výměna hmoty mezi jednotnými fázemi tak rovnice kontinuity p
 \noindent Rovnice hybnosti pro $i$-tou fázi za stejných předpokladů lze zapsat jako:
 
 \begin{equation}
-	\frac{\partial}{\partial t} (\alpha_{i}\rho_{i}\vec{v}_{i}) + \nabla \cdot (\alpha_{i}\rho_{i} \vec{v}_{i} \otimes \vec{v}_{i}) = -\alpha_{i} \nabla p + \nabla \cdot \bar{\tau}_{i} + \alpha_{i}\rho_{i}\vec{g} + \sum_{j=1}^n \vec{R}_{ji} + \vec{F}_{ext} + \vec{F}_{int}
+	\frac{\partial}{\partial t} (\alpha_{i}\rho_{i}\vec{v}_{i}) + \nabla \cdot (\alpha_{i}\rho_{i} \vec{v}_{i} \otimes \vec{v}_{i}) = -\alpha_{i} \nabla p + \nabla \cdot \bar{\tau}_{i} + \alpha_{i}\rho_{i}\vec{g} + \sum_{j=1}^n \vec{R}_{ji} + \vec{f}_{ext,i} + \vec{f}_{int,i}
 	\label{eq:moml}
 \end{equation}
 
-\noindent kde $p$ je tlak, $\bar{\tau}_{i}$ je deviátor tenzoru napětí, jehož konkretní tvar závisí na typu uvažované fáze, a $\alpha_{i}\rho_{i}\vec{g}$ má význam gravitační síly působící na objemový element. Člen $\vec{R}_{ji}$ představuje mezifázovou odporovou sílu mezi $i$-tou a $j$-tou fází, $\vec{F}_{ext}$ má význam dalších objemových sil a $\vec{F}_{int}$ zahrnuje povrchové síly působící na $i$-tou fázi vlivem ostatních fází. 
+\noindent kde $p$ je tlak, $\bar{\tau}_{i}$ je deviátor tenzoru napětí, jehož konkretní tvar závisí na typu uvažované fáze, a $\alpha_{i}\rho_{i}\vec{g}$ má význam gravitační síly působící na objemový element. Člen $\vec{R}_{ji}$ představuje mezifázovou odporovou sílu mezi $i$-tou a $j$-tou fází, $\vec{f}_{ext,i}$ má význam dalších objemových sil a $\vec{f}_{int,i}$ zahrnuje povrchové síly působící na $i$-tou fázi vlivem ostatních fází. Všechny výše zmíněné síly jsou vztaženy na objemový element dané fáze.
 
 \subsection{Eulerian-Granular}
 \label{sec:egm}
-Model Eulerian-Granular se liší od předchozího tím, že  popis chování pevné fáze byl odvozen s~využitím kinetické teorie, která je například známá ze statistického popisu plynů. U~tohoto modelu se viskozita pevné fáze mění v~závislosti na interakcích s~ostatními částice a primární fází. Na rozdíl od modelu Eulerian-Eulerian model Eulerian-Granular umožňuje nastavit maximální hodnotu objemového zlomku pevné fáze, která je pro sférické částice typicky kolem hodnoty \num{0.6}. Mezi nejčastější aplikace patří simulace fluidních loží nebo suspendace v~mechanicky míchaných nádobách.
+Model Eulerian-Granular se liší od předchozího tím, že  popis chování pevné fáze byl odvozen s~využitím kinetické teorie, která je například známá ze statistického popisu plynů. U~tohoto modelu se viskozita pevné fáze mění v~závislosti na interakcích s~ostatními částicemi a primární fází. Na rozdíl od modelu Eulerian-Eulerian model Eulerian-Granular umožňuje nastavit maximální hodnotu objemového zlomku pevné fáze, která je pro sférické částice typicky kolem hodnoty \num{0.6}. Mezi nejčastější aplikace patří simulace fluidních loží nebo suspendace v~mechanicky míchaných nádobách.
 
 Bilanci hybnosti pro pevnou fázi $s$ má tvar:
 
 \begin{equation}
-	\frac{\partial}{\partial t} (\alpha_{s}\rho_{s}\vec{v}_{s}) + \nabla \cdot (\alpha_{s}\rho_{s} \vec{v}_{s} \otimes \vec{v}_{s}) = -\alpha_{s} \nabla p - \nabla p_{s} + \nabla \cdot \bar{\tau}_{s} + \alpha_{s}\rho_{s}\vec{g} + \sum_{j=1}^n \vec{R}_{ji} + \vec{F}_{ext} + \vec{F}_{int}
+	\frac{\partial}{\partial t} (\alpha_{s}\rho_{s}\vec{v}_{s}) + \nabla \cdot (\alpha_{s}\rho_{s} \vec{v}_{s} \otimes \vec{v}_{s}) = -\alpha_{s} \nabla p - \nabla p_{s} + \nabla \cdot \bar{\tau}_{s} + \alpha_{s}\rho_{s}\vec{g} + \sum_{j=1}^n \vec{R}_{ji} + \vec{f}_{ext,i} + \vec{f}_{int,i}
 	\label{eq:momls}
 \end{equation}
   
@@ -81,9 +81,9 @@ Tuto sílu lze rozepsat jakou součin koeficientu mezifázového sdílení hybno
 	\label{eq:kfs}
 \end{equation}
   
-\noindent Symbol $d_{s}$ značí průměr pevných částic a $C_{D}$ koeficient odpor, kterým se právě ovlivňuje chování odporové síly. Tento koeficient může být obecně složitou funkcí relativní rychlosti pohybu částice, její velikosti, hustotou a viskozitou tekutiny případně dalších veličin.   
+\noindent Symbol $d_{s}$ značí průměr pevných částic a $C_{D}$ koeficient odpor, kterým se právě ovlivňuje chování odporové síly. Tento koeficient může být obecně složitou funkcí relativní rychlosti pohybu částice, její velikosti, hustotou a viskozitou tekutiny či případně dalších veličin.   
 
-V~současnosti existuje řada modelů pro koeficient odporů, které se liší podle toho, pro jaký účel byly navrženy. Jedním z~nejznámějších je model, který navrhli \citet{schi32}. Autoři získali vztah \ref{eq:schlneu} pro výpočet koeficientu odporu na základě experimentálního měření rychlosti usazování sférické částice ve stagnantním sloupci kapaliny.    
+V~současnosti existuje řada modelů pro koeficient odporů, které se liší podle toho pro jaký účel byly navrženy. Jedním z~nejznámějších je model, který navrhli \citet{schi32}. Autoři získali vztah \ref{eq:schlneu} pro výpočet koeficientu odporu na základě experimentálního měření rychlosti usazování sférické částice ve stagnantním sloupci kapaliny.    
  
 	\hypertarget{hyp:schlneu}{} 
 \begin{equation}
@@ -94,14 +94,14 @@ V~současnosti existuje řada modelů pro koeficient odporů, které se liší p
   \end{array} \right.
 \end{equation}
 
-\noindent Ze vztahu \ref{eq:schlneu} je patrné, že Schillerova-Naumannova korelace je funkcí Reynoldsova kritéria pro částici, které je definováno jako:
+\noindent Ze vztahu \ref{eq:schlneu} je patrné, že Schillerova-Naumannova korelace je funkcí Reynoldsova kritéria pro částici které je definováno jako:
 
 \begin{equation}
 	Re_{p}= \frac{\rho_{f}d_{s}|\vec{v}_{s} - \vec{v}_{f}|}{\eta_{f}}
 	\label{eq:reyp}
 \end{equation}
 
-Bohužel odporový koeficient navržený Schillerem a Naumannem se ukázal jako nepříliš vhodný k~popisu odporové síly v~systémech s~plně vyvinutým turbulentním prouděním. Proto řada autorů navrhl úpravu této korelace a některé z~nich jsou uvedeny v~tab. \ref{tab:cds}. Člen $\lambda$ se nazývá Kolmogorovo mikroměřítko je funkcí kinematické viskozity a disipace energie a určuje nejmenší velikost turbulentní vírů přítomných v~systému. 
+Bohužel odporový koeficient navržený Schillerem a Naumannem se ukázal jako nepříliš vhodný k~popisu odporové síly v~systémech s~plně vyvinutým turbulentním prouděním. Proto řada autorů navrhl úpravu této korelace a některé z~nich jsou uvedeny v~tab. \ref{tab:cds}. Člen $\lambda$ se nazývá Kolmogorovo mikroměřítko a určuje nejmenší velikost turbulentní vírů přítomných v~systému, přičemž je funkcí kinematické viskozity a disipace energie.
 
 \begin{table}[h!]
 \begin{center}
