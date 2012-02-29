@@ -6,8 +6,11 @@
 %\usepackage{sectsty} % pro jednoduché přestylování nadpisů
 \usepackage[round]{natbib} %pro bibliografii a citace
 \usepackage{tabularx} %pro lepsi tabulky
+\usepackage[small,bf,belowskip=0.2cm]{caption} %změna stylu popisku a mezery před a za
 \usepackage{siunitx} %pro sazbu fyzikálních jednotek
 \usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2cm]{geometry} %nastaveni okraju a vzdalenosti cislovani
+\usepackage{subfig} %subfloat je nejaky divny, takze navrat k subfig-u
+
 
 %vypne vypisovani Kapitola u \chapter
 \makeatletter
@@ -58,6 +61,7 @@
 	\pagestyle{plain}
     \setlength{\baselineskip}{1.5\baselineskip}
 	\setcounter{page}{0}
+	\include{theory}
 	\include{review}
     \include{symbols}
 	\normalsize{}
