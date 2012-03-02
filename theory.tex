@@ -23,8 +23,16 @@ Stav úplné suspendace je charakterizován pohybem pevné fáze v celé nádob�
 Posledním stádiem je dosažení stavu homogenní suspendace, při němž částice pevné fáze dosahují prakticky rovnoměrného rozložení v celém promíchávaném systému. Jakékoliv další zvýšení frekvence míchadla nebo jeho příkonu nemá již prakticky žádný vliv na distribuci pevné fáze. Dosažení stavu homogenní suspendace je často důležité u procesů, které vyžadují rovnoměrné rozložení částic v systému. Příkladem takovéhoto procesu může být krystalizace, kde nerovnoměrná koncentrace pevné fáze způsobuje tvorbu míst s lokálním přesycením, jenž následně negativně ovlivňují kvalitu vzniklých krystalů. Nicméně ve většině případů je postačující dosažení stavu úplné suspendace, který vyžaduje menší množství vykonané práce.
 
 \subsection{Kritická frekvence otáčení míchadla}
+Jak již bylo zmíněno v předcházející kapitole, kritická frekvence otáčení je minimální rychlost otáčení míchadla potřeba k udržení částic pevné fáze ve vznosu. První kdo navrhl empirickou korelaci k jejímu výpočtu byl \citet{zwi58}. Jím navržený vztah má tvar:
 
+\begin{equation}
+	N_{js} = \left[\frac{g(\rho_{s}-\rho_{l})}{\rho_{l}}\right]^{\num{0.45}}W^{\num{0.13}}d_{p}^{\num{0.2}}D^{\num{-0.85}}\nu^{\num{0.1}}S
+	\label{eq:nkrit}
+\end{equation} 
 
+\noindent kde $g$ je gravitační zrychlení, $\rho_{s}$ hustota pevné fáze, $\rho_{l}$ hustota kapalné fáze, $W$ relativní hmotnostní zlomek pevné fáze, $d_{p}$ průměr částice pevné fáze, $\nu$ kinematická viskozita a $S$ je bezrozměrná Zwieteringova konstanta, která zohledňuje geometrii systému a míchadla. Ze vztahu je dobře patrné, že rozdíl hustot jednotlivých fází nejvýznamněji ovlivňuje výslednou kritickou frekvenci otáčení míchadla. Pozdější studie provedené, jenž provedli, 
+
+\newpage 
 \section{Počítačová dynamika tekutin (CFD)}
 
 
