@@ -63,20 +63,22 @@ Další užitečnou charakteristikou systému kapalina-pevná fáze je takzvaná
 	\label{eq:kvasus}
 \end{equation}  
 
-\noindent Díky své diskrétní povaze je tato veličina navíc dobře stanovitelná pomocí simulace technikou CFD.
+\noindent Díky své diskrétní povaze je tato veličina navíc dobře stanovitelná pomocí simulační techniky CFD. S rostoucí homogenitou systémů číselná hodnota kvality suspenze klesá a v limitním případě je nulová. Někdy se proto místo kvality suspenze používá pojem stupeň homogenizace, jenž vznikne odečtením kvality suspenze od jedničky.
+
+\citet{boh80} určili na základě experimentů hodnoty kvality suspenze pro jednotlivé stupně suspendace. Jejich výsledky jsou shrnuty v tab. \ref{tab:kvasus}.
 
 \begin{table}[h!]
 \begin{center}
-\caption{Zwieteringovy konstanty pro \SI{45}{\degree} PBT}
-\label{tab:jj}
+\caption{Rozdělení stupňů suspendace dle kvality suspenze}
+\label{tab:kvasus}
 \begin{tabular}{cc}
 \toprule
 Stupeň suspendace & Kvalita suspenze $(\sigma)$ \\
 \midrule
 
-Částečná & \num{4.8} \\
-Úplná & \num{4.6} \\
-Úplná & \num{4.6} \\
+Částečná &  $\sigma \geq \num{0.8}$ \\
+Úplná & $\num{0.2} < \sigma < \num{0.8}$ \\
+Homogenní & $\sigma \leq \num{0.2}$ \\
 
 \bottomrule
 \end{tabular}
