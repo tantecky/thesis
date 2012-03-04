@@ -59,13 +59,13 @@ $D/4$ \\
 Další užitečnou charakteristikou systému kapalina-pevná fáze je takzvaná kvalita suspenze, což je směrodatná odchylka koncentrace pevné fáze. Často se však dává přednost vyjádření pomocí objemového zlomku pevné fáze. Pro konečný počet $n$ měření lze kvalitu suspenze definovat jako:
 
 \begin{equation}
-	\sigma = \sqrt{\frac{1}{n}\sum_{n}^{i=1}\left(\frac{c_{i}}{\bar{c}} - 1\right)^{2}}
+	\sigma = \sqrt{\frac{1}{n}\sum_{i=1}^{n}\left(\frac{c_{i}}{\bar{c}} - 1\right)^{2}}
 	\label{eq:kvasus}
 \end{equation}  
 
-\noindent Díky své diskrétní povaze je tato veličina navíc dobře stanovitelná pomocí simulační techniky CFD. S rostoucí homogenitou systémů číselná hodnota kvality suspenze klesá a v limitním případě je nulová. Někdy se proto místo kvality suspenze používá pojem stupeň homogenizace, jenž vznikne odečtením kvality suspenze od jedničky.
+\noindent Díky své diskrétní povaze je tato veličina navíc dobře stanovitelná pomocí simulační techniky CFD. S~rostoucí homogenitou systémů číselná hodnota kvality suspenze klesá a v~limitním případě je nulová. Někdy se proto místo kvality suspenze používá pojem stupeň homogenizace, jenž vznikne odečtením kvality suspenze od jedničky.
 
-\citet{boh80} určili na základě experimentů hodnoty kvality suspenze pro jednotlivé stupně suspendace. Jejich výsledky jsou shrnuty v tab. \ref{tab:kvasus}.
+\citet{boh80} určili na základě experimentů hodnoty kvality suspenze pro jednotlivé stupně suspendace. Jejich výsledky jsou shrnuty v~tab. \ref{tab:kvasus}.
 
 \begin{table}[h!]
 \begin{center}
@@ -88,7 +88,7 @@ Homogenní & $\sigma \leq \num{0.2}$ \\
 \subsection{Výška vznosu pevné fáze}
 Při míchaní suspenzní se ve vsádce tvoří snadno rozlišitelná oblast ve které se vyskytuje naprostá většina částic pevné fáze. Vzdálenost mezi dnem nádoby a rozhraním této oblasti se někdy také nazývá jako výška suspenzního mraku. 
 
-Experimentálně studovali výšku suspenzního mraku např. autoři \citet{hic97}. Z jejich měření vyplynulo, že nejvýznamnější vliv na výšku vznosu pevné fáze má poměr průměrů míchadla a nádoby $(D/T)$, poměr světlé výšky a průměru nádoby $(C/T)$ a koncentrace pevné fáze. Dosažení dobré distribuce částic ve vysoké nádobě $(H > T)$ se ukázalo jako poměrně problematické, a proto výzkumníci zdůraznili potřebu použití více míchadel v takovýchto systémech.
+Experimentálně studovali výšku suspenzního mraku např. autoři \citet{hic97}. Z~jejich měření vyplynulo, že nejvýznamnější vliv na výšku vznosu pevné fáze má poměr průměrů míchadla a nádoby $(D/T)$, poměr světlé výšky a průměru nádoby $(C/T)$ a koncentrace pevné fáze. Dosažení dobré distribuce částic ve vysoké nádobě $(H > T)$ se ukázalo jako poměrně problematické, a proto výzkumníci zdůraznili potřebu použití více míchadel v~takovýchto systémech.
 
 \citet{bit02} odvodili korelaci pro výpočet výšky suspenzního mraku na základě dostupných experimentálních dat, které naměřili \citet{hic97} a \citet{buj99}. Zmíněný vztah byl navržen pro rychloběžná axiální míchadla a má tvar:
 
