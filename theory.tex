@@ -24,7 +24,6 @@ Posledním stádiem je dosažení stavu homogenní suspendace, při němž čás
 
 \subsection{Kritická frekvence otáčení míchadla}
 Jak již bylo zmíněno v~předcházející kapitole, kritická frekvence otáčení je minimální rychlost otáčení míchadla potřeba k~udržení částic pevné fáze ve vznosu. První kdo navrhl empirickou korelaci k~jejímu výpočtu byl \citet{zwi58}. Jím navržený vztah má tvar:
-
 \begin{equation}
 	N_{js} = \left[\frac{g(\rho_{s}-\rho_{l})}{\rho_{l}}\right]^{\num{0.45}}W^{\num{0.13}}d_{p}^{\num{0.2}}D^{\num{-0.85}}\nu^{\num{0.1}}S
 	\label{eq:nkrit}
@@ -57,7 +56,6 @@ $D/4$ \\
 
 \subsection{Kvalita suspenze (stupeň homogenizace)}
 Další užitečnou charakteristikou systému kapalina-pevná fáze je takzvaná kvalita suspenze, což je směrodatná odchylka koncentrace pevné fáze. Často se však dává přednost vyjádření pomocí objemového zlomku pevné fáze. Pro konečný počet $n$ měření lze kvalitu suspenze definovat jako:
-
 \begin{equation}
 	\sigma = \sqrt{\frac{1}{n}\sum_{i=1}^{n}\left(\frac{c_{i}}{\bar{c}} - 1\right)^{2}}
 	\label{eq:kvasus}
@@ -91,11 +89,23 @@ Při míchaní suspenzní se ve vsádce tvoří snadno rozlišitelná oblast ve 
 Experimentálně studovali výšku suspenzního mraku např. autoři \citet{hic97}. Z~jejich měření vyplynulo, že nejvýznamnější vliv na výšku vznosu pevné fáze má poměr průměrů míchadla a nádoby $(D/T)$, poměr světlé výšky a průměru nádoby $(C/T)$ a koncentrace pevné fáze. Dosažení dobré distribuce částic ve vysoké nádobě $(H > T)$ se ukázalo jako poměrně problematické, a proto výzkumníci zdůraznili potřebu použití více míchadel v~takovýchto systémech.
 
 \citet{bit02} odvodili korelaci pro výpočet výšky suspenzního mraku na základě dostupných experimentálních dat, které naměřili \citet{hic97} a \citet{buj99}. Zmíněný vztah byl navržen pro rychloběžná axiální míchadla a má tvar:
-
 \begin{equation}
 	C_{H}=\frac{N}{N_{js}}\left[\num{0.84} - \num{1.05}\frac{C}{T} + \num{0.7}\frac{(D/T)^{2}}{1 - (D/T)^{2}}  \right]T
 	\label{eq:sushei}
 \end{equation}  
+
+\subsection{Doba homogenizace}
+Doba homogenizace $t_{mix}$ je definována jako čas potřebný k tomu, aby se hodnota normalizované koncentrace stopovací látky $c(t)^{*}$ pohybovala v předem zvoleném rozmezí. Nejčastěji se volí přípustná hodnota fluktuace \SI{\pm 5}{\percent}, tedy $c(t)^{*} \in \left<\num{0.95};\num{1.05}\right>$. 
+
+Výše zmíněná normalizovaná kocentrace je určena vztahem:
+\begin{equation}
+	c(t)^{*} = \frac{c(t) - c_{0}}{c_{\infty} - c_{0}}
+	\label{eq:bezkon}
+\end{equation}
+
+\noindent přičemž $c(t)$ je koncentrace stopovací látky v čase $t$, $c_{\infty}$ je koncentrace ve vsádce po dokonalém rozmíchání a $c_{0}$ představuje počáteční koncentraci v systému.  
+
+Hodnota doby homogenizace také velmi záleží na místě měření zmíněné koncentrace. Například \citet{buj99} měřili dobu homogenizace pro systém kapalina-pevná fáze v mechanicky míchané nádobě. Z výsledků vyplynulo, že nad suspenzním mrakem je doba homogenizace přibližně dvacetkrát delší než v oblasti, která je bohatá na přítomnost částic pevné fáze.
 
 \newpage 
 \section{Počítačová dynamika tekutin (CFD)}
