@@ -109,6 +109,15 @@ Hodnota doby homogenizace také velmi záleží na místě měření zmíněné 
 
 \newpage 
 \section{Počítačová dynamika tekutin (CFD)}
+Následující kapitola obsahuje stručný přehled základních rovnic a matematických modelů, které jsou uplatněny při simulaci pomocí techniky CFD. Hlavní důraz je kladen na problematiku isotermního vícefázového proudění kapalina-pevná fáze v mechanicky míchaných nádobách.
 
+\subsection{Úvod do CFD}
+Počítačová dynamika tekutin (angl. computational fluid dynamics -- CFD) je jedno z odvětví hydromechaniky, jenž využívá numerické metody a algoritmy k řešení problémů zahrnující proudění tekutin, transport hmoty a tepla, chemické reakce a celou řadu dalších fyzikálně-chemických jevů. Na počátku každé CFD simulace je třeba nejprve vytvořit model zkoumaného systémů na který jsou následně aplikovány matematické postupy tak, aby byly ze zadaných okrajových a počátečních podmínek získány vybrané údaje o dějích probíhajících v celé zkoumané doméně při respektování fyzikálních zákonů. Tyto zákony jsou nejčastěji formulovány v podobě parciálních diferenciálních rovnic. Celou CFD simulaci lze rozdělit do třech hlavních kroků:
 
-
+\begin{enumerate}[itemsep=0pt,parsep=0pt,partopsep=0pt,topsep=0pt,label=\bfseries\arabic*{.}]
+  \item \textbf{Tvorba geometrie a výpočetní sítě (preprocessing)}
+  
+  V první fází je vytvořena geometrie zkoumaného systému, která je následně rozdělena na konečný počet kontrolních objemů (buněk). Vzniklá výpočetní síť může obsahovat buňky různých typů. Dvojrozměrná doména se nejčastěji dělí na trojúhelníky nebo obdélníky. V trojrozměrném případě se nejčastěji využívají jehlany, hranoly, kvádry či další mnohostěny. V současnosti se již dává přednost nestrukturovaným sítím před strukturovanýma. Pro strukturovanou síť platí, že každá stěna buňky přiléhá pouze k jedné stěně sousedního kontrolního objemu. Jejich hlavní nevýhodou je obtížná tvorba složitějších tvarů a nemožnost libovolného zahušťování.
+  \item \textbf{Vlastní výpočet}
+  \item \textbf{Analýza výsledků (postprocessing)}
+\end{enumerate}
