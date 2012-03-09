@@ -107,12 +107,14 @@ Výše zmíněná normalizovaná kocentrace je určena vztahem:
 
 Hodnota doby homogenizace také velmi záleží na místě měření zmíněné koncentrace. Například \citet{buj99} měřili dobu homogenizace pro systém kapalina-pevná fáze v mechanicky míchané nádobě. Z výsledků vyplynulo, že nad suspenzním mrakem je doba homogenizace přibližně dvacetkrát delší než v oblasti, která je bohatá na přítomnost částic pevné fáze.
 
-\newpage 
+%\newpage 
 \section{Počítačová dynamika tekutin (CFD)}
 Následující kapitola obsahuje stručný přehled základních rovnic a matematických modelů, které jsou uplatněny při simulaci pomocí techniky CFD. Hlavní důraz je kladen na problematiku isotermního vícefázového proudění kapalina-pevná fáze v mechanicky míchaných nádobách.
 
 \subsection{Úvod do CFD}
 Počítačová dynamika tekutin (angl. computational fluid dynamics -- CFD) je jedno z odvětví hydromechaniky, jenž využívá numerické metody a algoritmy k řešení problémů zahrnující proudění tekutin, transport hmoty a tepla, chemické reakce a celou řadu dalších fyzikálně-chemických jevů. Na počátku každé CFD simulace je třeba nejprve vytvořit model zkoumaného systémů na který jsou následně aplikovány matematické postupy tak, aby byly ze zadaných okrajových a počátečních podmínek získány vybrané údaje o dějích probíhajících v celé zkoumané doméně při respektování fyzikálních zákonů. Tyto zákony jsou nejčastěji formulovány v podobě parciálních diferenciálních rovnic. 
+
+S prudkým nárůstem výkonu výpočetní techniky se metoda CFD stala přístupnější širšímu množství uživatelů. Mezi její hlavní výhody patří schopnost studovat systém za podmínek, kdy experimentální měření jsou těžko proveditelná, či přímo nemožná. Díky tomu je možné např. dosáhnout znatelného snížení finančních a časových nákladů ve vývojové fází nového výrobku. Nicméně je třeba dodat, že každý simulační výpočet je silně závislý na dodaných počátečních a okrajových podmínkách, a proto CFD nikdy nemůže úplně nahradit experimentální měření.
 
 Celou CFD simulaci lze rozdělit do třech hlavních kroků: tvorba geometrie a výpočetní sítě, vlastní výpočet a analýza výsledků
 
@@ -136,4 +138,39 @@ K provedení vlastního simulačního výpočtu dnes existuje celá řada jak ko
 \end{itemize}
 
 \subsubsection{Analýza výsledků (postprocessing)}
-Posledním krokem každé CFD analýzy ... K tomuto účelu existuje 
+Posledním krokem každé CFD je zpracování a analýza získaných simulačních výsledků. K tomuto účelu bylo vytvořena řada softwarových nástrojů mezi které patří např. Ansys CFD-Post, Tecplot 360 nebo ParaView. Hlavní úkoly těchto programů činí:
+
+\begin{itemize}[itemsep=0pt,parsep=0pt,partopsep=0pt,topsep=0pt]
+  \item výpočet dodatečných veličin
+  \item tvorba řezů doménou
+  \item zobrazení vektorových polí
+  \item tvorba konturových grafů
+  \item vyobrazení ploch o konstantní hodnotě veličiny
+  \item porovnání několika simulací
+\end{itemize}
+
+\subsection{Rovnice kontinuity}
+
+Základní vztahem pro popis tekutiny je rovnice kontinuity, jenž vyjadřuje zákon zachování hmoty. Pro jednofázový systém obsahující stlačitelnou tekutinu má tato rovnice tvar:
+\begin{equation}
+	\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho\vec{v}) = 0
+	\label{eq:conti1}
+\end{equation}
+přičemž $\rho$ značí hustotu tekutiny, $t$ čas a $\vec{v}$ je vektor rychlosti. První člen v rov. \ref{eq:conti1} reprezentuje změnu hustoty v čase (akumulaci) a druhý člen představuje změnu hmotnosti objemového elementu v důsledku konvekce. Pokud lze tekutinu považovat za nestlačitelnou, tak hustota kontinua je konstantní a výše zmíněný vztah se zjednoduší na rov. \ref{eq:conti1simp}.
+\begin{equation}
+	\nabla \cdot \vec{v} = 0
+	\label{eq:conti1simp}
+\end{equation}  
+
+Pro vícefázový systém je třeba zapsat rovnici kontinuity pro každou fázi zvlášť, přičemž je třeba obecně uvažovat přenos hmoty mezi jednotlivými fázemi. Rovnice kontinuity pro $i$-tou fázi lze zapsat jako:
+\begin{equation}
+	\frac{\partial}{\partial t} (\alpha_{i}\rho_{i}) +  \nabla \cdot (\alpha_{i}\rho_{i}\vec{v}_{i}) = \sum_{\substack{ i \neq j \\ j=1}}^{n}\Gamma_{ij}
+	\label{eq:conti2}
+\end{equation} 
+kde člen $\Gamma_{ij}$ představuje hmotnostní tok mezi $i$-tou a $j$-tou fází vztažený na objemový element a $\alpha_{i}$ značí objemový zlomek dané fáze. Objemové zlomky všech fází navíc musí splňovat algebraickou rovnici \ref{eq:volfrac}.
+\begin{equation}
+	\sum_{i=1}^n \alpha_{i} = 1
+	\label{eq:volfrac}
+\end{equation} 
+
+\subsection{Bilance hybnosti}
