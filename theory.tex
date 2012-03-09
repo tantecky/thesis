@@ -112,12 +112,28 @@ Hodnota doby homogenizace také velmi záleží na místě měření zmíněné 
 Následující kapitola obsahuje stručný přehled základních rovnic a matematických modelů, které jsou uplatněny při simulaci pomocí techniky CFD. Hlavní důraz je kladen na problematiku isotermního vícefázového proudění kapalina-pevná fáze v mechanicky míchaných nádobách.
 
 \subsection{Úvod do CFD}
-Počítačová dynamika tekutin (angl. computational fluid dynamics -- CFD) je jedno z odvětví hydromechaniky, jenž využívá numerické metody a algoritmy k řešení problémů zahrnující proudění tekutin, transport hmoty a tepla, chemické reakce a celou řadu dalších fyzikálně-chemických jevů. Na počátku každé CFD simulace je třeba nejprve vytvořit model zkoumaného systémů na který jsou následně aplikovány matematické postupy tak, aby byly ze zadaných okrajových a počátečních podmínek získány vybrané údaje o dějích probíhajících v celé zkoumané doméně při respektování fyzikálních zákonů. Tyto zákony jsou nejčastěji formulovány v podobě parciálních diferenciálních rovnic. Celou CFD simulaci lze rozdělit do třech hlavních kroků:
+Počítačová dynamika tekutin (angl. computational fluid dynamics -- CFD) je jedno z odvětví hydromechaniky, jenž využívá numerické metody a algoritmy k řešení problémů zahrnující proudění tekutin, transport hmoty a tepla, chemické reakce a celou řadu dalších fyzikálně-chemických jevů. Na počátku každé CFD simulace je třeba nejprve vytvořit model zkoumaného systémů na který jsou následně aplikovány matematické postupy tak, aby byly ze zadaných okrajových a počátečních podmínek získány vybrané údaje o dějích probíhajících v celé zkoumané doméně při respektování fyzikálních zákonů. Tyto zákony jsou nejčastěji formulovány v podobě parciálních diferenciálních rovnic. 
 
-\begin{enumerate}[itemsep=0pt,parsep=0pt,partopsep=0pt,topsep=0pt,label=\bfseries\arabic*{.}]
-  \item \textbf{Tvorba geometrie a výpočetní sítě (preprocessing)}
+Celou CFD simulaci lze rozdělit do třech hlavních kroků: tvorba geometrie a výpočetní sítě, vlastní výpočet a analýza výsledků
+
+\subsubsection{Tvorba geometrie a výpočetní sítě (preprocessing)}
+V první fází je vytvořena geometrie zkoumaného systému, která je následně rozdělena na konečný počet kontrolních objemů (buněk). Vzniklá výpočetní síť může obsahovat buňky různých typů. Dvojrozměrná doména se nejčastěji dělí na trojúhelníky nebo obdélníky. V trojrozměrném případě se nejčastěji využívají jehlany, hranoly, kvádry či další mnohostěny. V současnosti se již dává přednost nestrukturovaným sítím před strukturovanýma. Pro strukturovanou síť platí, že každá stěna buňky přiléhá pouze k jedné stěně sousedního kontrolního objemu. Jejich hlavní nevýhodou je obtížná tvorba složitějších tvarů a nemožnost libovolného zahušťování.
+
+\subsubsection{Vlastní výpočet}
+K provedení vlastního simulačního výpočtu dnes existuje celá řada jak komerčních, tak bezplatných CFD řešičů. Příkladem komerčních produktů může být např. ANSYS Fluent, ANSYS CFX,  ANSYS Polyflow nebo STAR-CCM+. Mezi nejznámější bezplatné CFD řešiče patří OpenFOAM či Code Saturne. Interně tyto softwary využívají jednu z následujích numerických metod k řešení parciálních diferenciálních rovnic:
+
+\begin{itemize}[itemsep=0pt,parsep=0pt,partopsep=0pt,topsep=0pt]
+  \item \textbf{Metoda konečných diferencí (FDM)}
   
-  V první fází je vytvořena geometrie zkoumaného systému, která je následně rozdělena na konečný počet kontrolních objemů (buněk). Vzniklá výpočetní síť může obsahovat buňky různých typů. Dvojrozměrná doména se nejčastěji dělí na trojúhelníky nebo obdélníky. V trojrozměrném případě se nejčastěji využívají jehlany, hranoly, kvádry či další mnohostěny. V současnosti se již dává přednost nestrukturovaným sítím před strukturovanýma. Pro strukturovanou síť platí, že každá stěna buňky přiléhá pouze k jedné stěně sousedního kontrolního objemu. Jejich hlavní nevýhodou je obtížná tvorba složitějších tvarů a nemožnost libovolného zahušťování.
-  \item \textbf{Vlastní výpočet}
-  \item \textbf{Analýza výsledků (postprocessing)}
-\end{enumerate}
+  Tato metoda, někdy též označována jako metoda sítí, patří mezi nejstarší techniky k řešení parciálních diferenciálních rovnic. Její podstatou je náhrada derivací pomocí diferenčních náhrad, což má za následek diskretizaci daného problému na konečný počet uzlů. Ve výsledku se tedy řeší soustava lineárních algebraických rovnic. Mezi jednu z hlavních nevýhod této metody je její obtížná formulace pro nestrukturované sítě. 
+  \item \textbf{Metoda konečných objemů (FVM)}
+  
+  Hlavním znakem metody konečných objemů je fakt, že řeší rovnice modelu v integrální formě pro konečný počet kontrolních objemů. Díky tomu je zaručeno splnění zákonů zachování dané veličiny pro každou výpočetní buňku. Následná diskretizace výše zmíněných integrálních rovnic převádí opět vede na řešení řídké soustavy lineárních algebraických rovnic. Drtivá většina dnešních CFD rešičů využívá právě tuto numerickou metodu. 
+  
+  \item \textbf{Metoda konečných prvků (FEM)}
+  
+  Podstatou metody konečných prvků je hledání řešení daných parciálních diferenciálních rovnic v podobě po částech definovaných funkcí na předem zvoleném počtu buněk. Ve výsledku se tedy hledají váhové koeficienty pro tyto bázové funkce tak, aby získané řešení minimalizovalo chybu aproximace. Metoda konečných prvků je zvláště využívána v oblasti pevnostní analýzy nebo při simulaci proudění vysoce nenewtonovských tekutin.  
+\end{itemize}
+
+\subsubsection{Analýza výsledků (postprocessing)}
+Posledním krokem každé CFD analýzy ... K tomuto účelu existuje 
