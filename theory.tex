@@ -173,4 +173,34 @@ kde člen $\Gamma_{ij}$ představuje hmotnostní tok mezi $i$-tou a $j$-tou fáz
 	\label{eq:volfrac}
 \end{equation} 
 
-\subsection{Bilance hybnosti}
+\subsection{Bilance hybnosti v kontinuu}
+Zákon zachování hybnosti v kontinuu je možné vyjádřit pomocí Cauchyho rovnice dynamické rovnováhy, která má tvar:
+\begin{equation}
+    \rho \left( \frac{\partial \vec{v}}{\partial t} + \vec{v} \cdot \nabla  \vec{v} \right) = -\nabla p +  \nabla \cdot \vec{\vec{\tau}} + \vec{f}
+  	\label{eq:cauchy}
+\end{equation} 
+Symbol $p$ značí tlak působící na objemový element, $\vec{\vec{\tau}}$ je tenzor viskózního napětí a člen $\vec{f}$ zahrnuje další objemové síly působící na kontinuum (např. gravitační síla).
+
+V trojrozměrné soustavě kartézských souřadnicích má tenzor viskózního napětí celkem devět složek a je definován vztahem:
+\begin{equation}
+    \vec{\vec{\tau}} = 
+    \begin{bmatrix}
+      \sigma_{xx} & \tau_{xy} & \tau_{xz}\\ 
+      \tau_{yx} & \sigma_{yy} & \tau_{yz}\\ 
+      \tau_{zx} & \tau_{zy} & \sigma_{zz}\\ 
+    \end{bmatrix}
+  	\label{eq:tenstress}
+\end{equation} 
+Složky napětí $\sigma_{xx}$, $\sigma_{yy}$ a $\sigma_{zz}$ působí v normálovém směru na daný objemový element a zbylé členy představují tečná napětí. Tuto skutečnost dobře ilustruje obr. \ref{fig:stresses}. 
+
+\begin{figure}[h!]
+\begin{center}
+  \includegraphics[scale=0.13]{images/stresses.eps}
+  \caption{Složky viskózního napětí}
+  \label{fig:stresses}
+\end{center}
+\end{figure} 
+
+\noindent  Navíc pokud je daná tekutina  izotropní, tak 
+
+
