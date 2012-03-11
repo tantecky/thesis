@@ -201,6 +201,22 @@ Složky napětí $\sigma_{xx}$, $\sigma_{yy}$ a $\sigma_{zz}$ působí v normál
 \end{center}
 \end{figure} 
 
-\noindent  Navíc pokud je daná tekutina  izotropní, tak 
+\noindent  Navíc pokud je daná tekutina izotropní (neupřednostňuje žádný směr deformace), tak tenzor \ref{eq:tenstress} má pouze šest nezávislých složek, protože mezi tečnými napětími platí vztahy:
+\begin{equation}
+    \begin{array}{ccc}
+      \tau_{xy} = \tau_{yx}, & \tau_{xz} = \tau_{zx}, & \tau_{zy} = \tau_{yz}
+      \end{array}
+  	\label{eq:dept}
+\end{equation} 
+Pro Newtonovskou tekutinu dále platí, že jednotlivá viskozitní napětí jsou úměrná míře lineárních deformací objemového elementu kontinua. Tenzor \ref{eq:tenstress} lze poté vyjádřit jako: 
+\begin{equation}
+    \vec{\vec{\tau}} = 
+    \begin{bmatrix}
+      2\eta\frac{\partial v_{x}}{\partial x} + \lambda \nabla \cdot \vec{v} & \eta \left( \frac{\partial v_{x}}{\partial y} + \frac{\partial v_{y}}{\partial x} \right) & \tau_{xz}\\ 
+      \eta \left( \frac{\partial v_{x}}{\partial y} + \frac{\partial v_{y}}{\partial x} \right) & 2\eta\frac{\partial v_{y}}{\partial y} + \lambda \nabla \cdot \vec{v} & \tau_{yz}\\ 
+      \tau_{zx} & \tau_{zy} & 2\eta\frac{\partial v_{z}}{\partial z} + \lambda \nabla \cdot \vec{v}\\ 
+    \end{bmatrix}
+  	\label{eq:newtenstress}
+\end{equation} 
 
 
