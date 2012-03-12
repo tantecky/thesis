@@ -208,15 +208,41 @@ Složky napětí $\sigma_{xx}$, $\sigma_{yy}$ a $\sigma_{zz}$ působí v normál
       \end{array}
   	\label{eq:dept}
 \end{equation} 
-Pro Newtonovskou tekutinu dále platí, že jednotlivá viskozitní napětí jsou úměrná míře lineárních deformací objemového elementu kontinua. Tenzor \ref{eq:tenstress} lze poté vyjádřit jako: 
+Pro Newtonovskou tekutinu dále platí, že jednotlivá viskózní napětí jsou úměrná míře lineárních deformací objemového elementu kontinua. Tenzor \ref{eq:tenstress} lze poté vyjádřit jako: 
 \begin{equation}
     \vec{\vec{\tau}} = 
     \begin{bmatrix}
-      2\eta\frac{\partial v_{x}}{\partial x} + \lambda \nabla \cdot \vec{v} & \eta \left( \frac{\partial v_{x}}{\partial y} + \frac{\partial v_{y}}{\partial x} \right) & \tau_{xz}\\ 
-      \eta \left( \frac{\partial v_{x}}{\partial y} + \frac{\partial v_{y}}{\partial x} \right) & 2\eta\frac{\partial v_{y}}{\partial y} + \lambda \nabla \cdot \vec{v} & \tau_{yz}\\ 
-      \tau_{zx} & \tau_{zy} & 2\eta\frac{\partial v_{z}}{\partial z} + \lambda \nabla \cdot \vec{v}\\ 
+      2\eta\frac{\partial v_{x}}{\partial x} + \left( \lambda - \frac{2}{3} \eta  \right)  \nabla \cdot \vec{v} & \eta \left( \frac{\partial v_{x}}{\partial y} + \frac{\partial v_{y}}{\partial x} \right) & \eta \left( \frac{\partial v_{x}}{\partial z} + \frac{\partial v_{z}}{\partial x} \right)\\ 
+      \eta \left( \frac{\partial v_{x}}{\partial y} + \frac{\partial v_{y}}{\partial x} \right) & 2\eta\frac{\partial v_{y}}{\partial y} + \left( \lambda - \frac{2}{3} \eta  \right)  \nabla \cdot \vec{v} 
+      & \eta \left( \frac{\partial v_{y}}{\partial z} + \frac{\partial v_{z}}{\partial y} \right)\\ 
+      \eta \left( \frac{\partial v_{x}}{\partial z} + \frac{\partial v_{z}}{\partial x} \right) & \eta \left( \frac{\partial v_{y}}{\partial z} + \frac{\partial v_{z}}{\partial y} \right)
+      & 2\eta\frac{\partial v_{z}}{\partial z} + \left( \lambda - \frac{2}{3} \eta  \right) \nabla \cdot \vec{v}\\ 
     \end{bmatrix}
   	\label{eq:newtenstress}
 \end{equation} 
+Člen $\eta$ představuje dynamickou (tečnou) viskozitu a $\lambda$ značí dilatační (objemovou) viskozitu, jejíž hodnota je nulová pro jednoatomové plyny při nízké hustotě. Někdy se tenzor \ref{eq:newtenstress} zapisuje v úspornější podobě:
+\begin{equation}
+	\vec{\vec{\tau}} = \eta \left[ \nabla \vec{v} +  \left( \nabla \vec{v} \right)^{\mathsf{T}}\right] +  \left( \lambda -\frac{2}{3} \eta \right) \nabla \cdot \vec{v} \vec{\vec{I}}
+	\label{eq:comptenstress}
+\end{equation}
+kde $\vec{\vec{I}}$ je jednotkový tenzor.
 
+Dosazením vztahu \ref{eq:comptenstress} do rov. \ref{eq:cauchy} a při předpokladu nestlačitelnosti kontinua ($\nabla \cdot \vec{v} = 0$) se získá Navierova-Stokesova rovnice:
+\begin{equation}
+    \rho \left( \frac{\partial \vec{v}}{\partial t} + \vec{v} \cdot \nabla  \vec{v} \right) = -\nabla p + \eta \nabla^{2}\vec{v}  + \vec{f}
+  	\label{eq:navst}
+\end{equation} 
+Ve trojrozměrné soustavě kartézských souřadnic lze vektorovou rov. \ref{eq:navst} rozepsat na 
+\begin{equation}
+\begin{array}{c}
+    \rho \left( \frac{\partial v_{x}}{\partial t} + v_{x}\frac{\partial v_{x}}{\partial x} + v_{y}\frac{\partial v_{x}}{\partial y} + v_{z}\frac{\partial v_{x}}{\partial z} \right) = -\frac{\partial p}{\partial x} +  \eta \left( \frac{\partial^{2} v_{x}}{\partial x^{2}} + \frac{\partial^{2} v_{y}}{\partial y^{2}} + \frac{\partial^{2} v_{z}}{\partial z^{2}} \right) + f_{x}   \vspace{3mm} \\
+    
+    \rho \left( \frac{\partial v_{y}}{\partial t} + v_{x}\frac{\partial v_{y}}{\partial x} + v_{y}\frac{\partial v_{y}}{\partial y} + v_{z}\frac{\partial v_{y}}{\partial z} \right) = -\frac{\partial p}{\partial y} +  \eta \left( \frac{\partial^{2} v_{x}}{\partial x^{2}} + \frac{\partial^{2} v_{y}}{\partial y^{2}} + \frac{\partial^{2} v_{z}}{\partial z^{2}} \right) + f_{y}   \vspace{3mm} \\
+    
+    \rho \left( \frac{\partial v_{z}}{\partial t} + v_{x}\frac{\partial v_{z}}{\partial x} + v_{y}\frac{\partial v_{z}}{\partial y} + v_{z}\frac{\partial v_{z}}{\partial z} \right) = -\frac{\partial p}{\partial z} +  \eta \left( \frac{\partial^{2} v_{x}}{\partial x^{2}} + \frac{\partial^{2} v_{y}}{\partial y^{2}} + \frac{\partial^{2} v_{z}}{\partial z^{2}} \right) + f_{z}   \\
+    \end{array}
+  	\label{eq:navst3d}
+\end{equation} 
+Soustava rovnic \ref{eq:navst3d} spolu s rov. \ref{eq:conti1simp} tvoří systém čtyř parciálních diferenciálních rovnic pro neznámé $p$, $v_{x}$, $v_{y}$ a $v_{z}$. 
 
+\subsection{Vícefázové modely}
