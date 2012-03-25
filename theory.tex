@@ -251,23 +251,29 @@ Velké množství přírodních a průmyslových procesů je tvořeno vícefázo
 V~současnosti existuje řada matematických modelů, které popisují vícefázové proudění a lišící se výsledným způsobem použití. Následující podkapitola obsahuje přehled modelů, které se nejčastěji využívají k~simulaci suspendace v~mechanicky míchaných nádobách. Především se jedná o simulační techniky Eulerian-Lagrangian, Eulerian-Eulerian a Eulerian-Granular.
 
 \subsubsection{Model Eulerian-Lagrangian}
-Tento typ modelu uvažuje primární tekutou fází jako kontinuum s~dispergovanou sekundární fází. Pro primární fázi je řešena rovnice kontinuity spolu s~Navierovými-Stokesovými rovnicemi, zatímco pro dispergovanou fázi je řešena trajektorie každé částice separátně. Jednotlivé fáze si mohou mezi sebou vyměňovat hmotu, hybnost a energii, avšak vzájemné interakce částic nebo jejich rozpad jsou zanedbány. Model Eulerian-Lagrangian je především vhodný pro systémy, kde objemový zlomek dispergované fáze nepřesáhne \SI{10}{\percent} např: rozprašovací sušárny, cyklóny nebo spalování uhlí či kapalného paliva. 
+Tento typ modelu uvažuje primární tekutou fází jako kontinuum s~dispergovanou sekundární fází. Pro primární fázi je řešena rovnice kontinuity spolu s~Navierovými-Stokesovými rovnicemi, zatímco pro dispergovanou fázi je řešena trajektorie každé částice nebo skupiny částic separátně. Jednotlivé fáze si mohou mezi sebou vyměňovat hmotu, hybnost a energii, avšak vzájemné interakce částic mezi sebou jsou většinou zanedbány. Model Eulerian-Lagrangian je především vhodný pro systémy, kde objemový zlomek dispergované fáze nepřesáhne \SI{10}{\percent} např: rozprašovací sušárny, cyklóny nebo spalování uhlí či kapalného paliva. 
 
 Řešením bilance sil působící na částici (rov. \ref{eq:dpm}) je získána její trajektorie v~daném časovém okamžiku.
 
 \begin{equation}
-	m_{p}\frac{d\vec{v}_{p}}{dt} = \vec{F}_{D} + \vec{F}_{g} + \vec{F}_{vz} + \vec{F}_{ad}
+	m_{p}\frac{d\vec{v}_{p}}{dt} = \vec{F}_{p} + \vec{F}_{g} + \vec{F}_{B} + \vec{F}_{D} + \vec{F}_{ad}
 	\label{eq:dpm}
 \end{equation} 
 
-\noindent Kde jednotlivé členy značí:
+\noindent Členy $m_{p}$ a $\vec{v}_{p}$ na levé straně rov. \ref{eq:dpm} představují hmotnost částice a její vektor rychlosti. Pravá strana výše zmíněné rovnice obsahuje součet jednotlivých sil působících na diskrétní fázi. Symbol $\vec{F}_{p}$ značí sílu tlakového gradientu, jenž působí na částici vlivem akcelerace okolní kapaliny. Další členy $\vec{F}_{g}$ a $\vec{F}_{B}$ reprezentují gravitační resp. vztlakovou sílu. Jednotlivé příspěvky těchto sil lze rozepsat do tvaru:    
+\begin{equation}
+	\vec{F}_{p} + \vec{F}_{g} + \vec{F}_{B} = V_{p} \nabla p + m_{p} \vec{g} -  V_{p} \rho_{f} \vec{g}
+	\label{eq:force3}
+\end{equation} 
+\noindent Odporová síla $\vec{F}_{D}$ představuje výslednici sil kterou tekutina působí proti pohybu částic. Pro kulovou částici lze tento člen vyjádřit jako:
+\begin{equation}
+	\vec{F}_{D} =
+	\label{eq:fd}
+\end{equation} 
+
+
 
 \begin{itemize}[itemsep=0pt,parsep=0pt,partopsep=0pt,topsep=0pt]
-  \item $m_{p}$ hmotnost částice
-  \item $\vec{v}_{p}$ rychlost částice
-  \item $\vec{F}_{D}$ odporovou sílu
-  \item $\vec{F}_{g}$ gravitační sílu
-  \item $\vec{F}_{vz}$ vztlakovou sílu
   \item $\vec{F}_{ad}$ další síly (např: tlaková, zdánlivá síla, síla zahrnující vliv rotace atd.)
 \end{itemize}
 
