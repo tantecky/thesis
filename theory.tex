@@ -259,23 +259,44 @@ Tento typ modelu uvažuje primární tekutou fází jako kontinuum s~dispergovan
 	m_{p}\frac{d\vec{v}_{p}}{dt} = \vec{F}_{p} + \vec{F}_{g} + \vec{F}_{B} + \vec{F}_{D} + \vec{F}_{ad}
 	\label{eq:dpm}
 \end{equation} 
-
-\noindent Členy $m_{p}$ a $\vec{v}_{p}$ na levé straně rov. \ref{eq:dpm} představují hmotnost částice a její vektor rychlosti. Pravá strana výše zmíněné rovnice obsahuje součet jednotlivých sil působících na diskrétní fázi. Symbol $\vec{F}_{p}$ značí sílu tlakového gradientu, jenž působí na částici vlivem akcelerace okolní kapaliny. Další členy $\vec{F}_{g}$ a $\vec{F}_{B}$ reprezentují gravitační resp. vztlakovou sílu. Jednotlivé příspěvky těchto sil lze rozepsat do tvaru:    
+Členy $m_{p}$ a $\vec{v}_{p}$ na levé straně rov. \ref{eq:dpm} představují hmotnost částice a její vektor rychlosti. Pravá strana výše zmíněné rovnice obsahuje součet jednotlivých sil působících na diskrétní fázi. Symbol $\vec{F}_{p}$ značí sílu tlakového gradientu, jenž působí na částici vlivem akcelerace okolní kapaliny. Další členy $\vec{F}_{g}$ a $\vec{F}_{B}$ reprezentují gravitační resp. vztlakovou sílu. Jednotlivé příspěvky těchto sil lze rozepsat do tvaru:    
 \begin{equation}
 	\vec{F}_{p} + \vec{F}_{g} + \vec{F}_{B} = V_{p} \nabla p + m_{p} \vec{g} -  V_{p} \rho_{f} \vec{g}
 	\label{eq:force3}
 \end{equation} 
-\noindent Odporová síla $\vec{F}_{D}$ představuje výslednici sil kterou tekutina působí proti pohybu částic. Pro kulovou částici lze tento člen vyjádřit jako:
+ Odporová síla $\vec{F}_{D}$ představuje výslednici sil kterou tekutina působí proti pohybu částic. Pro kulovou částici lze tento člen vyjádřit jako:
 \begin{equation}
-	\vec{F}_{D} =
+	\vec{F}_{D} = \frac{\pi}{8}C_{D}\rho_{f} d_{p}^{2} \left|\vec{v}_{p} - \vec{v}_{f}\right| \left(\vec{v}_{p} - \vec{v}_{f}\right)
 	\label{eq:fd}
 \end{equation} 
+Bezrozměrné číslo $C_{D}$ v rov. \ref{eq:fd} se nazývá koeficient odporu nebo součinitel tření a vyjadřuje závislost odporu prostření na tvaru tělesa, charakteru proudění a vlastnostech tekutiny. Detailnějším rozborem tohoto členu se zabývá kapitola XXX.
 
-
-
-\begin{itemize}[itemsep=0pt,parsep=0pt,partopsep=0pt,topsep=0pt]
-  \item $\vec{F}_{ad}$ další síly (např: tlaková, zdánlivá síla, síla zahrnující vliv rotace atd.)
-\end{itemize}
+Poslední příspěvkem $\vec{F}_{ad}$ do bilance \ref{eq:dpm} zahrnuje další síly působící na částici pevné fáze. Jedná se například o Saffmanovu vztlakovou sílu, jenž vzniká v důsledku vířivosti rychlostního pole kapalné fáze a působí především na částice o velikosti menší než několik mikrometrů. Další silou která se někdy zohledňuje při vícefázové simulaci je zdánlivá setrvačná síla, která je způsobena společným pohybem tekutiny v blízkosti dispergované fáze při její akceleraci. Tento jev má za následek dočasný zdánlivý nárůst hmotnosti částic. Zdánlivá setrvačná síla se projevuje především v systémech kapalina-plynná fáze.  
 
 \subsubsection{Model Eulerian-Eulerian}
+U~modelu Eulerian-Eulerian jsou jednotlivé fáze považovány za prostupující se kontinua a každý bod v~systému obsahuje informaci o~objemovém zlomku dané fáze. Z~tohoto popisu je zřejmé, že suma objemových zlomků přes všechny fáze v~libovolném bodě se vždy musí rovnat jedné. 
+
+\begin{equation}
+	\sum_{i=1}^n \alpha_{i} = 1
+	\label{eq:volfrac}
+\end{equation} 
+
+\noindent Jednotlivé fáze mohou být kapalné, plynné nebo pevné a jejich celkový počet není teoreticky limitován. Pro každou fázi se řeší rovnice kontinuity (\ref{eq:conti}) a sada rovnic pro hybnost (\ref{eq:moml}). K~výměně hybnosti mezi jednotlivými fázemi slouží mezifázové členy v~těchto rovnicích. Pokud dochází k~přenosu tepla nebo hmoty je třeba tuto skutečnost zohlednit v~bilanci energie a hmoty.
+
+Když probíhá výměna hmoty mezi jednotnými fázemi, tak rovnice kontinuity pro $i$-tou fázi má tvar:
+
+\begin{equation}
+	\frac{\partial}{\partial t} (\alpha_{i}\rho_{i}) +  \nabla \cdot (\alpha_{i}\rho_{i}\vec{v}_{i}) = 0
+	\label{eq:conti}
+\end{equation}
+
+\noindent Rovnice hybnosti pro $i$-tou fázi za stejných předpokladů lze zapsat jako:
+
+\begin{equation}
+	\frac{\partial}{\partial t} (\alpha_{i}\rho_{i}\vec{v}_{i}) + \nabla \cdot (\alpha_{i}\rho_{i} \vec{v}_{i} \otimes \vec{v}_{i}) = -\alpha_{i} \nabla p + \nabla \cdot \bar{\tau}_{i} + \alpha_{i}\rho_{i}\vec{g} + \sum_{j=1}^n \vec{R}_{ji} + \vec{f}_{ext,i} + \vec{f}_{int,i}
+	\label{eq:moml}
+\end{equation}
+
+\noindent kde $p$ je tlak, $\bar{\tau}_{i}$ je deviátor tenzoru napětí, jehož konkretní tvar závisí na typu uvažované fáze, a $\alpha_{i}\rho_{i}\vec{g}$ má význam gravitační síly působící na objemový element. Člen $\vec{R}_{ji}$ představuje mezifázovou odporovou sílu mezi $i$-tou a $j$-tou fází, $\vec{f}_{ext,i}$ má význam dalších objemových sil a $\vec{f}_{int,i}$ zahrnuje povrchové síly působící na $i$-tou fázi vlivem ostatních fází. Všechny výše zmíněné síly jsou vztaženy na objemový element dané fáze.
+
 \subsubsection{Model Eulerian-Granular}
