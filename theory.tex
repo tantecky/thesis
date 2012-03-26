@@ -311,7 +311,7 @@ Bilanci hybnosti pro pevnou fázi $s$ má tvar:
 	\frac{\partial}{\partial t} \left(\alpha_{s}\rho_{s}\vec{v}_{s}\right) + \nabla \cdot (\alpha_{s}\rho_{s} \vec{v}_{s} \otimes \vec{v}_{s}) = -\alpha_{s} \nabla p - \nabla p_{s} + \nabla \cdot \left(\alpha_{s} \vec{\vec{\tau}}_{s} \right) +\sum_{\substack{ j \neq s \\ j=1}}^{n} \vec{R}_{ji} + \vec{f}_{ext,s} + \vec{f}_{int,s}
 	\label{eq:moms}
 \end{equation}
-Člen $p_{s}$ je tlak pevné fáze, který se skládá z kinetické části a členu, který výsledkem neelastických srážek mezi částicemi. V současnosti existuje řada modelů k výpočtu tlaku pevné fáze. Jedním z nich je model odvozený autory Lun XXX:
+Člen $p_{s}$ je tlak pevné fáze, který se skládá z kinetické části a členu, který výsledkem neelastických srážek mezi částicemi. V současnosti existuje řada modelů k výpočtu tlaku pevné fáze. Jedním z nich je model odvozený autory \citet{lun84}:
 \begin{equation}
 	p_{s} = \alpha_{s}\rho_{s}\Theta + 2\rho_{s}\left(1 + r_{s} \right) \alpha_{s}^{2}g_{s}\Theta
 	\label{eq:ps}
@@ -328,14 +328,55 @@ Tenzor viskózního napětí pevné fáze $\vec{\vec{\tau}}_{s}$ v rov. \ref{eq:
 	\vec{\vec{\tau_{s}}} = \eta_{s} \left[ \nabla \vec{v_{s}} +  \left( \nabla \vec{v_{s}} \right)^{\mathsf{T}}\right] +  \left( \lambda_{s} -\frac{2}{3} \eta_{s} \right) \nabla \cdot \vec{v_{s}} \vec{\vec{I}}
 	\label{eq:solidstress}
 \end{equation}
-Tečná viskozita zrnité fáze $\eta_{s}$ je dána součtem kolizní, kinetické a třecí části:
+Tečná viskozita zrnité fáze $\eta_{s}$ je dána součtem kolizní, kinetické a frikční části:
 \begin{equation}
 	\eta_{s} = \eta_{s,col}  + \eta_{s,kin} + \eta_{s,fr} 
 	\label{eq:nys}
 \end{equation}
-Přičemž běžně využívané korelace k jejich určení navrhli autoři Gida XXX a Symal XXX. Dilatační viskozita $\lambda_{s}$ zohledňuje odpor pevných částic při expanzi či kompresi. Lun XXX odvodil následující vztah k jejímu výpočtu:
+přičemž běžně využívané korelace k jejich určení byly navrženy \citet{gid92}, \citet{syam93}. Dilatační viskozita $\lambda_{s}$ zohledňuje odpor pevných částic při expanzi či kompresi. \citet{lun84} odvodili následující vztah k jejímu výpočtu:
 \begin{equation}
 	\lambda_{s} = \frac{4}{3}\alpha_{s}\rho_{s}d_{s}g_{s}\left(1 + r_{s} \right)\sqrt{\frac{\Theta}{\pi}}
 	\label{eq:dilvis}
 \end{equation}
  
+\subsection{Odporový koeficient}
+V~současnosti existuje řada modelů pro koeficient odporu, které se liší podle toho pro jaký účel byly navrženy. Jedním z~nejznámějších je model, který navrhli \citet{schi32}. Autoři získali vztah \ref{eq:schlneu} pro výpočet koeficientu odporu na základě experimentálního měření rychlosti usazování sférické částice ve stagnantním sloupci kapaliny.    
+ 
+	\hypertarget{hyp:schlneu}{} 
+\begin{equation}
+	\label{eq:schlneu}
+  C_{D0} = \left\{ \begin{array}{ll}
+  \frac{24}{Re_{p}}  \left( 1 + \num{0.15}Re_{p}^{\num{0.687}} \right) & Re_{p} \le 1000\\
+  \num{0.44} & Re_{p} > 1000\\
+  \end{array} \right.
+\end{equation}
+
+\noindent Ze vztahu \ref{eq:schlneu} je patrné, že Schillerova-Naumannova korelace je funkcí Reynoldsova kritéria pro částici které je definováno jako:
+
+\begin{equation}
+	Re_{p}= \frac{\rho_{f}d_{s}|\vec{v}_{s} - \vec{v}_{f}|}{\eta_{f}}
+	\label{eq:reyp}
+\end{equation}
+
+Bohužel koeficient odporu navržený Schillerem a Naumannem se ukázal jako nepříliš vhodný k~popisu odporové síly v~systémech s~plně vyvinutým turbulentním prouděním. Proto řada autorů navrhla úpravu této korelace a některé z~nich jsou uvedeny v~tab. \ref{tab:cds}. Člen $\lambda$ se nazývá Kolmogorovo mikroměřítko a určuje nejmenší velikost turbulentní vírů přítomných v~systému, přičemž je funkcí kinematické viskozity a disipace energie.
+
+\begin{table}[h!]
+\begin{center}
+  
+		\hypertarget{hyp:cds}{}
+		\caption{Modely pro odporový koeficient v~turbulentní oblasti proudění}
+		\label{tab:cds}
+\begin{tabular}{|c|c|>{\centering\arraybackslash}p{5cm}|}
+  \hline
+  
+{\textbf{Autor}} & {\textbf{Koeficient odporu}} & {\textbf{Stanoveno na základě}} \\ \hline{}
+
+\citet{pin01} & $C_{D} = C_{D0} \left( \num{0.4}\tanh\left(  \frac{16\lambda}{d_{s}} - 1  \right) \right) ^{-2}$ & měření rychlosti usazování v~míchací nádobě \\ \hline
+ 
+\citet{bru98} & $C_{D} = C_{D0} \left( 1 + \num{8.76e-4} \left( \frac{\lambda}{d_{s}} \right)^{3} \right)$ & experimentální studie Taylorova–Couetteova toku \\ \hline 
+
+\citet{kho06} & $C_{D} = C_{D0} \left( 1 + \num{8.76e-5} \left( \frac{\lambda}{d_{s}} \right)^{3} \right)$ & úpravy Brucatova vztahu pro míchací nádoby  \\ \hline 
+
+\end{tabular}
+\end{center}
+\end{table}
