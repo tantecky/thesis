@@ -28,8 +28,7 @@ Jak již bylo zmíněno v~předcházející kapitole, kritická frekvence otáč
 	N_{js} = \left[\frac{g(\rho_{s}-\rho_{l})}{\rho_{l}}\right]^{\num{0.45}}W^{\num{0.13}}d_{p}^{\num{0.2}}D^{\num{-0.85}}\nu^{\num{0.1}}S
 	\label{eq:nkrit}
 \end{equation} 
-
-\noindent kde $g$ je gravitační zrychlení, $\rho_{s}$ hustota pevné fáze, $\rho_{l}$ hustota kapalné fáze, $W$ relativní hmotnostní zlomek pevné fáze, $d_{p}$ průměr částice pevné fáze, $\nu$ kinematická viskozita a $S$ je bezrozměrná Zwieteringova konstanta, která zohledňuje geometrii systému a míchadla (tab. \ref{tab:S}). Ze vztahu je dobře patrné, že rozdíl hustot jednotlivých fází nejvýznamněji ovlivňuje výslednou kritickou frekvenci otáčení míchadla. Později provedené studie \citep{nie68,bal78,chou97} obecně potvrdily platnost Zwieteringova vztahu. Nicméně \citet{chou97} experimentálně ukázal, že při koncentraci pevné fáze menší než \volproc{2} nebo větší než \volproc{15} se již tato korelace jeví jako nepříliš spolehlivá.
+kde $g$ je gravitační zrychlení, $\rho_{s}$ hustota pevné fáze, $\rho_{l}$ hustota kapalné fáze, $W$ relativní hmotnostní zlomek pevné fáze, $d_{p}$ průměr částice pevné fáze, $\nu$ kinematická viskozita a $S$ je bezrozměrná Zwieteringova konstanta, která zohledňuje geometrii systému a míchadla (tab. \ref{tab:S}). Ze vztahu je dobře patrné, že rozdíl hustot jednotlivých fází nejvýznamněji ovlivňuje výslednou kritickou frekvenci otáčení míchadla. Později provedené studie \citep{nie68,bal78,chou97} obecně potvrdily platnost Zwieteringova vztahu. Nicméně \citet{chou97} experimentálně ukázal, že při koncentraci pevné fáze menší než \volproc{2} nebo větší než \volproc{15} se již tato korelace jeví jako nepříliš spolehlivá.
 
 \begin{table}[h!]
 \begin{center}
@@ -37,7 +36,7 @@ Jak již bylo zmíněno v~předcházející kapitole, kritická frekvence otáč
 \label{tab:S}
 \begin{tabular}{llr}
 \toprule
-Šířka lopatky & Světlá výška & Hodnota \\
+\textbf{Šířka lopatky} & \textbf{Světlá výška} & \textbf{Hodnota} \\
 \midrule
 
 $D/\num{3.5}$ \\
@@ -339,10 +338,10 @@ přičemž běžně využívané korelace k jejich určení byly navrženy \cite
 	\label{eq:dilvis}
 \end{equation}
  
-\subsection{Odporový koeficient}
-V~současnosti existuje řada modelů pro koeficient odporu, které se liší podle toho pro jaký účel byly navrženy. Jedním z~nejznámějších je model, který navrhli \citet{schi32}. Autoři získali vztah \ref{eq:schlneu} pro výpočet koeficientu odporu na základě experimentálního měření rychlosti usazování sférické částice ve stagnantním sloupci kapaliny.    
- 
-	\hypertarget{hyp:schlneu}{} 
+\subsection{Koeficient odporu}
+Koeficient odporu (součinitel tření) má zásadní vliv na velikost a charakter mezifázové odporové síly. Obecně je tento člen funkcí relativní rychlosti pohybu částic, jejich velikostí, hustotou a viskozitou tekutiny či případně dalších veličin. V~současnosti existuje celá řada modelů pro koeficient odporu, které se liší podle toho pro jaký účel byly navrženy. V této kapitole jsou především uvedeny korelace, jenž se používají při simulacích systému kapalina-pevná fáze v míchaných nádobách. 
+
+Jeden z nejznámějších modelů k výpočtu součinitele tření navrhli \citet{schi32}, kteří získali vztah \ref{eq:schlneu} pro výpočet koeficientu odporu na základě experimentálního měření rychlosti usazování sférické částice ve stagnantním sloupci kapaliny.    
 \begin{equation}
 	\label{eq:schlneu}
   C_{D0} = \left\{ \begin{array}{ll}
@@ -350,33 +349,36 @@ V~současnosti existuje řada modelů pro koeficient odporu, které se liší po
   \num{0.44} & Re_{p} > 1000\\
   \end{array} \right.
 \end{equation}
-
 \noindent Ze vztahu \ref{eq:schlneu} je patrné, že Schillerova-Naumannova korelace je funkcí Reynoldsova kritéria pro částici které je definováno jako:
-
 \begin{equation}
-	Re_{p}= \frac{\rho_{f}d_{s}|\vec{v}_{s} - \vec{v}_{f}|}{\eta_{f}}
+	Re_{p}= \frac{\rho_{f}d_{s}\left|\vec{v}_{s} - \vec{v}_{f}\right|}{\eta_{f}}
 	\label{eq:reyp}
 \end{equation}
 
-Bohužel koeficient odporu navržený Schillerem a Naumannem se ukázal jako nepříliš vhodný k~popisu odporové síly v~systémech s~plně vyvinutým turbulentním prouděním. Proto řada autorů navrhla úpravu této korelace a některé z~nich jsou uvedeny v~tab. \ref{tab:cds}. Člen $\lambda$ se nazývá Kolmogorovo mikroměřítko a určuje nejmenší velikost turbulentní vírů přítomných v~systému, přičemž je funkcí kinematické viskozity a disipace energie.
+Bohužel koeficient odporu navržený Schillerem a Naumannem se ukázal jako nepříliš vhodný k~popisu odporové síly v~systémech s~plně vyvinutým turbulentním prouděním, a proto řada autorů se zaměřila na úpravu této korelace.
+
+\citet{bru98} měřili rychlost usazování pevné fáze mezi dvěma opačně rotujícími válci (Taylorův–Couettův tok). Ze získaných výsledků následně autoři stanovili korelaci pro koeficient odporu zohledňující volnou turbulenci. Naproti tomu \citet{pin01} odvodili model pro koeficient odporu na základě experimentální studie suspendace v nádobě osazené skupinou míchadel. 
+
+Všechny výše zmíněné korelace jsou uvedeny v~tab. \ref{tab:cds}. Člen $\lambda$ se nazývá Kolmogorovo mikroměřítko a určuje nejmenší velikost turbulentní vírů přítomných v~systému, přičemž je funkcí kinematické viskozity a disipace energie.
 
 \begin{table}[h!]
 \begin{center}
-  
-		\hypertarget{hyp:cds}{}
-		\caption{Modely pro odporový koeficient v~turbulentní oblasti proudění}
-		\label{tab:cds}
-\begin{tabular}{|c|c|>{\centering\arraybackslash}p{5cm}|}
-  \hline
-  
-{\textbf{Autor}} & {\textbf{Koeficient odporu}} & {\textbf{Stanoveno na základě}} \\ \hline{}
+\caption{Modely pro odporový koeficient v~turbulentní oblasti proudění}
+\label{tab:cds}
+\begin{tabular}{cc>{\centering\arraybackslash}p{5cm}}
+\toprule
+\textbf{Autor} & \textbf{Koeficient odporu} & \textbf{Stanoveno na základě} \\
+\midrule{}
 
-\citet{pin01} & $C_{D} = C_{D0} \left( \num{0.4}\tanh\left(  \frac{16\lambda}{d_{s}} - 1  \right) \right) ^{-2}$ & měření rychlosti usazování v~míchací nádobě \\ \hline
- 
-\citet{bru98} & $C_{D} = C_{D0} \left( 1 + \num{8.76e-4} \left( \frac{\lambda}{d_{s}} \right)^{3} \right)$ & experimentální studie Taylorova–Couetteova toku \\ \hline 
+\multirow{2}{*}{\citet{bru98}} & \multirow{2}{*}{$C_{D} = C_{D0} \left[ 1 + \num{8.76e-4} \left( \frac{\lambda}{d_{s}} \right)^{3} \right] $} & experimentální studie Taylorova–Couettova toku \\ \addlinespace
 
-\citet{kho06} & $C_{D} = C_{D0} \left( 1 + \num{8.76e-5} \left( \frac{\lambda}{d_{s}} \right)^{3} \right)$ & úpravy Brucatova vztahu pro míchací nádoby  \\ \hline 
+\multirow{2}{*}{\citet{pin01}} & \multirow{2}{*}{$C_{D} = C_{D0} \left[ \num{0.4}\tanh\left(  \frac{16\lambda}{d_{s}} - 1  \right) \right] ^{-2}$} & měření rychlosti usazování v~míchací nádobě \\ \addlinespace
 
+\multirow{2}{*}{\citet{kho06}} & \multirow{2}{*}{$C_{D} = C_{D0} \left[ 1 + \num{8.76e-5} \left( \frac{\lambda}{d_{s}} \right)^{3} \right]$} & úpravy Brucatova vztahu pro míchací nádoby  \\
+
+\bottomrule
 \end{tabular}
 \end{center}
 \end{table}
+
+\subsection{Turbulentní modely}
