@@ -200,17 +200,17 @@ Pro Newtonovskou tekutinu dále platí, že jednotlivá viskózní napětí jsou
 \begin{equation}
     \vec{\vec{\tau}} = 
     \begin{bmatrix}
-      2\eta\frac{\partial v_{x}}{\partial x} + \left( \lambda - \frac{2}{3} \eta  \right)  \nabla \cdot \vec{v} & \eta \left( \frac{\partial v_{x}}{\partial y} + \frac{\partial v_{y}}{\partial x} \right) & \eta \left( \frac{\partial v_{x}}{\partial z} + \frac{\partial v_{z}}{\partial x} \right)\\ 
-      \eta \left( \frac{\partial v_{x}}{\partial y} + \frac{\partial v_{y}}{\partial x} \right) & 2\eta\frac{\partial v_{y}}{\partial y} + \left( \lambda - \frac{2}{3} \eta  \right)  \nabla \cdot \vec{v} 
+      2\eta\frac{\partial v_{x}}{\partial x} + \left( \kappa - \frac{2}{3} \eta  \right)  \nabla \cdot \vec{v} & \eta \left( \frac{\partial v_{x}}{\partial y} + \frac{\partial v_{y}}{\partial x} \right) & \eta \left( \frac{\partial v_{x}}{\partial z} + \frac{\partial v_{z}}{\partial x} \right)\\ 
+      \eta \left( \frac{\partial v_{x}}{\partial y} + \frac{\partial v_{y}}{\partial x} \right) & 2\eta\frac{\partial v_{y}}{\partial y} + \left( \kappa - \frac{2}{3} \eta  \right)  \nabla \cdot \vec{v} 
       & \eta \left( \frac{\partial v_{y}}{\partial z} + \frac{\partial v_{z}}{\partial y} \right)\\ 
       \eta \left( \frac{\partial v_{x}}{\partial z} + \frac{\partial v_{z}}{\partial x} \right) & \eta \left( \frac{\partial v_{y}}{\partial z} + \frac{\partial v_{z}}{\partial y} \right)
-      & 2\eta\frac{\partial v_{z}}{\partial z} + \left( \lambda - \frac{2}{3} \eta  \right) \nabla \cdot \vec{v}\\ 
+      & 2\eta\frac{\partial v_{z}}{\partial z} + \left( \kappa - \frac{2}{3} \eta  \right) \nabla \cdot \vec{v}\\ 
     \end{bmatrix}
   	\label{eq:newtenstress}
 \end{equation} 
-Člen $\eta$ představuje dynamickou (tečnou) viskozitu a $\lambda$ značí dilatační (objemovou) viskozitu, jejíž hodnota je nulová pro jednoatomové plyny při nízké hustotě. Někdy se tenzor \ref{eq:newtenstress} zapisuje v úspornější podobě:
+Člen $\eta$ představuje dynamickou (tečnou) viskozitu a $\kappa$ značí dilatační (objemovou) viskozitu, jejíž hodnota je nulová pro jednoatomové plyny při nízké hustotě. Někdy se tenzor \ref{eq:newtenstress} zapisuje v úspornější podobě:
 \begin{equation}
-	\vec{\vec{\tau}} = \eta \left[ \nabla \vec{v} +  \left( \nabla \vec{v} \right)^{\mathsf{T}}\right] +  \left( \lambda -\frac{2}{3} \eta \right) \nabla \cdot \vec{v} \vec{\vec{I}}
+	\vec{\vec{\tau}} = \eta \left[ \nabla \vec{v} +  \left( \nabla \vec{v} \right)^{\mathsf{T}}\right] +  \left( \kappa -\frac{2}{3} \eta \right) \nabla \cdot \vec{v} \vec{\vec{I}}
 	\label{eq:comptenstress}
 \end{equation}
 kde $\vec{\vec{I}}$ je jednotkový tenzor.
@@ -243,7 +243,7 @@ Tento typ modelu uvažuje primární tekutou fází jako kontinuum s~dispergovan
 
 Řešením bilance sil působící na částici (rov. \ref{eq:dpm}) je získána její trajektorie v~daném časovém okamžiku.
 \begin{equation}
-	m_{p}\frac{d\vec{v}_{p}}{dt} = \vec{F}_{p} + \vec{F}_{g} + \vec{F}_{B} + \vec{F}_{D} + \vec{F}_{ad}
+	m_{p}\od{\vec{v}_{p}}{t} = \vec{F}_{p} + \vec{F}_{g} + \vec{F}_{B} + \vec{F}_{D} + \vec{F}_{ad}
 	\label{eq:dpm}
 \end{equation} 
 Členy $m_{p}$ a $\vec{v}_{p}$ na levé straně rov. \ref{eq:dpm} představují hmotnost částice a její vektor rychlosti. Pravá strana výše zmíněné rovnice obsahuje součet jednotlivých sil působících na diskrétní fázi. Symbol $\vec{F}_{p}$ značí sílu tlakového gradientu, jenž působí na částici vlivem akcelerace okolní kapaliny. Další členy $\vec{F}_{g}$ a $\vec{F}_{B}$ reprezentují gravitační resp. vztlakovou sílu. Jednotlivé příspěvky těchto sil lze rozepsat do tvaru:    
@@ -324,7 +324,7 @@ Ve většině CFD řešíčů se určení hodnoty teploty zrnité fáze využív
 
 Tenzor viskózního napětí pevné fáze $\vec{\vec{\tau}}_{s}$ v rov. \ref{eq:moms} lze vyjádřit formálně stejně jako ve vztahu \ref{eq:comptenstress}. 
 \begin{equation}
-	\vec{\vec{\tau_{s}}} = \eta_{s} \left[ \nabla \vec{v_{s}} +  \left( \nabla \vec{v_{s}} \right)^{\mathsf{T}}\right] +  \left( \lambda_{s} -\frac{2}{3} \eta_{s} \right) \nabla \cdot \vec{v_{s}} \vec{\vec{I}}
+	\vec{\vec{\tau_{s}}} = \eta_{s} \left[ \nabla \vec{v_{s}} +  \left( \nabla \vec{v_{s}} \right)^{\mathsf{T}}\right] +  \left( \kappa_{s} -\frac{2}{3} \eta_{s} \right) \nabla \cdot \vec{v_{s}} \vec{\vec{I}}
 	\label{eq:solidstress}
 \end{equation}
 Tečná viskozita zrnité fáze $\eta_{s}$ je dána součtem kolizní, kinetické a frikční části:
@@ -332,9 +332,9 @@ Tečná viskozita zrnité fáze $\eta_{s}$ je dána součtem kolizní, kinetick�
 	\eta_{s} = \eta_{s,col}  + \eta_{s,kin} + \eta_{s,fr} 
 	\label{eq:nys}
 \end{equation}
-přičemž běžně využívané korelace k jejich určení byly navrženy \citet{gid92}, \citet{syam93}. Dilatační viskozita $\lambda_{s}$ zohledňuje odpor pevných částic při expanzi či kompresi. \citet{lun84} odvodili následující vztah k jejímu výpočtu:
+přičemž běžně využívané korelace k jejich určení byly navrženy \citet{gid92}, \citet{syam93}. Dilatační viskozita $\kappa_{s}$ zohledňuje odpor pevných částic při expanzi či kompresi. \citet{lun84} odvodili následující vztah k jejímu výpočtu:
 \begin{equation}
-	\lambda_{s} = \frac{4}{3}\alpha_{s}\rho_{s}d_{s}g_{s}\left(1 + r_{s} \right)\sqrt{\frac{\Theta}{\pi}}
+	\kappa_{s} = \frac{4}{3}\alpha_{s}\rho_{s}d_{s}g_{s}\left(1 + r_{s} \right)\sqrt{\frac{\Theta}{\pi}}
 	\label{eq:dilvis}
 \end{equation}
  
@@ -357,9 +357,13 @@ Jeden z nejznámějších modelů k výpočtu součinitele tření navrhli \cite
 
 Bohužel koeficient odporu navržený Schillerem a Naumannem se ukázal jako nepříliš vhodný k~popisu odporové síly v~systémech s~plně vyvinutým turbulentním prouděním, a proto řada autorů se zaměřila na úpravu této korelace.
 
-\citet{bru98} měřili rychlost usazování pevné fáze mezi dvěma opačně rotujícími válci (Taylorův–Couettův tok). Ze získaných výsledků následně autoři stanovili korelaci pro koeficient odporu zohledňující volnou turbulenci. Naproti tomu \citet{pin01} odvodili model pro koeficient odporu na základě experimentální studie suspendace v nádobě osazené skupinou míchadel. 
+\citet{bru98} měřili rychlost usazování pevné fáze mezi dvěma opačně rotujícími válci (Taylorův–Couettův tok). Ze získaných výsledků následně autoři stanovili korelaci pro koeficient odporu zohledňující volnou turbulenci. Naproti tomu \citet{pin01} odvodili model pro koeficient odporu na základě experimentální studie suspendace v nádobě osazené skupinou míchadel. \citet{kho06} upravili Brucátův vztah na základě srovnání experimentálních a simulačních výsledků získaných pomocí CFD během studie suspendace v míchané nádobě. 
 
-Všechny výše zmíněné korelace jsou uvedeny v~tab. \ref{tab:cds}. Člen $\lambda$ se nazývá Kolmogorovo mikroměřítko a určuje nejmenší velikost turbulentní vírů přítomných v~systému, přičemž je funkcí kinematické viskozity a disipace energie.
+Všechny výše zmíněné korelace jsou uvedeny v~tab. \ref{tab:cds}. Člen $\lambda$ se nazývá Kolmogorovo mikroměřítko a určuje nejmenší velikost turbulentní vírů přítomných v~systému, přičemž je funkcí kinematické viskozity tekutiny a rychlostí disipace turbulentní kinetické energie (viz. rov.).
+\begin{equation}
+  \lambda = \left( \frac{\nu^{3}}{\epsilon} \right) ^{1/4}
+	\label{eq:kolmo}
+\end{equation}
 
 \begin{table}[h!]
 \begin{center}
