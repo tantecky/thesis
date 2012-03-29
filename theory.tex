@@ -106,7 +106,6 @@ Výše zmíněná normalizovaná kocentrace je určena vztahem:
 
 Hodnota doby homogenizace také velmi záleží na místě měření zmíněné koncentrace. Například \citet{buj99} měřili dobu homogenizace pro systém kapalina-pevná fáze v mechanicky míchané nádobě. Z výsledků vyplynulo, že nad suspenzním mrakem je doba homogenizace přibližně dvacetkrát delší než v oblasti, která je bohatá na přítomnost částic pevné fáze.
 
-%\newpage 
 \section{Počítačová dynamika tekutin (CFD)}
 Následující kapitola obsahuje stručný přehled základních rovnic a matematických modelů, které jsou uplatněny při simulaci pomocí techniky CFD. Hlavní důraz je kladen na problematiku isotermního vícefázového proudění kapalina-pevná fáze v mechanicky míchaných nádobách.
 
@@ -317,7 +316,7 @@ Bilanci hybnosti pro pevnou fázi $s$ má tvar:
 \end{equation}
 kde $r_{s}$ je restituční koeficient vyjadřující míru elasticity srážek mezi částicemi. Symbol $g_{s}$ představuje radiální distribuční funkci, jenž upravuje pravděpodobnost kolizí částic pevné fáze. Poslední nediskutovaným členem $\Theta$ je teplota zrnité fáze, která je úměrná velikosti střední kvadratické rychlosti náhodného pohybu částic, tedy: 
 \begin{equation}
-	\Theta = \frac{1}{3}\left< \vec{u} \cdot \vec{u} \right>
+	\Theta = \frac{1}{3} \overline{ \vec{u} \cdot \vec{u}}
 	\label{eq:gtemp}
 \end{equation}
 Ve většině CFD řešíčů se určení hodnoty teploty zrnité fáze využívají algebraické modely odvozené z transportní rovnice pro tuto veličinu.
@@ -386,3 +385,58 @@ Všechny výše zmíněné korelace jsou uvedeny v~tab. \ref{tab:cds}. Člen $\l
 \end{table}
 
 \subsection{Turbulentní modely}
+Turbulentní pohyb patří k nejsložitějším a současně nejběžnějším přírodním jevům pozorovaných v proudících tekutinách. Z tohoto důvod je turbulenci věnována mimořádná pozornost v technických aplikacích zabývající se dynamikou proudění. 
+
+Proudění v tekutinách lze obecně rozdělit na dva hlavní typy: laminární a turbulentní. Při laminárním proudění jsou jednotlivé proudnice tekutiny spolu rovnoběžné a k promíchávání prakticky nedochází. Naproti tomu pro turbulentní proudění je charakteristické intenzivní promíchávání a vysoká míra neuspořádanosti probíhajícího procesu. Významný je také fakt, že mezi laminárním a turbulentním charakterem toku se ještě vyskytuje tzv. přechodové proudění jehož teoretický popis je velmi obtížný. Pro kvalitativní posouzení charakteru proudění se využívá Reynoldsovo číslo ($Re$), které je řádově vyšší v turbulentní oblasti než v laminární. 
+
+Z pohledu numerické simulace existují tři hlavní směry, jak se vypořádat s popisem toku tekutiny v turbulentní oblasti proudění. Jedná se o:
+\begin{itemize}[itemsep=0pt,parsep=0pt,partopsep=0pt,topsep=0pt]
+  \item přímou numerickou simulaci (DNS)
+  \item časově zprůměrované Navierovy-Stokesy rovnice (RANS)
+  \item techniku velkých vírů (LES)
+\end{itemize}
+
+\paragraph{Přímá numerická simulaci (DNS)}
+Následující přístup řeší k určení proudového pole pouze rovnici kontinuity a Navierovy-Stokesovy rovnice bez využití dodatečných rovnic pro turbulenci. Toto znamená, že celá škála prostorových a časových měřítek musí být řešena přímo, a proto použitá výpočetní doména musí být dostatečně jemná. Počet potřebný buněk obsažených ve výpočetní sítí roste přibližně kvadraticky s hodnotou Reynoldsova čísla ($Re^{3/4}$). Z tohoto důvodu klade technika DNS značné nároky na výpočetní techniku a následné vyhodnocení.
+
+\paragraph{Technika velkých vírů (LES)}
+Metoda LES představuje kompromis mezi přímou numerickou simulací (DNS) a časovým zprůměrováním Navierových-Stokesových rovnic (RANS). Tato technika je založena na hypotéze, že měřítka turbulentního proudění mohou být rozděleny na velkou a malou (podsíťovou) složku. Velké víry, jakožto hlavní nositelé kinetické energie, jsou řešený přímo zatímco malé víry jsou modelovány. Klíčovým krokem metody je filtrování Navierových-Stokesových rovnic, což vede k odstranění malých prostorových a časových měřítek z výsledného řešení. Intenzita filtrování přímo ovlivňuje míru získaných detailů proudového pole a tedy časovou náročnost simulace. Bohužel tato technika není implementována v současných CFD řešičích 
+Metoda LES představuje kompromis mezi přímou numerickou simulací (DNS) a časovým zprůměrováním Navierových-Stokesových rovnic (RANS). Tato technika je založena na hypotéze, že měřítka turbulentního proudění mohou být rozděleny na velkou a malou (podsíťovou) složku. Velké víry, jakožto hlavní nositelé kinetické energie, jsou řešený přímo zatímco malé víry jsou modelovány. Klíčovým krokem metody je filtrování Navierových-Stokesových rovnic, což vede k odstranění malých prostorových a časových měřítek z výsledného řešení. Intenzita filtrování přímo ovlivňuje míru získaných detailů proudového pole a tedy časovou náročnost simulace. Bohužel tato technika není implementována v současných CFD řešičích 
+
+\paragraph{Časově zprůměrované Navierovy-Stokesy rovnice (RANS)}
+Principem metody RANS je rozložení okamžité hodnoty veličiny popisující proudění na složku časově zprůměrovanou a fluktuační, tedy:
+\begin{equation}
+  \phi = \avg{\phi} + \phi'
+  \label{eq:avg_vels}
+\end{equation}
+Přičemž časově zprůměrovaná veličina je definovaná jako:
+\begin{equation}
+  \avg{\phi}  = \frac{1}{\bigtriangleup t} \int_{t_{0}}^{t_{0} + \bigtriangleup t} \phi\,\mathrm{d}t
+  \label{eq:phi_avg}
+\end{equation}
+Dosazením vztahu \ref{eq:avg_vels} do rov. \ref{eq:cauchy} pro nestlačitelnou tekutinu se získá Reynoldsova zprůměrovaná bilance hybnosti:  
+\begin{equation}
+    \rho \left( \frac{\partial \avg{\vec{v}}}{\partial t} + \avg{\vec{v}} \cdot \nabla  \avg{\vec{v}} \right) = -\nabla \avg{p} +  \nabla \cdot \avg{\vec{\vec{\tau}}} + \vec{\vec{\tau}}_{R} + \avg{\vec{f}}
+  	\label{eq:cauchy_avg}
+\end{equation} 
+kde $\vec{\vec{\tau}}_{R}$ je tenzor Reynoldsova napětí mající členy: 
+\begin{equation}
+    \begin{array}{cc}
+      \tau_{R,ij} = -\rho\avg{v_{i}'v_{j}'}, & \sigma_{R,ii} = -\rho\avg{\left(v_{i}'\right)^{2}}
+      \end{array}
+\end{equation}
+Obdobným způsobem lze odvodit časově zprůměrovanou rovnici kontinuity pro nestlačitelnou tekutinu.
+\begin{equation}
+	\nabla \cdot \avg{\vec{v}} = 0
+	\label{eq:conti1simp_avg}
+\end{equation}  
+
+Díky časovému zprůměrování jsou malá prostorová a časová měřítka vyhlazena, a proto tato technika je méně výpočetně náročná než DNS nebo LES přístupy. Nicméně RANS technika zavádí nové neznámé proměnné (složky Reynoldsova napětí), které je potřeba vhodně určit. K jejich stanovení se zavádějí aproximace a předpoklady označované jako turbulentní modely. Mezi nejznámější představitele těchto modelů patří: 
+\begin{itemize}[itemsep=0pt,parsep=0pt,partopsep=0pt,topsep=0pt]
+  \item Spalart-Allmaras (1 rovnice) 
+  \item \keps{} (2 rovnice) 
+  \item \komg{} (2 rovnice) 
+  \item Reynoldsův napěťový model (7 rovnice)
+\end{itemize}
+
+\subsubsection{\kepsb{} turbulentní model pro směs}
