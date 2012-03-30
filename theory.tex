@@ -424,6 +424,7 @@ kde $\vec{\vec{\tau}}_{R}$ je tenzor Reynoldsova napětí mající členy:
     \begin{array}{cc}
       \tau_{R,ij} = -\rho\avg{v_{i}'v_{j}'}, & \sigma_{R,ii} = -\rho\avg{\left(v_{i}'\right)^{2}}
       \end{array}
+      \label{eq:rey_stress}
 \end{equation}
 Obdobným způsobem lze odvodit časově zprůměrovanou rovnici kontinuity pro nestlačitelnou tekutinu.
 \begin{equation}
@@ -438,5 +439,36 @@ Díky časovému zprůměrování jsou malá prostorová a časová měřítka v
   \item \komg{} (2 rovnice) 
   \item Reynoldsův napěťový model (7 rovnice)
 \end{itemize}
+Velká část turbulentních modelů (např. první tři ve výše uvedeném výčtu) je založena na tzv. Boussineqově hypotéze XXX, která modeluje složky Reynoldsova napětí pomocí gradientů rychlosti a skalární veličiny nazývané turbulentní viskozita ($\eta_{t}$). Členy ve vztahu \ref{eq:rey_stress} lze poté rozepsat jako: 
+\begin{equation}
+    \begin{array}{cc}
+      \tau_{R,ij} = \eta_{t}\left( \pd{v_{i}}{x_{j}} + \pd{v_{j}}{x_{i}} \right), & \sigma_{R,ii} = 2\eta_{t}\pd{v_{i}}{x_{i}}  - \frac{2}{3} \left[ \rho k + \eta_{t} \left( \nabla  \cdot \vec{v} \right) \right]
+      \end{array}
+      \label{eq:rey_stress_bus}
+\end{equation}
+kde $k$ je turbulentní kinetická energie. Jednou z výhod toto přístupu je relativně nízká výpočetní náročnost k určení turbulentní viskozity. Naopak mezi jeho hlavní nevýhody patří předpoklad isotropní turbulence, který nemusí být v řadě případů splněn.  
 
-\subsubsection{\kepsb{} turbulentní model pro směs}
+\subsubsection{Standardní \kepsb{} turbulentní model pro směs}
+Tento model představuje první typ rozšíření klasického \keps{} pro jednofázový tok. Jeho použití je především vhodné v případech kdy poměr hustot jednotlivých fází je blízký jedničce. V takových to případech k popisu turbulentního proudu stačí využít veličiny popisující celou směs. Hustota směsi a vektor rychlosti směsi je vypočtena podle vztahu \ref{eq:rho_m} resp. \ref{eq:vel_m}.
+\begin{equation}
+	\rho_{m} = \sum_{i=1}^n \alpha_{i}\rho_{i}
+	\label{eq:rho_m}
+\end{equation}  
+\begin{equation}
+	\vec{v}_{m} = \frac{\sum_{i=1}^n \alpha_{i}\rho_{i}\vec{v}_{i}}{\rho_{m} }
+	\label{eq:vel_m}
+\end{equation}  
+Turbulentní viskozita je vypočtena ze vztahu:
+\begin{equation}
+	\eta_{t} = \rho_{m}C_{\eta}\frac{k^{2}}{\epsilon}
+	\label{eq:turb}
+\end{equation}  
+přičemž hodnoty veličin $k$ a $\epsilon$ jsou získány řešením příslušných transportních rovnic \ref{eq:k-eq} a \ref{eq:eps-eq}.
+\begin{equation}
+	\pd{\rho_{m}k}{t} +  \nabla  \cdot \left( \rho_{m} \vec{v}_{m} k \right) = \nabla  \cdot \left( \frac{\eta_{t}}{\sigma_{k}} \nabla k \right) + G_{k} - \rho_{m}\epsilon
+	\label{eq:k-eq}
+\end{equation}  
+\begin{equation}
+	\pd{\rho_{m}\epsilon}{t} +  \nabla  \cdot \left( \rho_{m} \vec{v}_{m} \epsilon \right) = \nabla  \cdot \left( \frac{\eta_{t}}{\sigma_{\epsilon}} \nabla \epsilon \right) + \frac{\epsilon}{k} \left( C_{1\epsilon}G_{k} - C_{2\epsilon}\rho_{m}\epsilon \right)
+	\label{eq:eps-eq}
+\end{equation}  
