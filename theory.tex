@@ -508,7 +508,25 @@ Nejstarší metoda simulace rotačního pohybu v nádobě je založena na určen
 \paragraph{Metoda vícenásobných souřadnicových soustav (MRF)}
 Podstatou této metody je rozdělení výpočetní sítě na část rotační a stacionární. Rovnice kontinuity a bilance hybnosti jsou řešeny v každé doméně zvlášť se zohledněním relativní rychlosti rychlosti podél zvolené osy. V těchto modifikovaných rovnicích se vyskytují nové členy  Corrilisovy a dostředivé síly. Je třeba poznamenat, že rotační část s míchadlem se ve skutečnosti ve výpočetní síti nepohybuje. Díky tomuto charakteru je MRF technika především vhodná pro stacionární simulace.
 
+\begin{figure}[h!]
+\begin{center}
+  \includegraphics[scale=0.35]{images/sm.eps}
+  \caption{Rotační zóna kolem míchadla}
+  \label{fig:mrf}
+\end{center}
+\end{figure} 
+
 \paragraph{Metoda klouzající sítě (SM)}
 Metoda klouzající sítě je nestacionární (časově závislá) technika při které se rotační část výpočetní sítě pohybuje v průběhu simulace. Pohyb míchadla není však plně spojitý, ale je diskretizován na malé časové kroky (často jedna tisícina sekundy). V každém takovémto kroku jsou iterativně řešeny modelové rovnice dokud není dosaženo požadovaného konvergenčního kritéria. Během těchto výpočtu jsou informace o proudění předávány přes rozhraní mezi rotační a stacionární částí. Z důvodu pohybu výpočetní sítě však buňky jednotlivých domén na rozhraní nemusí k sobě přesně přiléhat, a proto je třeba pro tento přenos využít interpolace. Technika rotující sítě je nejrigoróznější metoda k  popisu rotace míchadla v mechanicky míchaných nádobách, což je nicméně vykoupeno vyššími nároky na zpracování získaných výsledků a výpočetní techniku. 
 
 \subsection{Transport složky bez chemické reakce}
+Doba homogenizace v míchaných nádobách se experimentálně stanovuje měřením časového průběhu koncentrace stopovací látky. Při použití techniky CFD se koncentrace stopovací látky v každém místě systému získá řešením transportní rovnice. Tato rovnice pro obecnou skalární veličinu $\phi$, jenž nereaguje a nepodléhá fázovým přeměnám má tvar: 
+\begin{equation}
+	\pd{\kula{\rho \phi}}{t} + \nabla \cdot \kula{\rho\vec{v}\phi - \tilde{D}\nabla\phi} = 0
+	\label{eq:trans}
+\end{equation}  
+přičemž $\tilde{D}$ značí difuzní koeficient transportované složky. Pro případ vícefázové proudění je třeba mírně modifikovat rov. \ref{eq:trans}, aby zohledňovala tuto skutečnost. V $i$-té fází při zachování výše uvedených předpokladů je hodnota veličiny v každém bodě systému určena vztahem:
+\begin{equation}
+	\pd{\kula{\alpha_{i} \rho_{i} \phi_{i}}}{t} + \nabla \cdot \kula{\alpha_{i} \rho_{i}\vec{v}_{i}\phi_{i} - \alpha_{i} \tilde{D}_{i}\nabla\phi_{i}} = 0
+	\label{eq:trans_mix}
+\end{equation}  
