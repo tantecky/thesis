@@ -493,3 +493,22 @@ $C_{1\epsilon}$ & $C_{2\epsilon}$ & $C_{\eta}$ &  $\sigma_{k}$ & $\sigma_{\epsil
 \end{table}
 
 Na závěr je třeba dodat, že existují ještě dvě běžně používané úpravy \keps{} turbulentního modelu pro vícefázové proudění. První z nich je disperzní modifikace, která předpokládá existenci jedné hlavní (primární) fáze, jenž významně ovlivňuje pohyb ostatních rozptýlených fází. Druhým typem úpravy je řešení sady transportních rovnic \keps{} pro každou fázi zvlášť. Takovýto přístup je sice nejobecnější, ale také výpočetně náročnější než předchozí dvě modifikace. 
+
+\subsection{Modelování rotujícího míchadla}
+Pro popis rotace míchadla ve vsádce lze v současných CFD řešičích využít jednu ze tří následujících technik:
+\begin{itemize}[itemsep=0pt,parsep=0pt,partopsep=0pt,topsep=0pt]
+  \item specifikace okrajových podmínek
+  \item metoda vícenásobných souřadnicových soustav (MRF) 
+  \item metoda klouzající sítě (SM) 
+\end{itemize} 
+
+\paragraph{Specifikace okrajových podmínek}
+Nejstarší metoda simulace rotačního pohybu v nádobě je založena na určení okrajových podmínek pro míchadlo ze získaných experimentálních  dat. Pomocí metody jako LDV (Laser Doppler Velocimetry) nebo PIV (Particle Image Velocimetry) se určí střední rychlostní pole v blízkosti lopatek, které se následně zvolí jako okrajová podmínka pro míchadlo v rámci CFD simulace. Mezi hlavní nevýhody tohoto přístupu patří především  nutnost experimentálního měření a úzký vztah získaných simulačních výsledků se zkoumaným systémem. V současnosti se již tato technika téměř nepoužívá, neboť byla nahrazena modernějšími metoda diskutovanými níže.
+
+\paragraph{Metoda vícenásobných souřadnicových soustav (MRF)}
+Podstatou této metody je rozdělení výpočetní sítě na část rotační a stacionární. Rovnice kontinuity a bilance hybnosti jsou řešeny v každé doméně zvlášť se zohledněním relativní rychlosti rychlosti podél zvolené osy. V těchto modifikovaných rovnicích se vyskytují nové členy  Corrilisovy a dostředivé síly. Je třeba poznamenat, že rotační část s míchadlem se ve skutečnosti ve výpočetní síti nepohybuje. Díky tomuto charakteru je MRF technika především vhodná pro stacionární simulace.
+
+\paragraph{Metoda klouzající sítě (SM)}
+Metoda klouzající sítě je nestacionární (časově závislá) technika při které se rotační část výpočetní sítě pohybuje v průběhu simulace. Pohyb míchadla není však plně spojitý, ale je diskretizován na malé časové kroky (často jedna tisícina sekundy). V každém takovémto kroku jsou iterativně řešeny modelové rovnice dokud není dosaženo požadovaného konvergenčního kritéria. Během těchto výpočtu jsou informace o proudění předávány přes rozhraní mezi rotační a stacionární částí. Z důvodu pohybu výpočetní sítě však buňky jednotlivých domén na rozhraní nemusí k sobě přesně přiléhat, a proto je třeba pro tento přenos využít interpolace. Technika rotující sítě je nejrigoróznější metoda k  popisu rotace míchadla v mechanicky míchaných nádobách, což je nicméně vykoupeno vyššími nároky na zpracování získaných výsledků a výpočetní techniku. 
+
+\subsection{Transport složky bez chemické reakce}
