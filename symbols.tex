@@ -25,6 +25,7 @@ $\vec{g}$ & vektor gravitačního zrychlení & \si{\meter\per\second\squared} \\
 $g_{s}$ & radiální distribuční funkce & -- \\
 $H$ & výška plnění nádoby & \si{\meter} \\
 $\vec{\vec{I}}$ & jednotkový tenzor & -- \\
+$k$ & turbulentní kinetická energie & \si{\meter\squared\per\second\squared}\\
 $K$ & koeficient mezifázového sdílení hybnosti & \si{\kilogram\per\cubic\meter\per\second} \\
 $m$ & hmotnost & \si{\kilogram} \\
 $N$ & frekvence otáčení míchadla & \si{\per\second} \\
@@ -43,6 +44,7 @@ $t$ & čas & \si{\second} \\
 $T$ & vnitřní průměr nádoby & \si{\meter} \\
 $\vec{u}$ & vektor rychlosti náhodného pohybu částic zrnité fáze & \si{\meter\per\second} \\
 $\vec{v}$ & vektor rychlosti & \si{\meter\per\second} \\
+$v_{i}'$ & složka vektoru fluktuací rychlosti ve směru osy $i$ & \si{\meter\per\second} \\
 $V$ & objem & \si{\cubic\meter} \\
 $W$ & relativní hmotnostní zlomek pevné fáze & \si{\kilogram_{pevná fáze}\per\kilogram_{kapalina}} \\
 \end{tabularx}
@@ -57,15 +59,22 @@ $\eta$ & dynamická viskozita & \si{\pascal\second}\\
 $\eta_{s,col}$ & kolizní viskozita zrnité fáze & \si{\pascal\second}\\
 $\eta_{s,kin}$ & kinetická viskozita zrnité fáze & \si{\pascal\second}\\
 $\eta_{s,fr}$ & frikční viskozita zrnité fáze & \si{\pascal\second}\\
+$\eta_{t}$ & turbulentní viskozita & \si{\pascal\second}\\
 $\Theta$ & teplota zrnité fáze & \si{\meter\squared\per\second\squared} \\
 $\nu$ & kinematická viskozita & \si{\meter\squared\per\second}\\
 $\rho$ & hustota & \si{\kilogram\per\cubic\meter} \\
 $\sigma$ & kvalita suspenze & -- \\
 $\sigma_{ii}$ & normálové napětí ve směru osy $i$ & \si{\pascal} \\
 $\tau_{ij}$ & tečné napětí působící ve směru osy $j$ a kolmé k ose $i$ & \si{\pascal} \\
-$\vec{\vec{\tau}}$ & tenzor viskózního napětí & -- \\
+$\sigma_{R,ii}$ & normálové Reynoldsovo napětí ve směru osy $i$ & \si{\pascal} \\
+$\tau_{R,ij}$ & tečné Reynoldsovo napětí působící ve směru osy $j$ a kolmé k ose $i$ & \si{\pascal} \\
+$\vec{\vec{\tau}}$ & tenzor viskózního napětí & \si{\pascal} \\
+$\vec{\vec{\tau}}_{R}$ & tenzor Reynoldsova napětí & \si{\pascal} \\
 $\kappa$ & dilatační viskozita & \si{\pascal\second}\\
 $\lambda$ & Kolmogorovo mikroměřítko & \si{\meter}\\
+$\phi$ & skalární veličina & --\\
+$\avg{\phi}$ & zprůměrovaná skalární veličina & --\\
+$\phi'$ & fluktuace skalární veličiny & --\\
 
 \end{tabularx}
 
@@ -76,6 +85,7 @@ $f$ & tekutina & \\
 $i$ & $i$-tá fáze & \\
 $j$ & $j$-tá fáze & \\
 $l$ & kapalina & \\
+$m$ & směs & \\
 $p$ & pevná částice & \\
 $s$ & pevná fáze & \\
 \end{tabularx}
@@ -84,6 +94,7 @@ $s$ & pevná fáze & \\
 \begin{tabularx}{\textwidth}{@{}p{1.0cm} X }
 	
 CFD & computational fluid dynamics  \\
+DNS & direct numerical simulation \\
 FDM & computational fluid dynamics  \\
 FEM & computational fluid dynamics  \\
 FVM & computational fluid dynamics  \\
@@ -93,5 +104,6 @@ MRF & multiple reference frames \\
 PBT & pitched blade turbine \\
 PDA & phase Doppler anemometry \\
 RMS & Reynold's stress model\\
+RANS & Reynold's averaged Navier-Stokes equations \\
 SM & sliding mesh
 \end{tabularx}

@@ -31,7 +31,7 @@ Jak již bylo zmíněno v~předcházející kapitole, kritická frekvence otáč
 kde $g$ je gravitační zrychlení, $\rho_{s}$ hustota pevné fáze, $\rho_{l}$ hustota kapalné fáze, $W$ relativní hmotnostní zlomek pevné fáze, $d_{p}$ průměr částice pevné fáze, $\nu$ kinematická viskozita a $S$ je bezrozměrná Zwieteringova konstanta, která zohledňuje geometrii systému a míchadla (tab. \ref{tab:S}). Ze vztahu je dobře patrné, že rozdíl hustot jednotlivých fází nejvýznamněji ovlivňuje výslednou kritickou frekvenci otáčení míchadla. Později provedené studie \citep{nie68,bal78,chou97} obecně potvrdily platnost Zwieteringova vztahu. Nicméně \citet{chou97} experimentálně ukázal, že při koncentraci pevné fáze menší než \volproc{2} nebo větší než \volproc{15} se již tato korelace jeví jako nepříliš spolehlivá.
 
 \begin{table}[h!]
-\begin{center}
+\centering
 \caption{Zwieteringovy konstanty pro \SI{45}{\degree} PBT}
 \label{tab:S}
 \begin{tabular}{llr}
@@ -50,7 +50,6 @@ $D/4$ \\
 
 \bottomrule
 \end{tabular}
-\end{center}
 \end{table}
 
 \subsection{Kvalita suspenze (stupeň homogenizace)}
@@ -65,7 +64,7 @@ Další užitečnou charakteristikou systému kapalina-pevná fáze je takzvaná
 \citet{boh80} určili na základě experimentů hodnoty kvality suspenze pro jednotlivé stupně suspendace. Jejich výsledky jsou shrnuty v~tab. \ref{tab:kvasus}.
 
 \begin{table}[h!]
-\begin{center}
+\centering
 \caption{Rozdělení stupňů suspendace dle kvality suspenze}
 \label{tab:kvasus}
 \begin{tabular}{cc}
@@ -79,7 +78,6 @@ Homogenní & $\sigma \leq \num{0.2}$ \\
 
 \bottomrule
 \end{tabular}
-\end{center}
 \end{table}
 
 \subsection{Výška vznosu pevné fáze}
@@ -94,7 +92,7 @@ Experimentálně studovali výšku suspenzního mraku např. autoři \citet{hic9
 \end{equation}  
 
 \subsection{Doba homogenizace}
-Doba homogenizace $t_{mix}$ je definována jako čas potřebný k tomu, aby se hodnota normalizované koncentrace stopovací látky $c(t)^{*}$ pohybovala v předem zvoleném rozmezí. Nejčastěji se volí přípustná hodnota fluktuace \SI{\pm 5}{\percent}, tedy $c(t)^{*} \in \left<\num{0.95};\num{1.05}\right>$. 
+Doba homogenizace $t_{mix}$ je definována jako čas potřebný k~tomu, aby se hodnota normalizované koncentrace stopovací látky $c(t)^{*}$ pohybovala v~předem zvoleném rozmezí. Nejčastěji se volí přípustná hodnota fluktuace \SI{\pm 5}{\percent}, tedy $c(t)^{*} \in \left<\num{0.95};\num{1.05}\right>$. 
 
 Výše zmíněná normalizovaná kocentrace je určena vztahem:
 \begin{equation}
@@ -102,49 +100,49 @@ Výše zmíněná normalizovaná kocentrace je určena vztahem:
 	\label{eq:bezkon}
 \end{equation}
 
-\noindent přičemž $c(t)$ je koncentrace stopovací látky v čase $t$, $c_{\infty}$ je koncentrace ve vsádce po dokonalém rozmíchání a $c_{0}$ představuje počáteční koncentraci v systému.  
+\noindent přičemž $c(t)$ je koncentrace stopovací látky v~čase $t$, $c_{\infty}$ je koncentrace ve vsádce po dokonalém rozmíchání a $c_{0}$ představuje počáteční koncentraci v~systému.  
 
-Hodnota doby homogenizace také velmi záleží na místě měření zmíněné koncentrace. Například \citet{buj99} měřili dobu homogenizace pro systém kapalina-pevná fáze v mechanicky míchané nádobě. Z výsledků vyplynulo, že nad suspenzním mrakem je doba homogenizace přibližně dvacetkrát delší než v oblasti, která je bohatá na přítomnost částic pevné fáze.
+Hodnota doby homogenizace také velmi záleží na místě měření zmíněné koncentrace. Například \citet{buj99} měřili dobu homogenizace pro systém kapalina-pevná fáze v~mechanicky míchané nádobě. Z~výsledků vyplynulo, že nad suspenzním mrakem je doba homogenizace přibližně dvacetkrát delší než v~oblasti, která je bohatá na přítomnost částic pevné fáze.
 
 \section{Počítačová dynamika tekutin (CFD)}
-Následující kapitola obsahuje stručný přehled základních rovnic a matematických modelů, které jsou uplatněny při simulaci pomocí techniky CFD. Hlavní důraz je kladen na problematiku isotermního vícefázového proudění kapalina-pevná fáze v mechanicky míchaných nádobách.
+Následující kapitola obsahuje stručný přehled základních rovnic a matematických modelů, které jsou uplatněny při simulaci pomocí techniky CFD. Hlavní důraz je kladen na problematiku isotermního vícefázového proudění kapalina-pevná fáze v~mechanicky míchaných nádobách.
 
 \subsection{Úvod do CFD}
-Počítačová dynamika tekutin (angl. computational fluid dynamics -- CFD) je jedno z odvětví hydromechaniky, jenž využívá numerické metody a algoritmy k řešení problémů zahrnující proudění tekutin, transport hmoty a tepla, chemické reakce a celou řadu dalších fyzikálně-chemických jevů. Na počátku každé CFD simulace je třeba nejprve vytvořit model zkoumaného systémů na který jsou následně aplikovány matematické postupy tak, aby byly ze zadaných okrajových a počátečních podmínek získány vybrané údaje o dějích probíhajících v celé zkoumané doméně při respektování fyzikálních zákonů. Tyto zákony jsou nejčastěji formulovány v podobě parciálních diferenciálních rovnic. 
+Počítačová dynamika tekutin (angl. computational fluid dynamics -- CFD) je jedno z~odvětví hydromechaniky, jenž využívá numerické metody a algoritmy k~řešení problémů zahrnující proudění tekutin, transport hmoty a tepla, chemické reakce a celou řadu dalších fyzikálně-chemických jevů. Na počátku každé CFD simulace je třeba nejprve vytvořit model zkoumaného systémů na který jsou následně aplikovány matematické postupy tak, aby byly ze zadaných okrajových a počátečních podmínek získány vybrané údaje o~dějích probíhajících v~celé zkoumané doméně při respektování fyzikálních zákonů. Tyto zákony jsou nejčastěji formulovány v~podobě parciálních diferenciálních rovnic. 
 
-S prudkým nárůstem výkonu výpočetní techniky se metoda CFD stala přístupnější širšímu množství uživatelů. Mezi její hlavní výhody patří schopnost studovat systém za podmínek, kdy experimentální měření jsou těžko proveditelná, či přímo nemožná. Díky tomu je možné např. dosáhnout znatelného snížení finančních a časových nákladů ve vývojové fází nového výrobku. Nicméně je třeba dodat, že každý simulační výpočet je silně závislý na dodaných počátečních a okrajových podmínkách, a proto CFD nikdy nemůže úplně nahradit experimentální měření.
+S~prudkým nárůstem výkonu výpočetní techniky se metoda CFD stala přístupnější širšímu množství uživatelů. Mezi její hlavní výhody patří schopnost studovat systém za podmínek, kdy experimentální měření jsou těžko proveditelná, či přímo nemožná. Díky tomu je možné např. dosáhnout znatelného snížení finančních a časových nákladů ve vývojové fází nového výrobku. Nicméně je třeba dodat, že každý simulační výpočet je silně závislý na dodaných počátečních a okrajových podmínkách, a proto CFD nikdy nemůže úplně nahradit experimentální měření.
 
-Celou CFD simulaci lze rozdělit do třech hlavních kroků: tvorba geometrie a výpočetní sítě, vlastní výpočet a analýza výsledků
+Celou CFD simulaci lze rozdělit do třech hlavních kroků: tvorba geometrie a výpočetní sítě, vlastní výpočet a analýza výsledků.
 
-\subsubsection{Tvorba geometrie a výpočetní sítě (preprocessing)}
-V první fází je vytvořena geometrie zkoumaného systému, která je následně rozdělena na konečný počet kontrolních objemů (buněk). Vzniklá výpočetní síť může obsahovat buňky různých typů. Dvojrozměrná doména se nejčastěji dělí na trojúhelníky nebo obdélníky. V trojrozměrném případě se nejčastěji využívají jehlany, hranoly, kvádry či další mnohostěny. V současnosti se již dává přednost nestrukturovaným sítím před strukturovanýma. Pro strukturovanou síť platí, že každá stěna buňky přiléhá pouze k jedné stěně sousedního kontrolního objemu. Jejich hlavní nevýhodou je obtížná tvorba složitějších tvarů a nemožnost libovolného zahušťování.
+\paragraph{Tvorba geometrie a výpočetní sítě (preprocessing)}
+V~první fází je vytvořena geometrie zkoumaného systému, která je následně rozdělena na konečný počet kontrolních objemů (buněk). Vzniklá výpočetní síť může obsahovat buňky různých typů. Dvojrozměrná doména se nejčastěji skládá z~trojúhelníků nebo obdélníků. V~trojrozměrném případě se nejčastěji využívají jehlany, hranoly, kvádry či další mnohostěny. Navíc v~současnosti se již dává přednost nestrukturovaným sítím před strukturovanýma. Pro strukturovanou síť platí, že každá stěna buňky přiléhá pouze k~jedné stěně sousedního kontrolního objemu. Jejich hlavní nevýhodou je obtížná tvorba složitějších tvarů a nemožnost libovolného zahušťování.
 
-\subsubsection{Vlastní výpočet}
-K provedení vlastního simulačního výpočtu dnes existuje celá řada jak komerčních, tak bezplatných CFD řešičů. Příkladem komerčních produktů může být např. ANSYS Fluent, ANSYS CFX,  ANSYS Polyflow nebo STAR-CCM+. Mezi nejznámější bezplatné CFD řešiče patří OpenFOAM či Code Saturne. Interně tyto softwary využívají jednu z následujích numerických metod k řešení parciálních diferenciálních rovnic:
+\paragraph{Vlastní výpočet}
+K~provedení vlastního simulačního výpočtu dnes existuje celá řada jak komerčních, tak bezplatných CFD řešičů. Příkladem komerčních produktů může být např. ANSYS Fluent, ANSYS CFX,  ANSYS Polyflow nebo STAR-CCM+. Mezi nejznámější bezplatné CFD řešiče patří OpenFOAM či Code Saturne. Interně tyto softwary využívají jednu z~následujích numerických metod k~řešení parciálních diferenciálních rovnic:
 
 \begin{itemize}[itemsep=0pt,parsep=0pt,partopsep=0pt,topsep=0pt]
   \item \textbf{Metoda konečných diferencí (FDM)}
   
-  Tato metoda, někdy též označována jako metoda sítí, patří mezi nejstarší techniky k řešení parciálních diferenciálních rovnic. Její podstatou je náhrada derivací pomocí diferenčních náhrad, což má za následek diskretizaci daného problému na konečný počet uzlů. Ve výsledku se tedy řeší soustava lineárních algebraických rovnic. Mezi jednu z hlavních nevýhod této metody je její obtížná formulace pro nestrukturované sítě. 
+  Tato metoda, někdy též označována jako metoda sítí, patří mezi nejstarší techniky k~řešení parciálních diferenciálních rovnic. Její podstatou je náhrada derivací pomocí diferenčních náhrad, což má za následek diskretizaci daného problému na konečný počet uzlů. Ve výsledku se tedy řeší soustava lineárních algebraických rovnic. Mezi jednu z~hlavních nevýhod této metody je její obtížná formulace pro nestrukturované sítě. 
   \item \textbf{Metoda konečných objemů (FVM)}
   
-  Hlavním znakem metody konečných objemů je fakt, že řeší rovnice modelu v integrální formě pro konečný počet kontrolních objemů. Díky tomu je zaručeno splnění zákonů zachování dané veličiny pro každou výpočetní buňku. Následná diskretizace výše zmíněných integrálních rovnic převádí opět vede na řešení řídké soustavy lineárních algebraických rovnic. Drtivá většina dnešních CFD rešičů využívá právě tuto numerickou metodu. 
+  Hlavním znakem metody konečných objemů je fakt, že řeší modelové rovnice v~integrální formě pro konečný počet kontrolních objemů. Díky tomu je zaručeno splnění zákonů zachování dané veličiny pro každou výpočetní buňku. Následná diskretizace výše zmíněných integrálních rovnic opět vede na řešení řídké soustavy lineárních algebraických rovnic. Drtivá většina dnešních CFD rešičů využívá právě tuto numerickou metodu. 
   
   \item \textbf{Metoda konečných prvků (FEM)}
   
-  Podstatou metody konečných prvků je hledání řešení daných parciálních diferenciálních rovnic v podobě po částech definovaných funkcí na předem zvoleném počtu buněk. Ve výsledku se tedy hledají váhové koeficienty pro tyto bázové funkce tak, aby získané řešení minimalizovalo chybu aproximace. Metoda konečných prvků je zvláště využívána v oblasti pevnostní analýzy nebo při simulaci proudění vysoce nenewtonovských tekutin.  
+  Podstatou metody konečných prvků je hledání řešení daných parciálních diferenciálních rovnic v~podobě po částech definovaných funkcí na předem zvoleném počtu buněk. Ve výsledku se tedy hledají váhové koeficienty pro tyto bázové funkce tak, aby získané řešení minimalizovalo chybu aproximace. Metoda konečných prvků je zvláště využívána v~oblasti pevnostní analýzy nebo při simulaci proudění vysoce nenewtonovských tekutin.  
 \end{itemize}
 
-\subsubsection{Analýza výsledků (postprocessing)}
-Posledním krokem každé CFD je zpracování a analýza získaných simulačních výsledků. K tomuto účelu bylo vytvořena řada softwarových nástrojů mezi které patří např. Ansys CFD-Post, Tecplot 360 nebo ParaView. Hlavní úkoly těchto programů činí:
+\paragraph{Analýza výsledků (postprocessing)}
+Posledním krokem každé CFD je zpracování a analýza získaných simulačních výsledků. K~tomuto účelu byla vytvořena řada softwarových nástrojů mezi které patří např. Ansys CFD-Post, Tecplot 360 nebo ParaView. Hlavní úlohy těchto programů činí:
 
 \begin{itemize}[itemsep=0pt,parsep=0pt,partopsep=0pt,topsep=0pt]
   \item výpočet dodatečných veličin
   \item tvorba řezů doménou
   \item zobrazení vektorových polí
   \item tvorba konturových grafů
-  \item vyobrazení ploch o konstantní hodnotě veličiny
-  \item porovnání několika simulací
+  \item vyobrazení ploch o~konstantní hodnotě veličiny
+  \item paralelní porovnání několika simulací
 \end{itemize}
 
 \subsection{Rovnice kontinuity}
@@ -154,21 +152,21 @@ Základní vztahem pro popis tekutiny je rovnice kontinuity, jenž vyjadřuje z�
 	\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho\vec{v}) = 0
 	\label{eq:conti1}
 \end{equation}
-přičemž $\rho$ značí hustotu tekutiny, $t$ čas a $\vec{v}$ je vektor rychlosti. První člen v rov. \ref{eq:conti1} reprezentuje změnu hustoty v čase (akumulaci) a druhý člen představuje změnu hmotnosti objemového elementu v důsledku konvekce. Pokud lze tekutinu považovat za nestlačitelnou, tak hustota kontinua je konstantní a výše zmíněný vztah se zjednoduší na rov. \ref{eq:conti1simp}.
+přičemž $\rho$ značí hustotu tekutiny, $t$ čas a $\vec{v}$ je vektor rychlosti. První člen v~rov. \ref{eq:conti1} reprezentuje změnu hustoty v~čase (akumulaci) a druhý člen představuje změnu hmotnosti objemového elementu v~důsledku konvekce. Pokud lze tekutinu považovat za nestlačitelnou, tak hustota kontinua je konstantní a výše zmíněný vztah se zjednoduší na rov. \ref{eq:conti1simp}.
 \begin{equation}
 	\nabla \cdot \vec{v} = 0
 	\label{eq:conti1simp}
 \end{equation}  
 
-\subsection{Bilance hybnosti v kontinuu}
-Zákon zachování hybnosti v kontinuu je možné vyjádřit pomocí Cauchyho rovnice dynamické rovnováhy, která má tvar:
+\subsection{Bilance hybnosti v~kontinuu}
+Zákon zachování hybnosti v~kontinuu je možné vyjádřit pomocí Cauchyho rovnice dynamické rovnováhy, která má tvar:
 \begin{equation}
-    \rho \left( \frac{\partial \vec{v}}{\partial t} + \vec{v} \cdot \nabla  \vec{v} \right) = -\nabla p +  \nabla \cdot \vec{\vec{\tau}} + \vec{f}
+    \rho \left[ \frac{\partial \vec{v}}{\partial t} + \vec{v} \cdot \kula{\nabla \vec{v}} \right] = -\nabla p +  \nabla \cdot \vec{\vec{\tau}} + \vec{f}
   	\label{eq:cauchy}
 \end{equation} 
 Symbol $p$ značí tlak působící na objemový element, $\vec{\vec{\tau}}$ je tenzor viskózního napětí a člen $\vec{f}$ zahrnuje další objemové síly působící na kontinuum (např. gravitační síla).
 
-V trojrozměrné soustavě kartézských souřadnicích má tenzor viskózního napětí celkem devět složek a je definován vztahem:
+V~trojrozměrné soustavě kartézských souřadnicích má tenzor viskózního napětí celkem devět složek a je definován vztahem:
 \begin{equation}
     \vec{\vec{\tau}} = 
     \begin{bmatrix}
@@ -178,17 +176,16 @@ V trojrozměrné soustavě kartézských souřadnicích má tenzor viskózního 
     \end{bmatrix}
   	\label{eq:tenstress}
 \end{equation} 
-Složky napětí $\sigma_{xx}$, $\sigma_{yy}$ a $\sigma_{zz}$ působí v normálovém směru na daný objemový element a zbylé členy představují tečná napětí. Tuto skutečnost dobře ilustruje obr. \ref{fig:stresses}. 
+Složky napětí $\sigma_{xx}$, $\sigma_{yy}$ a $\sigma_{zz}$ působí v~normálovém směru na daný objemový element a zbylé členy představují tečná napětí. Tuto skutečnost dobře ilustruje obr. \ref{fig:stresses}. 
 
 \begin{figure}[h!]
-\begin{center}
+\centering
   \includegraphics[scale=0.13]{images/stresses.eps}
   \caption{Složky viskózního napětí}
   \label{fig:stresses}
-\end{center}
 \end{figure} 
 
-\noindent  Navíc pokud je daná tekutina izotropní (neupřednostňuje žádný směr deformace), tak tenzor \ref{eq:tenstress} má pouze šest nezávislých složek, protože mezi tečnými napětími platí vztahy:
+\noindent  Navíc pokud je daná tekutina isotropní (neupřednostňuje žádný směr deformace), tak tenzor ve vztahu \ref{eq:tenstress} má pouze šest nezávislých složek, protože mezi tečnými napětími platí vztahy:
 \begin{equation}
     \begin{array}{ccc}
       \tau_{xy} = \tau_{yx}, & \tau_{xz} = \tau_{zx}, & \tau_{zy} = \tau_{yz}
@@ -207,7 +204,7 @@ Pro Newtonovskou tekutinu dále platí, že jednotlivá viskózní napětí jsou
     \end{bmatrix}
   	\label{eq:newtenstress}
 \end{equation} 
-Člen $\eta$ představuje dynamickou (tečnou) viskozitu a $\kappa$ značí dilatační (objemovou) viskozitu, jejíž hodnota je nulová pro jednoatomové plyny při nízké hustotě. Někdy se tenzor \ref{eq:newtenstress} zapisuje v úspornější podobě:
+Člen $\eta$ představuje dynamickou (tečnou) viskozitu a $\kappa$ značí dilatační (objemovou) viskozitu, jejíž hodnota je nulová pro jednoatomové plyny při nízké hustotě. Někdy se tenzor \ref{eq:newtenstress} zapisuje v~úspornější podobě:
 \begin{equation}
 	\vec{\vec{\tau}} = \eta \left[ \nabla \vec{v} +  \left( \nabla \vec{v} \right)^{\mathsf{T}}\right] +  \left( \kappa -\frac{2}{3} \eta \right) \nabla \cdot \vec{v} \vec{\vec{I}}
 	\label{eq:comptenstress}
@@ -216,7 +213,7 @@ kde $\vec{\vec{I}}$ je jednotkový tenzor.
 
 Dosazením vztahu \ref{eq:comptenstress} do rov. \ref{eq:cauchy} a při předpokladu nestlačitelnosti kontinua ($\nabla \cdot \vec{v} = 0$) se získá Navierova-Stokesova rovnice:
 \begin{equation}
-    \rho \left( \frac{\partial \vec{v}}{\partial t} + \vec{v} \cdot \nabla  \vec{v} \right) = -\nabla p + \eta \nabla^{2}\vec{v}  + \vec{f}
+    \rho \left[ \frac{\partial \vec{v}}{\partial t} + \vec{v} \cdot \kula{\nabla  \vec{v}} \right] = -\nabla p + \eta \nabla^{2}\vec{v}  + \vec{f}
   	\label{eq:navst}
 \end{equation} 
 Ve trojrozměrné soustavě kartézských souřadnic lze vektorovou rov. \ref{eq:navst} rozepsat na 
@@ -230,12 +227,12 @@ Ve trojrozměrné soustavě kartézských souřadnic lze vektorovou rov. \ref{eq
     \end{array}
   	\label{eq:navst3d}
 \end{equation} 
-Soustava rovnic \ref{eq:navst3d} spolu s rov. \ref{eq:conti1simp} tvoří systém čtyř parciálních diferenciálních rovnic pro neznámé $p$, $v_{x}$, $v_{y}$ a $v_{z}$. 
+Soustava rovnic \ref{eq:navst3d} spolu s~rov. \ref{eq:conti1simp} tvoří systém čtyř parciálních diferenciálních rovnic pro neznámé $p$, $v_{x}$, $v_{y}$ a $v_{z}$. 
 
 \subsection{Vícefázové modely}
-Velké množství přírodních a průmyslových procesů je tvořeno vícefázovým prouděním. Problematika simulace tohoto děje je daleko komplexnější než v případě systému složeného pouze z jedné fáze. V hydrodynamice je pojem fáze chápán v širším smyslu než z termodynamického hlediska. Z tohoto pohledu lze fází definovat jako třídu materiálu, jenž interaguje určitým způsobem s dalšími částmi systému. 
+Velké množství přírodních a průmyslových procesů je tvořeno vícefázovým prouděním. Problematika simulace tohoto děje je daleko komplexnější než v~případě systému složeného pouze z~jedné fáze. V~hydrodynamice je pojem fáze chápán v~širším smyslu než z~termodynamického hlediska. Z~tohoto pohledu lze fází definovat jako třídu materiálu, jenž interaguje určitým způsobem s~dalšími částmi systému. 
 
-V~současnosti existuje řada matematických modelů, které popisují vícefázové proudění a lišící se výsledným způsobem použití. Následující podkapitola obsahuje přehled modelů, které se nejčastěji využívají k~simulaci suspendace v~mechanicky míchaných nádobách. Především se jedná o simulační techniky Eulerian-Lagrangian, Eulerian-Eulerian a Eulerian-Granular.
+V~současnosti existuje řada matematických modelů, které popisují vícefázové proudění a lišící se výsledným způsobem použití. Následující podkapitola obsahuje přehled modelů, které se nejčastěji využívají k~simulaci suspendace v~mechanicky míchaných nádobách. Především se jedná o~simulační techniky Eulerian-Lagrangian, Eulerian-Eulerian a Eulerian-Granular.
 
 \subsubsection{Model Eulerian-Lagrangian}
 Tento typ modelu uvažuje primární tekutou fází jako kontinuum s~dispergovanou sekundární fází. Pro primární fázi je řešena rovnice kontinuity (\ref{eq:conti1simp}) spolu s~Navierovými-Stokesovými rovnicemi (\ref{eq:navst3d}), zatímco pro dispergovanou fázi je řešena trajektorie každé částice nebo skupiny částic separátně. Jednotlivé fáze si mohou mezi sebou vyměňovat hmotu, hybnost a energii, avšak vzájemné interakce částic mezi sebou jsou většinou zanedbány. Model Eulerian-Lagrangian je především vhodný pro systémy, kde objemový zlomek dispergované fáze nepřesáhne \SI{10}{\percent} např: rozprašovací sušárny, cyklóny nebo spalování uhlí či kapalného paliva. 
@@ -255,9 +252,9 @@ Tento typ modelu uvažuje primární tekutou fází jako kontinuum s~dispergovan
 	\vec{F}_{D} = \frac{\pi}{8}C_{D}\rho_{f} d_{p}^{2} \left|\vec{v}_{p} - \vec{v}_{f}\right| \left(\vec{v}_{p} - \vec{v}_{f}\right)
 	\label{eq:fd}
 \end{equation} 
-Bezrozměrné číslo $C_{D}$ v rov. \ref{eq:fd} se nazývá koeficient odporu nebo součinitel tření a vyjadřuje závislost odporu prostření na tvaru tělesa, charakteru proudění a vlastnostech tekutiny. Detailnějším rozborem tohoto členu se zabývá kapitola XXX.
+Bezrozměrné číslo $C_{D}$ v~rov. \ref{eq:fd} se nazývá koeficient odporu nebo součinitel tření a vyjadřuje závislost odporu prostředí na tvaru tělesa, charakteru proudění a vlastnostech tekutiny. Detailnějším rozborem tohoto členu se zabývá kapitola \ref{kap:cd}.
 
-Poslední příspěvkem $\vec{F}_{ad}$ do bilance \ref{eq:dpm} zahrnuje další síly působící na částici pevné fáze. Jedná se například o Saffmanovu vztlakovou sílu, jenž vzniká v důsledku vířivosti rychlostního pole kapalné fáze a působí především na částice o velikosti menší než několik mikrometrů. Další silou která se někdy zohledňuje při vícefázové simulaci je zdánlivá setrvačná síla, která je způsobena společným pohybem tekutiny v blízkosti dispergované fáze při její akceleraci. Tento jev má za následek dočasný zdánlivý nárůst hmotnosti částic. Zdánlivá setrvačná síla se projevuje především v systémech kapalina-plynná fáze.  
+Poslední příspěvkem $\vec{F}_{ad}$ do bilance \ref{eq:dpm} zahrnuje další síly působící na částici pevné fáze. Jedná se například o~Saffmanovu vztlakovou sílu, jenž vzniká v~důsledku vířivosti rychlostního pole kapalné fáze a působí především na částice o~velikosti menší než několik mikrometrů. Další silou která se někdy zohledňuje při vícefázové simulaci je zdánlivá setrvačná síla, která je způsobena společným pohybem tekutiny v~blízkosti dispergované fáze při její akceleraci. Tento jev má za následek dočasný zdánlivý nárůst hmotnosti částic. Zdánlivá setrvačná síla se projevuje především v~systémech kapalina-plynná fáze.  
 
 \subsubsection{Model Eulerian-Eulerian}
 U~modelu Eulerian-Eulerian jsou jednotlivé fáze považovány za prostupující se kontinua a každý bod v~systému obsahuje informaci o~objemovém zlomku dané fáze. Z~tohoto popisu je zřejmé, že suma objemových zlomků přes všechny fáze v~libovolném bodě se vždy musí rovnat jedné. 
@@ -270,23 +267,23 @@ Jednotlivé fáze mohou být kapalné, plynné nebo pevné a jejich celkový po�
 
 Pro vícefázový systém je třeba zapsat rovnici kontinuity pro každou fázi zvlášť, přičemž je třeba obecně uvažovat přenos hmoty mezi jednotlivými fázemi. Rovnice kontinuity pro $i$-tou fázi lze zapsat jako:
 \begin{equation}
-	\frac{\partial}{\partial t} (\alpha_{i}\rho_{i}) +  \nabla \cdot (\alpha_{i}\rho_{i}\vec{v}_{i}) = \sum_{\substack{ i \neq j \\ j=1}}^{n}\Gamma_{ij}
+	\pd{\kula{\alpha_{i}\rho_{i}}}{t} +  \nabla \cdot (\alpha_{i}\rho_{i}\vec{v}_{i}) = \sum_{\substack{ i \neq j \\ j=1}}^{n}\Gamma_{ij}
 	\label{eq:conti2}
 \end{equation} 
-kde člen $\Gamma_{ij}$ představuje hmotnostní tok mezi $i$-tou a $j$-tou fází vztažený na objemový element a $\alpha_{i}$ značí objemový zlomek dané fáze. Pokud však nedochází k transportu hmoty mezi fázemi, tak se rov. \ref{eq:conti2} zjednoduší do tvaru:
+kde člen $\Gamma_{ij}$ představuje hmotnostní tok mezi $i$-tou a $j$-tou fází vztažený na objemový element a $\alpha_{i}$ značí objemový zlomek dané fáze. Pokud však nedochází k~transportu hmoty mezi fázemi, tak se rov. \ref{eq:conti2} zjednoduší do tvaru:
 \begin{equation}
-	\frac{\partial}{\partial t} (\alpha_{i}\rho_{i}) +  \nabla \cdot (\alpha_{i}\rho_{i}\vec{v}_{i}) = 0
+	\pd{\kula{\alpha_{i}\rho_{i}}}{t} +  \nabla \cdot (\alpha_{i}\rho_{i}\vec{v}_{i}) = 0
 	\label{eq:conti3}
 \end{equation} 
 
 Rovnice hybnosti pro $i$-tou fázi za předpokladu nulového mezifázového transportu hmoty lze zapsat jako:
 \begin{equation}
-	\frac{\partial}{\partial t} \left(\alpha_{i}\rho_{i}\vec{v}_{i}\right) + \nabla \cdot (\alpha_{i}\rho_{i} \vec{v}_{i} \otimes \vec{v}_{i}) = -\alpha_{i} \nabla p + \nabla \cdot \left(\alpha_{i} \vec{\vec{\tau}}_{i} \right) +\sum_{\substack{ i \neq j \\ j=1}}^{n} \vec{R}_{ji} + \vec{f}_{ext,i} + \vec{f}_{int,i}
+	\pd{\kula{\alpha_{i}\rho_{i}\vec{v}_{i}}}{t} + \nabla \cdot \kula{\alpha_{i}\rho_{i} \vec{v}_{i} \otimes \vec{v}_{i}} = -\alpha_{i} \nabla p + \nabla \cdot \left(\alpha_{i} \vec{\vec{\tau}}_{i} \right) +\sum_{\substack{ i \neq j \\ j=1}}^{n} \vec{R}_{ji} + \vec{f}_{ext,i} + \vec{f}_{int,i}
 	\label{eq:moml}
 \end{equation}
 \noindent kde $p$ je tlak sdílený mezi všemi fázemi, $\vec{\vec{\tau}}_{i}$ je tenzor viskózního napětí, jehož konkretní tvar závisí na typu uvažované fáze. Člen $\vec{R}_{ji}$ představuje mezifázovou odporovou sílu mezi $i$-tou a $j$-tou fází, $\vec{f}_{ext,i}$ má význam dalších objemových sil a $\vec{f}_{int,i}$ zahrnuje povrchové síly působící na $i$-tou fázi vlivem ostatních fází. Všechny výše zmíněné síly jsou vztaženy na objemový element dané fáze. 
 
-Člen mezifázové odporové síly $\vec{R}_{ji}$ v~rovnici \ref{eq:moml} nejvýznamněji přispívá do popisu interakce mezi jednotlivými fázemi, a proto správnost popisu tohoto členu zásadně ovlivňuje kvalitu výsledné simulace. Tuto sílu lze rozepsat jakou součin koeficientu mezifázového sdílení hybnosti a relativní rychlosti $i$-té a $j$-té fáze.
+Člen mezifázové odporové síly $\vec{R}_{ji}$ v~rovnici \ref{eq:moml} nejvýznamněji přispívá do popisu interakce mezi jednotlivými fázemi, a proto správnost popisu tohoto členu zásadně ovlivňuje kvalitu výsledné simulace. Tuto sílu lze rozepsat jakou součin koeficientu mezifázového sdílení hybnosti a relativní rychlosti mezi $i$-tou a $j$-tou fází.
 \begin{equation}
 	 \sum_{\substack{ i \neq j \\ j=1}}^{n} \vec{R}_{ji} = K_{ji} \left( \vec{v}_{j} - \vec{v}_{i} \right)
 	\label{eq:kij}
@@ -304,24 +301,24 @@ Za zmínku stojí fakt, že při využití modelu Eulerian-Eulerian se pevná f�
 \label{sec:egm}
 Vícefázový model Eulerian-Granular se liší od předchozího tím, že  popis chování pevné fáze byl odvozen s~využitím kinetické teorie, která je například známá ze statistického popisu plynů. U~tohoto modelu se viskozita pevné fáze mění v~závislosti na interakcích s~ostatními částicemi a primární fází. Mezi nejčastější aplikace patří simulace fluidních loží nebo suspendace v~mechanicky míchaných nádobách.
 
-Bilanci hybnosti pro pevnou fázi $s$ má tvar:
+Bilance hybnosti pro pevnou fázi $s$ má tvar:
 \begin{equation}
-	\frac{\partial}{\partial t} \left(\alpha_{s}\rho_{s}\vec{v}_{s}\right) + \nabla \cdot (\alpha_{s}\rho_{s} \vec{v}_{s} \otimes \vec{v}_{s}) = -\alpha_{s} \nabla p - \nabla p_{s} + \nabla \cdot \left(\alpha_{s} \vec{\vec{\tau}}_{s} \right) +\sum_{\substack{ j \neq s \\ j=1}}^{n} \vec{R}_{ji} + \vec{f}_{ext,s} + \vec{f}_{int,s}
+	\pd{\kula{\alpha_{s}\rho_{s}\vec{v}_{s}}}{t} + \nabla \cdot \kula{\alpha_{s}\rho_{s} \vec{v}_{s} \otimes \vec{v}_{s}} = -\alpha_{s} \nabla p - \nabla p_{s} + \nabla \cdot \left(\alpha_{s} \vec{\vec{\tau}}_{s} \right) +\sum_{\substack{ j \neq s~\\ j=1}}^{n} \vec{R}_{ji} + \vec{f}_{ext,s} + \vec{f}_{int,s}
 	\label{eq:moms}
 \end{equation}
-Člen $p_{s}$ je tlak pevné fáze, který se skládá z kinetické části a členu, který výsledkem neelastických srážek mezi částicemi. V současnosti existuje řada modelů k výpočtu tlaku pevné fáze. Jedním z nich je model odvozený autory \citet{lun84}:
+Člen $p_{s}$ je tlak pevné fáze, který se skládá z~kinetické části a členu, který výsledkem neelastických srážek mezi částicemi. V~současnosti existuje řada modelů k~výpočtu tlaku pevné fáze. Jedním z~nich je model odvozený autory \citet{lun84}:
 \begin{equation}
 	p_{s} = \alpha_{s}\rho_{s}\Theta + 2\rho_{s}\left(1 + r_{s} \right) \alpha_{s}^{2}g_{s}\Theta
 	\label{eq:ps}
 \end{equation}
 kde $r_{s}$ je restituční koeficient vyjadřující míru elasticity srážek mezi částicemi. Symbol $g_{s}$ představuje radiální distribuční funkci, jenž upravuje pravděpodobnost kolizí částic pevné fáze. Poslední nediskutovaným členem $\Theta$ je teplota zrnité fáze, která je úměrná velikosti střední kvadratické rychlosti náhodného pohybu částic, tedy: 
 \begin{equation}
-	\Theta = \frac{1}{3} \overline{ \vec{u} \cdot \vec{u}}
+	\Theta = \frac{1}{3} \avg{ \vec{u} \cdot \vec{u}}
 	\label{eq:gtemp}
 \end{equation}
-Ve většině CFD řešíčů se určení hodnoty teploty zrnité fáze využívají algebraické modely odvozené z transportní rovnice pro tuto veličinu.
+Ve většině CFD řešíčů se určení hodnoty teploty zrnité fáze využívají algebraické modely odvozené z~transportní rovnice pro tuto veličinu.
 
-Tenzor viskózního napětí pevné fáze $\vec{\vec{\tau}}_{s}$ v rov. \ref{eq:moms} lze vyjádřit formálně stejně jako ve vztahu \ref{eq:comptenstress}. 
+Tenzor viskózního napětí pevné fáze $\vec{\vec{\tau}}_{s}$ v~rov. \ref{eq:moms} lze vyjádřit formálně stejně jako ve vztahu \ref{eq:comptenstress}. 
 \begin{equation}
 	\vec{\vec{\tau_{s}}} = \eta_{s} \left[ \nabla \vec{v_{s}} +  \left( \nabla \vec{v_{s}} \right)^{\mathsf{T}}\right] +  \left( \kappa_{s} -\frac{2}{3} \eta_{s} \right) \nabla \cdot \vec{v_{s}} \vec{\vec{I}}
 	\label{eq:solidstress}
@@ -331,16 +328,17 @@ Tečná viskozita zrnité fáze $\eta_{s}$ je dána součtem kolizní, kinetick�
 	\eta_{s} = \eta_{s,col}  + \eta_{s,kin} + \eta_{s,fr} 
 	\label{eq:nys}
 \end{equation}
-přičemž běžně využívané korelace k jejich určení byly navrženy \citet{gid92}, \citet{syam93}. Dilatační viskozita $\kappa_{s}$ zohledňuje odpor pevných částic při expanzi či kompresi. \citet{lun84} odvodili následující vztah k jejímu výpočtu:
+přičemž běžně využívané korelace k~jejich určení byly navrženy \citet{gid92} nebo \citet{syam93}. Dilatační viskozita $\kappa_{s}$ zohledňuje odpor pevných částic při expanzi či kompresi. \citet{lun84} odvodili následující vztah k~jejímu výpočtu:
 \begin{equation}
 	\kappa_{s} = \frac{4}{3}\alpha_{s}\rho_{s}d_{s}g_{s}\left(1 + r_{s} \right)\sqrt{\frac{\Theta}{\pi}}
 	\label{eq:dilvis}
 \end{equation}
  
 \subsection{Koeficient odporu}
-Koeficient odporu (součinitel tření) má zásadní vliv na velikost a charakter mezifázové odporové síly. Obecně je tento člen funkcí relativní rychlosti pohybu částic, jejich velikostí, hustotou a viskozitou tekutiny či případně dalších veličin. V~současnosti existuje celá řada modelů pro koeficient odporu, které se liší podle toho pro jaký účel byly navrženy. V této kapitole jsou především uvedeny korelace, jenž se používají při simulacích systému kapalina-pevná fáze v míchaných nádobách. 
+\label{kap:cd}
+Koeficient odporu (součinitel tření) má zásadní vliv na velikost a charakter mezifázové odporové síly. Obecně je tento člen funkcí relativní rychlosti pohybu částic, jejich velikostí, hustotou a viskozitou tekutiny či případně dalších veličin. V~současnosti existuje celá řada modelů pro koeficient odporu, které se liší podle toho pro jaký účel byly navrženy. V~této kapitole jsou především uvedeny korelace, jenž se používají při simulacích systému kapalina-pevná fáze v~míchaných nádobách. 
 
-Jeden z nejznámějších modelů k výpočtu součinitele tření navrhli \citet{schi32}, kteří získali vztah \ref{eq:schlneu} pro výpočet koeficientu odporu na základě experimentálního měření rychlosti usazování sférické částice ve stagnantním sloupci kapaliny.    
+Jeden z~nejznámějších modelů k~výpočtu součinitele tření navrhli \citet{schi32}, kteří získali vztah \ref{eq:schlneu} pro výpočet koeficientu odporu na základě experimentálního měření rychlosti usazování sférické částice ve stagnantním sloupci kapaliny.    
 \begin{equation}
 	\label{eq:schlneu}
   C_{D0} = \left\{ \begin{array}{ll}
@@ -354,18 +352,18 @@ Jeden z nejznámějších modelů k výpočtu součinitele tření navrhli \cite
 	\label{eq:reyp}
 \end{equation}
 
-Bohužel koeficient odporu navržený Schillerem a Naumannem se ukázal jako nepříliš vhodný k~popisu odporové síly v~systémech s~plně vyvinutým turbulentním prouděním, a proto řada autorů se zaměřila na úpravu této korelace.
+Bohužel model pro koeficient odporu navržený Schillerem a Naumannem se ukázal jako nepříliš vhodný k~popisu odporové síly v~systémech s~plně vyvinutým turbulentním prouděním, a proto řada autorů se zaměřila na úpravu této korelace.
 
-\citet{bru98} měřili rychlost usazování pevné fáze mezi dvěma opačně rotujícími válci (Taylorův–Couettův tok). Ze získaných výsledků následně autoři stanovili korelaci pro koeficient odporu zohledňující volnou turbulenci. Naproti tomu \citet{pin01} odvodili model pro koeficient odporu na základě experimentální studie suspendace v nádobě osazené skupinou míchadel. \citet{kho06} upravili Brucátův vztah na základě srovnání experimentálních a simulačních výsledků získaných pomocí CFD během studie suspendace v míchané nádobě. 
+\citet{bru98} měřili rychlost usazování pevné fáze mezi dvěma proti sobě rotujícími válci (Taylorův–Couettův tok). Ze získaných výsledků následně autoři stanovili korelaci pro koeficient odporu zohledňující volnou turbulenci. Naproti tomu \citet{pin01} odvodili model pro koeficient odporu na základě experimentální studie suspendace v~nádobě osazené skupinou míchadel. \citet{kho06} upravili Brucátův vztah na základě srovnání experimentálních a simulačních výsledků získaných pomocí CFD během studie suspendace v~míchané nádobě. 
 
-Všechny výše zmíněné korelace jsou uvedeny v~tab. \ref{tab:cds}. Člen $\lambda$ se nazývá Kolmogorovo mikroměřítko a určuje nejmenší velikost turbulentní vírů přítomných v~systému, přičemž je funkcí kinematické viskozity tekutiny a rychlostí disipace turbulentní kinetické energie (viz. rov.).
+Všechny výše zmíněné korelace jsou shrnuty v~tab. \ref{tab:cds}. Člen $\lambda$ se nazývá Kolmogorovo mikroměřítko a určuje nejmenší velikost turbulentních vírů přítomných v~systému, přičemž je funkcí kinematické viskozity tekutiny a rychlostí disipace turbulentní kinetické energie (viz. rov. \ref{eq:kolmo}).
 \begin{equation}
   \lambda = \left( \frac{\nu^{3}}{\epsilon} \right) ^{1/4}
 	\label{eq:kolmo}
 \end{equation}
 
 \begin{table}[h!]
-\begin{center}
+\centering
 \caption{Modely pro odporový koeficient v~turbulentní oblasti proudění}
 \label{tab:cds}
 \begin{tabular}{cc>{\centering\arraybackslash}p{5cm}}
@@ -381,15 +379,14 @@ Všechny výše zmíněné korelace jsou uvedeny v~tab. \ref{tab:cds}. Člen $\l
 
 \bottomrule
 \end{tabular}
-\end{center}
 \end{table}
 
 \subsection{Turbulentní modely}
-Turbulentní pohyb patří k nejsložitějším a současně nejběžnějším přírodním jevům pozorovaných v proudících tekutinách. Z tohoto důvod je turbulenci věnována mimořádná pozornost v technických aplikacích zabývající se dynamikou proudění. 
+Turbulentní pohyb patří k~nejsložitějším a současně nejběžnějším přírodním jevům pozorovaných v~proudících tekutinách. Z~tohoto důvod je turbulenci věnována mimořádná pozornost v~technických aplikacích zabývající se dynamikou proudění. 
 
-Proudění v tekutinách lze obecně rozdělit na dva hlavní typy: laminární a turbulentní. Při laminárním proudění jsou jednotlivé proudnice tekutiny spolu rovnoběžné a k promíchávání prakticky nedochází. Naproti tomu pro turbulentní proudění je charakteristické intenzivní promíchávání a vysoká míra neuspořádanosti probíhajícího procesu. Významný je také fakt, že mezi laminárním a turbulentním charakterem toku se ještě vyskytuje tzv. přechodové proudění jehož teoretický popis je velmi obtížný. Pro kvalitativní posouzení charakteru proudění se využívá Reynoldsovo číslo ($Re$), které je řádově vyšší v turbulentní oblasti než v laminární. 
+Proudění v~tekutinách lze obecně rozdělit na dva hlavní typy: laminární a turbulentní. Při laminárním proudění jsou jednotlivé proudnice tekutiny spolu rovnoběžné a k~promíchávání prakticky nedochází. Naproti tomu pro turbulentní proudění je charakteristické intenzivní promíchávání a vysoká míra neuspořádanosti probíhajícího procesu. Významný je také fakt, že mezi laminárním a turbulentním charakterem toku se ještě vyskytuje tzv. přechodové proudění jehož teoretický popis je velmi obtížný. Pro kvalitativní posouzení charakteru proudění se využívá Reynoldsovo číslo ($Re$), které je řádově vyšší v~turbulentní oblasti než v~laminární. 
 
-Z pohledu numerické simulace existují tři hlavní směry, jak se vypořádat s popisem toku tekutiny v turbulentní oblasti proudění. Jedná se o:
+Z~pohledu numerické simulace existují tři hlavní směry, jak se vypořádat s~popisem toku tekutiny v~turbulentní oblasti proudění. Jedná se o:
 \begin{itemize}[itemsep=0pt,parsep=0pt,partopsep=0pt,topsep=0pt]
   \item přímou numerickou simulaci (DNS)
   \item časově zprůměrované Navierovy-Stokesy rovnice (RANS)
@@ -397,10 +394,10 @@ Z pohledu numerické simulace existují tři hlavní směry, jak se vypořádat 
 \end{itemize}
 
 \paragraph{Přímá numerická simulaci (DNS)}
-Následující přístup řeší k určení proudového pole pouze rovnici kontinuity a Navierovy-Stokesovy rovnice bez využití dodatečných rovnic pro turbulenci. Toto znamená, že celá škála prostorových a časových měřítek musí být řešena přímo, a proto použitá výpočetní doména musí být dostatečně jemná. Počet potřebný buněk obsažených ve výpočetní sítí roste přibližně kvadraticky s hodnotou Reynoldsova čísla ($Re^{3/4}$). Z tohoto důvodu klade technika DNS značné nároky na výpočetní techniku a následné vyhodnocení.
+Následující přístup řeší k~určení proudového pole pouze rovnici kontinuity a Navierovy-Stokesovy rovnice bez využití dodatečných rovnic pro turbulenci. Toto znamená, že celá škála prostorových a časových měřítek musí být řešena přímo, a proto použitá výpočetní doména musí být dostatečně jemná. Počet potřebný buněk obsažených ve výpočetní sítí roste přibližně kvadraticky s~hodnotou Reynoldsova čísla, přesně s~$Re^{3/4}$. Z~tohoto důvodu klade technika DNS značné nároky na výpočetní techniku a následné vyhodnocení.
 
 \paragraph{Technika velkých vírů (LES)}
-Metoda LES představuje kompromis mezi přímou numerickou simulací (DNS) a časovým zprůměrováním Navierových-Stokesových rovnic (RANS). Tato technika je založena na hypotéze, že měřítka turbulentního proudění mohou být rozděleny na velkou a malou (podsíťovou) složku. Velké víry, jakožto hlavní nositelé kinetické energie, jsou řešený přímo zatímco malé víry jsou modelovány. Klíčovým krokem metody je filtrování Navierových-Stokesových rovnic, což vede k odstranění malých prostorových a časových měřítek z výsledného řešení. Intenzita filtrování přímo ovlivňuje míru získaných detailů proudového pole a tedy časovou náročnost simulace. Bohužel tato technika není v současnosti implementována běžnými CFD řešiči pro využití ve vícefázových simulacích. 
+Metoda LES představuje kompromis mezi přímou numerickou simulací (DNS) a časovým zprůměrováním Navierových-Stokesových rovnic (RANS). Tato technika je založena na hypotéze, že měřítka turbulentního proudění mohou být rozděleny na velkou a malou (podsíťovou) složku. Velké víry, jakožto hlavní nositelé kinetické energie, jsou řešený přímo zatímco malé víry jsou modelovány. Klíčovým krokem metody je filtrování Navierových-Stokesových rovnic, což vede k~odstranění malých prostorových a časových měřítek z~výsledného řešení. Intenzita filtrování přímo ovlivňuje míru získaných detailů proudového pole a tedy časovou náročnost simulace. Bohužel tato technika není v~současnosti implementována běžnými CFD řešiči pro využití ve vícefázových simulacích. 
 
 \paragraph{Časově zprůměrované Navierovy-Stokesy rovnice (RANS)}
 Principem metody RANS je rozložení okamžité hodnoty veličiny popisující proudění na složku časově zprůměrovanou a fluktuační, tedy:
@@ -415,7 +412,7 @@ Přičemž časově zprůměrovaná veličina je definovaná jako:
 \end{equation}
 Dosazením vztahu \ref{eq:avg_vels} do rov. \ref{eq:cauchy} pro nestlačitelnou tekutinu se získá Reynoldsova zprůměrovaná bilance hybnosti:  
 \begin{equation}
-    \rho \left( \frac{\partial \avg{\vec{v}}}{\partial t} + \avg{\vec{v}} \cdot \nabla  \avg{\vec{v}} \right) = -\nabla \avg{p} +  \nabla \cdot \avg{\vec{\vec{\tau}}} + \vec{\vec{\tau}}_{R} + \avg{\vec{f}}
+    \rho \left[ \frac{\partial \avg{\vec{v}}}{\partial t} + \avg{\vec{v}} \cdot \kula{\nabla  \avg{\vec{v}}} \right] = -\nabla \avg{p} +  \nabla \cdot \avg{\vec{\vec{\tau}}} + \vec{\vec{\tau}}_{R} + \avg{\vec{f}}
   	\label{eq:cauchy_avg}
 \end{equation} 
 kde $\vec{\vec{\tau}}_{R}$ je tenzor Reynoldsova napětí mající členy: 
@@ -431,7 +428,7 @@ Obdobným způsobem lze odvodit časově zprůměrovanou rovnici kontinuity pro 
 	\label{eq:conti1simp_avg}
 \end{equation}  
 
-Díky časovému zprůměrování jsou malá prostorová a časová měřítka vyhlazena, a proto tato technika je méně výpočetně náročná než DNS nebo LES přístupy. Nicméně RANS technika zavádí nové neznámé proměnné (složky Reynoldsova napětí), které je potřeba vhodně určit. K jejich stanovení se zavádějí aproximace a předpoklady označované jako turbulentní modely. Mezi nejznámější představitele těchto modelů patří: 
+Díky časovému zprůměrování jsou malá prostorová a časová měřítka vyhlazena, a proto tato technika je méně výpočetně náročná než DNS nebo LES přístupy. Nicméně RANS technika zavádí nové neznámé proměnné (složky Reynoldsova napětí), které je potřeba vhodně určit. K~jejich stanovení se zavádějí aproximace a předpoklady označované jako turbulentní modely. Mezi nejznámější představitele těchto modelů patří: 
 \begin{itemize}[itemsep=0pt,parsep=0pt,partopsep=0pt,topsep=0pt]
   \item Spalart-Allmaras (1 rovnice) 
   \item \keps{} (2 rovnice) 
@@ -441,14 +438,14 @@ Díky časovému zprůměrování jsou malá prostorová a časová měřítka v
 Velká část turbulentních modelů (např. první tři ve výše uvedeném výčtu) je založena na tzv. Boussineqově hypotéze XXX, která modeluje složky Reynoldsova napětí pomocí gradientů rychlosti a skalární veličiny nazývané turbulentní viskozita ($\eta_{t}$). Členy ve vztahu \ref{eq:rey_stress} lze poté rozepsat jako: 
 \begin{equation}
     \begin{array}{cc}
-      \tau_{R,ij} = \eta_{t}\left( \pd{v_{i}}{x_{j}} + \pd{v_{j}}{x_{i}} \right), & \sigma_{R,ii} = 2\eta_{t}\pd{v_{i}}{x_{i}}  - \frac{2}{3} \left[ \rho k + \eta_{t} \left( \nabla  \cdot \vec{v} \right) \right]
+      \tau_{R,ij} = \eta_{t}\left( \pd{v_{i}}{x_{j}} + \pd{v_{j}}{x_{i}} \right), & \sigma_{R,ii} = 2\eta_{t}\pd{v_{i}}{x_{i}}  - \frac{2}{3} \left[ \rho k~+ \eta_{t} \left( \nabla  \cdot \vec{v} \right) \right]
       \end{array}
       \label{eq:rey_stress_bus}
 \end{equation}
-kde $k$ je turbulentní kinetická energie. Jednou z výhod toto přístupu je relativně nízká výpočetní náročnost k určení turbulentní viskozity. Naopak mezi jeho hlavní nevýhody patří předpoklad isotropní turbulence, který nemusí být v řadě případů splněn.  
+kde $k$ je turbulentní kinetická energie. Jednou z~výhod toto přístupu je relativně nízká výpočetní náročnost k~určení turbulentní viskozity. Naopak mezi jeho hlavní nevýhody patří předpoklad isotropní turbulence, který nemusí být v~řadě případů splněn.  
 
 \subsubsection{Standardní \kepsb{} turbulentní model pro směs}
-Tento model představuje první typ rozšíření klasického \keps{} přístupu pro jednofázový tok. Jeho použití je především vhodné v případech kdy poměr hustot jednotlivých fází je blízký jedničce. V takovýchto případech k popisu turbulentního proudění stačí využít veličiny popisující celou směs. Hustota směsi a vektoré pole rychlosti směsi jsou vypočteny podle vztahu \ref{eq:rho_m} resp. \ref{eq:vel_m}.
+Tento model představuje první typ rozšíření klasického \keps{} přístupu pro jednofázový tok. Jeho použití je především vhodné v~případech kdy poměr hustot jednotlivých fází je blízký jedničce. V~takovýchto případech k~popisu turbulentního proudění stačí využít veličiny popisující celou směs. Hustota směsi a vektoré pole rychlosti směsi jsou vypočteny podle vztahu \ref{eq:rho_m} resp. \ref{eq:vel_m}.
 \begin{equation}
 	\rho_{m} = \sum_{i=1}^n \alpha_{i}\rho_{i}
 	\label{eq:rho_m}
@@ -464,22 +461,22 @@ Turbulentní viskozita je určena ze vztahu:
 \end{equation}  
 přičemž hodnoty veličin $k$ a $\epsilon$ jsou získány řešením příslušných transportních rovnic \ref{eq:k-eq} a \ref{eq:eps-eq}.
 \begin{equation}
-	\pd{\kula{\rho_{m}k}}{t} +  \nabla  \cdot \left( \rho_{m} \vec{v}_{m} k \right) = \nabla  \cdot \left( \frac{\eta_{t}}{\sigma_{k}} \nabla k \right) + G_{k} - \rho_{m}\epsilon
+	\pd{\kula{\rho_{m}k}}{t} +  \nabla  \cdot \left( \rho_{m} \vec{v}_{m} k~\right) = \nabla  \cdot \left( \frac{\eta_{t}}{\sigma_{k}} \nabla k~\right) + G_{k} - \rho_{m}\epsilon
 	\label{eq:k-eq}
 \end{equation}  
 \begin{equation}
 	\pd{\kula{\rho_{m}\epsilon}}{t} +  \nabla  \cdot \left( \rho_{m} \vec{v}_{m} \epsilon \right) = \nabla  \cdot \left( \frac{\eta_{t}}{\sigma_{\epsilon}} \nabla \epsilon \right) + \frac{\epsilon}{k} \left( C_{1\epsilon}G_{k} - C_{2\epsilon}\rho_{m}\epsilon \right)
 	\label{eq:eps-eq}
 \end{equation}  
-Symbol $G_{k}$ ve výše uvedených rovnicích má význam produkce turbulentní kinetické energie a jeho hodnota je vypočtena z rovnice:
+Symbol $G_{k}$ ve výše uvedených rovnicích má význam produkce turbulentní kinetické energie a jeho hodnota je vypočtena z~rovnice:
 \begin{equation}
    G_{k} = \eta_{t} \left[ \nabla \vec{v}_{m} +  \left( \nabla \vec{v}_{m} \right)^{\mathsf{T}}\right] : \nabla \vec{v}_{m} 
   \label{eq:gk}
 \end{equation} 
-Členy $C_{1\epsilon}$, $C_{2\epsilon}$, a $C_{\eta}$ jsou konstanty modelu a symboly $\sigma_{k}$ resp. $\sigma_{\epsilon}$ značí Prandtlova turbulentní čísla. Hodnoty těchto parametrů byly stanoveny na základě experimentálních měření a jsou uvedeny v tab. \ref{tab:const}.
+Členy $C_{1\epsilon}$, $C_{2\epsilon}$, a $C_{\eta}$ jsou konstanty modelu a symboly $\sigma_{k}$ resp. $\sigma_{\epsilon}$ značí Prandtlova turbulentní čísla. Hodnoty těchto parametrů byly stanoveny na základě experimentálních měření a jsou uvedeny v~tab. \ref{tab:const}.
 
 \begin{table}[h!]
-\begin{center}
+\centering
 \caption{Hodnoty parametrů pro standardní \keps{} model}
 \label{tab:const}
 \begin{tabular}{ccccc}
@@ -489,13 +486,12 @@ $C_{1\epsilon}$ & $C_{2\epsilon}$ & $C_{\eta}$ &  $\sigma_{k}$ & $\sigma_{\epsil
 \num{1.44} & \num{1.92} & \num{0.09} & \num{1.0} & \num{1.3} \\
 \bottomrule
 \end{tabular}
-\end{center}
 \end{table}
 
-Na závěr je třeba dodat, že existují ještě dvě běžně používané úpravy \keps{} turbulentního modelu pro vícefázové proudění. První z nich je disperzní modifikace, která předpokládá existenci jedné hlavní (primární) fáze, jenž významně ovlivňuje pohyb ostatních rozptýlených fází. Druhým typem úpravy je řešení sady transportních rovnic \keps{} pro každou fázi zvlášť. Takovýto přístup je sice nejobecnější, ale také výpočetně náročnější než předchozí dvě modifikace. 
+Na závěr je třeba dodat, že existují ještě dvě běžně používané úpravy \keps{} turbulentního modelu pro vícefázové proudění. První z~nich je disperzní modifikace, která předpokládá existenci jedné hlavní (primární) fáze, jenž významně ovlivňuje pohyb ostatních rozptýlených fází. Druhým typem úpravy je řešení sady transportních rovnic \keps{} pro každou fázi zvlášť. Takovýto přístup je sice nejobecnější, ale také výpočetně náročnější než předchozí dvě modifikace. 
 
 \subsection{Modelování rotujícího míchadla}
-Pro popis rotace míchadla ve vsádce lze v současných CFD řešičích využít jednu ze tří následujících technik:
+Pro popis rotace míchadla ve vsádce lze v~současných CFD řešičích využít jednu ze tří následujících technik:
 \begin{itemize}[itemsep=0pt,parsep=0pt,partopsep=0pt,topsep=0pt]
   \item specifikace okrajových podmínek
   \item metoda vícenásobných souřadnicových soustav (MRF) 
@@ -503,29 +499,28 @@ Pro popis rotace míchadla ve vsádce lze v současných CFD řešičích využ�
 \end{itemize} 
 
 \paragraph{Specifikace okrajových podmínek}
-Nejstarší metoda simulace rotačního pohybu v nádobě je založena na určení okrajových podmínek pro míchadlo ze získaných experimentálních  dat. Pomocí metody jako LDV (Laser Doppler Velocimetry) nebo PIV (Particle Image Velocimetry) se určí střední rychlostní pole v blízkosti lopatek, které se následně zvolí jako okrajová podmínka pro míchadlo v rámci CFD simulace. Mezi hlavní nevýhody tohoto přístupu patří především  nutnost experimentálního měření a úzký vztah získaných simulačních výsledků se zkoumaným systémem. V současnosti se již tato technika téměř nepoužívá, neboť byla nahrazena modernějšími metoda diskutovanými níže.
+Nejstarší metoda simulace rotačního pohybu v~nádobě je založena na určení okrajových podmínek pro míchadlo ze získaných experimentálních  dat. Pomocí metody jako LDV (Laser Doppler Velocimetry) nebo PIV (Particle Image Velocimetry) se určí střední rychlostní pole v~blízkosti lopatek, které se následně zvolí jako okrajová podmínka pro míchadlo v~rámci CFD simulace. Mezi hlavní nevýhody tohoto přístupu patří především  nutnost experimentálního měření a úzký vztah získaných simulačních výsledků se zkoumaným systémem. V~současnosti se již tato technika téměř nepoužívá, neboť byla nahrazena modernějšími metoda diskutovanými níže.
 
 \paragraph{Metoda vícenásobných souřadnicových soustav (MRF)}
-Podstatou této metody je rozdělení výpočetní sítě na část rotační a stacionární. Rovnice kontinuity a bilance hybnosti jsou řešeny v každé doméně zvlášť se zohledněním relativní rychlosti rychlosti podél zvolené osy. V těchto modifikovaných rovnicích se vyskytují nové členy  Corrilisovy a dostředivé síly. Je třeba poznamenat, že rotační část s míchadlem se ve skutečnosti ve výpočetní síti nepohybuje. Díky tomuto charakteru je MRF technika především vhodná pro stacionární simulace.
+Podstatou této metody je rozdělení výpočetní sítě na část rotační a stacionární. Rovnice kontinuity a bilance hybnosti jsou řešeny v~každé doméně zvlášť se zohledněním relativní rychlosti rychlosti podél zvolené osy. V~těchto modifikovaných rovnicích se vyskytují nové členy  Corrilisovy a dostředivé síly. Je třeba poznamenat, že rotační část s~míchadlem se ve skutečnosti ve výpočetní síti nepohybuje. Díky tomuto charakteru je MRF technika především vhodná pro stacionární simulace.
 
 \begin{figure}[h!]
-\begin{center}
+\centering
   \includegraphics[scale=0.35]{images/sm.eps}
   \caption{Rotační zóna kolem míchadla}
   \label{fig:mrf}
-\end{center}
 \end{figure} 
 
 \paragraph{Metoda klouzající sítě (SM)}
-Metoda klouzající sítě je nestacionární (časově závislá) technika při které se rotační část výpočetní sítě pohybuje v průběhu simulace. Pohyb míchadla není však plně spojitý, ale je diskretizován na malé časové kroky (často jedna tisícina sekundy). V každém takovémto kroku jsou iterativně řešeny modelové rovnice dokud není dosaženo požadovaného konvergenčního kritéria. Během těchto výpočtu jsou informace o proudění předávány přes rozhraní mezi rotační a stacionární částí. Z důvodu pohybu výpočetní sítě však buňky jednotlivých domén na rozhraní nemusí k sobě přesně přiléhat, a proto je třeba pro tento přenos využít interpolace. Technika rotující sítě je nejrigoróznější metoda k  popisu rotace míchadla v mechanicky míchaných nádobách, což je nicméně vykoupeno vyššími nároky na zpracování získaných výsledků a výpočetní techniku. 
+Metoda klouzající sítě je nestacionární (časově závislá) technika při které se rotační část výpočetní sítě pohybuje v~průběhu simulace. Pohyb míchadla není však plně spojitý, ale je diskretizován na malé časové kroky (často jedna tisícina sekundy). V~každém takovémto kroku jsou iterativně řešeny modelové rovnice dokud není dosaženo požadovaného konvergenčního kritéria. Během těchto výpočtu jsou informace o~proudění předávány přes rozhraní mezi rotační a stacionární částí. Z~důvodu pohybu výpočetní sítě však buňky jednotlivých domén na rozhraní nemusí k~sobě přesně přiléhat, a proto je třeba pro tento přenos využít interpolace. Technika rotující sítě je nejrigoróznější metoda k~popisu rotace míchadla v~mechanicky míchaných nádobách, což je nicméně vykoupeno vyššími nároky na zpracování získaných výsledků a výpočetní techniku. 
 
 \subsection{Transport složky bez chemické reakce}
-Doba homogenizace v míchaných nádobách se experimentálně stanovuje měřením časového průběhu koncentrace stopovací látky. Při použití techniky CFD se koncentrace stopovací látky v každém místě systému získá řešením transportní rovnice. Tato rovnice pro obecnou skalární veličinu $\phi$, jenž nereaguje a nepodléhá fázovým přeměnám má tvar: 
+Doba homogenizace v~míchaných nádobách se experimentálně stanovuje měřením časového průběhu koncentrace stopovací látky. Při použití techniky CFD se koncentrace stopovací látky v~každém místě systému získá řešením transportní rovnice. Tato rovnice pro obecnou skalární veličinu $\phi$, jenž nereaguje a nepodléhá fázovým přeměnám má tvar: 
 \begin{equation}
 	\pd{\kula{\rho \phi}}{t} + \nabla \cdot \kula{\rho\vec{v}\phi - \tilde{D}\nabla\phi} = 0
 	\label{eq:trans}
 \end{equation}  
-přičemž $\tilde{D}$ značí difuzní koeficient transportované složky. Pro případ vícefázové proudění je třeba mírně modifikovat rov. \ref{eq:trans}, aby zohledňovala tuto skutečnost. V $i$-té fází při zachování výše uvedených předpokladů je hodnota veličiny v každém bodě systému určena vztahem:
+přičemž $\tilde{D}$ značí difuzní koeficient transportované složky. Pro případ vícefázové proudění je třeba mírně modifikovat rov. \ref{eq:trans}, aby zohledňovala tuto skutečnost. V~$i$-té fází při zachování výše uvedených předpokladů je hodnota veličiny v~každém bodě systému určena vztahem:
 \begin{equation}
 	\pd{\kula{\alpha_{i} \rho_{i} \phi_{i}}}{t} + \nabla \cdot \kula{\alpha_{i} \rho_{i}\vec{v}_{i}\phi_{i} - \alpha_{i} \tilde{D}_{i}\nabla\phi_{i}} = 0
 	\label{eq:trans_mix}
