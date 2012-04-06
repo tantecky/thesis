@@ -15,6 +15,11 @@
 \usepackage{amsmath} %pro rozšířené možnosti sazby mat. symbolů
 \usepackage{multirow} %pro viceradkove tabulky
 \usepackage{commath} %pro správnou sazbu diferenciálů
+%pro zdrojaky
+\usepackage{listingsutf8}
+
+\lstset{language=C,basicstyle=\footnotesize,numbers=left,showspaces=false,showstringspaces=false,numberstyle=\footnotesize\sffamily,frame=single,title=\lstname,breaklines=true,inputencoding=utf8/latin2,basicstyle=\footnotesize\sffamily
+} 
 
 %meta údaje v PDFku
 \hypersetup{
@@ -57,7 +62,7 @@
 \newcommand{\kula}[1]{ \left( #1 \right)}
 \newcommand{\pvpP}{\mbox{PVP 5}}
 \newcommand{\pvpS}{\mbox{PVP 7,5}}
-\newcommand{\flu}{Ansys Fluent}
+\newcommand{\flu}{ANSYS FLUENT}
 
 
 %\sectionfont{\fontsize{14pt}{1.5}\selectfont}
@@ -87,4 +92,5 @@
 	\normalsize{}
 	%\setlength{\bibhang}{0pt} odsazen prvního řádku bibliografie
 	\include{bibliography}
+	\include{attachment}
 \end{document}

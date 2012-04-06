@@ -105,7 +105,7 @@ Výše zmíněná normalizovaná kocentrace je určena vztahem:
 Hodnota doby homogenizace také velmi záleží na místě měření zmíněné koncentrace. Například \citet{buj99} měřili dobu homogenizace pro systém kapalina-pevná fáze v~mechanicky míchané nádobě. Z~výsledků vyplynulo, že nad suspenzním mrakem je doba homogenizace přibližně dvacetkrát delší než v~oblasti, která je bohatá na přítomnost částic pevné fáze.
 
 \section{Počítačová dynamika tekutin (CFD)}
-Následující kapitola obsahuje stručný přehled základních rovnic a matematických modelů, které jsou uplatněny při simulaci pomocí techniky CFD. Hlavní důraz je kladen na problematiku isotermního vícefázového proudění kapalina-pevná fáze v~mechanicky míchaných nádobách.
+Následující kapitola obsahuje stručný přehled základních rovnic a matematických modelů, které jsou uplatněny při simulaci pomocí techniky CFD. Hlavní důraz je kladen na problematiku izotermního vícefázového proudění kapalina-pevná fáze v~mechanicky míchaných nádobách.
 
 \subsection{Úvod do CFD}
 Počítačová dynamika tekutin (angl. computational fluid dynamics -- CFD) je jedno z~odvětví hydromechaniky, jenž využívá numerické metody a algoritmy k~řešení problémů zahrnující proudění tekutin, transport hmoty a tepla, chemické reakce a celou řadu dalších fyzikálně-chemických jevů. Na počátku každé CFD simulace je třeba nejprve vytvořit model zkoumaného systémů na který jsou následně aplikovány matematické postupy tak, aby byly ze zadaných okrajových a počátečních podmínek získány vybrané údaje o~dějích probíhajících v~celé zkoumané doméně při respektování fyzikálních zákonů. Tyto zákony jsou nejčastěji formulovány v~podobě parciálních diferenciálních rovnic. 
@@ -118,7 +118,7 @@ Celou CFD simulaci lze rozdělit do třech hlavních kroků: tvorba geometrie a 
 V~první fází je vytvořena geometrie zkoumaného systému, která je následně rozdělena na konečný počet kontrolních objemů (buněk). Vzniklá výpočetní síť může obsahovat buňky různých typů. Dvojrozměrná doména se nejčastěji skládá z~trojúhelníků nebo obdélníků. V~trojrozměrném případě se nejčastěji využívají jehlany, hranoly, kvádry či další mnohostěny. Navíc v~současnosti se již dává přednost nestrukturovaným sítím před strukturovanýma. Pro strukturovanou síť platí, že každá stěna buňky přiléhá pouze k~jedné stěně sousedního kontrolního objemu. Jejich hlavní nevýhodou je obtížná tvorba složitějších tvarů a nemožnost libovolného zahušťování.
 
 \paragraph{Vlastní výpočet}
-K~provedení vlastního simulačního výpočtu dnes existuje celá řada jak komerčních, tak bezplatných CFD řešičů. Příkladem komerčních produktů může být např. ANSYS Fluent, ANSYS CFX,  ANSYS Polyflow nebo STAR-CCM+. Mezi nejznámější bezplatné CFD řešiče patří OpenFOAM či Code Saturne. Interně tyto softwary využívají jednu z~následujích numerických metod k~řešení parciálních diferenciálních rovnic:
+K~provedení vlastního simulačního výpočtu dnes existuje celá řada jak komerčních, tak bezplatných CFD řešičů. Příkladem komerčních produktů může být např. \flu, ANSYS CFX,  ANSYS Polyflow nebo STAR-CCM+. Mezi nejznámější bezplatné CFD řešiče patří OpenFOAM či Code Saturne. Interně tyto softwary využívají jednu z~následujících numerických metod k~řešení parciálních diferenciálních rovnic:
 
 \begin{itemize}[itemsep=0pt,parsep=0pt,partopsep=0pt,topsep=0pt]
   \item \textbf{Metoda konečných diferencí (FDM)}
@@ -134,7 +134,7 @@ K~provedení vlastního simulačního výpočtu dnes existuje celá řada jak ko
 \end{itemize}
 
 \paragraph{Analýza výsledků (postprocessing)}
-Posledním krokem každé CFD je zpracování a analýza získaných simulačních výsledků. K~tomuto účelu byla vytvořena řada softwarových nástrojů mezi které patří např. Ansys CFD-Post, Tecplot 360 nebo ParaView. Hlavní úlohy těchto programů činí:
+Posledním krokem každé CFD je zpracování a analýza získaných simulačních výsledků. K~tomuto účelu byla vytvořena řada softwarových nástrojů mezi které patří např. ANSYS CFD-Post, Tecplot 360 nebo ParaView. Hlavní úlohy těchto programů činí:
 
 \begin{itemize}[itemsep=0pt,parsep=0pt,partopsep=0pt,topsep=0pt]
   \item výpočet dodatečných veličin
@@ -356,7 +356,7 @@ Bohužel model pro koeficient odporu navržený Schillerem a Naumannem se ukáza
 
 \citet{bru98} měřili rychlost usazování pevné fáze mezi dvěma proti sobě rotujícími válci (Taylorův–Couettův tok). Ze získaných výsledků následně autoři stanovili korelaci pro koeficient odporu zohledňující volnou turbulenci. Naproti tomu \citet{pin01} odvodili model pro koeficient odporu na základě experimentální studie suspendace v~nádobě osazené skupinou míchadel. \citet{kho06} upravili Brucátův vztah na základě srovnání experimentálních a simulačních výsledků získaných pomocí CFD během studie suspendace v~míchané nádobě. 
 
-Všechny výše zmíněné korelace jsou shrnuty v~tab. \ref{tab:cds}. Člen $\lambda$ se nazývá Kolmogorovo mikroměřítko a určuje nejmenší velikost turbulentních vírů přítomných v~systému, přičemž je funkcí kinematické viskozity tekutiny a rychlostí disipace turbulentní kinetické energie (viz. rov. \ref{eq:kolmo}).
+Všechny výše zmíněné korelace jsou shrnuty v~tab. \ref{tab:cds}, avšak žádná z~nich není implementována v~běžně dostupných CFD řešičích. Člen $\lambda$ se nazývá Kolmogorovo mikroměřítko a určuje nejmenší velikost turbulentních vírů přítomných v~systému, přičemž je funkcí kinematické viskozity tekutiny a rychlostí disipace turbulentní kinetické energie (viz. rov. \ref{eq:kolmo}).
 \begin{equation}
   \lambda = \left( \frac{\nu^{3}}{\epsilon} \right) ^{1/4}
 	\label{eq:kolmo}
