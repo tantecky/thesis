@@ -15,8 +15,14 @@
 \usepackage{amsmath} %pro rozšířené možnosti sazby mat. symbolů
 \usepackage{multirow} %pro viceradkove tabulky
 \usepackage{commath} %pro správnou sazbu diferenciálů
+\usepackage{float} %pro vlastní float objekty
 %pro zdrojaky
 \usepackage{listingsutf8}
+
+%novy float objekt grf
+\floatstyle{plain}
+\newfloat{grf}{thp}{lop}[chapter]
+\floatname{grf}{Graf}
 
 \lstset{language=C,basicstyle=\footnotesize,numbers=left,showspaces=false,showstringspaces=false,numberstyle=\footnotesize\sffamily,frame=single,title=\lstname,breaklines=true,inputencoding=utf8/latin2,basicstyle=\footnotesize\sffamily
 } 
