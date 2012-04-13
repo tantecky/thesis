@@ -96,8 +96,40 @@ Poslední skupina grafů \ref{fig:cd} zachycuje průběh normalizované hodnoty 
   \subfloat[v~čase \SI{2}{\second}]{\label{fig:cd-2}\includegraphics[scale=0.40]{Results/CDComp/cd-2s.eps}} 
   \\ 
   \subfloat[v~čase \SI{7}{\second}]{\label{fig:cd-7}\includegraphics[scale=0.40]{Results/CDComp/cd-7s.eps}}
-  \caption{Průběh objemového zlomku pevné fáze}
+  \caption{Průběh hodnoty koeficientu odporu}
   \label{fig:cd}
 \end{grf}
 \newpage
+
+\section{Výška vznosu pevné fáze}
+Výška suspenzního mraku byla stanovena pro systém tvořený kapalinou \pvpS{} a pevnou fází o koncentraci \volproc{10} při třech různých frekvencí otáčení míchadla. Pro vlastní simulaci byl využit vícefázový přístup Eulerian-Eulerian spolu s Khopkarovým model pro koeficient odporu. Pro potřeby CFD výpočtů \citet{kas08} definovali výšku suspenzního mraku jako vzdálenost mezi dnem nádoby a nejvzdálenějším bodem, který má objemový zlomek zrnité fáze roven průměrné koncentraci v nádrži. Stejný přistup pro učení této výšky byl využit i v následující práci.  
+
+Na obrázku \ref{fig:h-w10-4s-num} je zachycen řez nádobou s konturami objemového zlomku pevné fáze získaný pomocí CFD simulace. Frekvence otáčení míchadla v tomto případě činila \SI{4}{\per\second}. Výška vznosu kuliček z PVC byla, pomocí techniky diskutované výše, stanovena na \SI{24.6}{\centi\meter}. Pro srovnání na obr. \ref{fig:h-w10-4s-exp} je ukázána fotografie pořízenou během experimentu.
+
+\begin{figure}[h!]
+ \centering
+  \subfloat[simulace]{\label{fig:h-w10-4s-num}\includegraphics[scale=0.36]{Results/CloudHeight/w10-4s.eps}} 
+  \qquad 
+  \subfloat[experiment]{\label{fig:h-w10-4s-exp}\includegraphics[scale=0.35]{Results/CloudHeight/pvp7-vol10-4s.eps}}
+  \caption{Průběh objemového zlomku pevné fáze}
+  \label{fig:h-w10-4s}
+\end{figure}
+
+\begin{figure}[h!]
+ \centering
+  \subfloat[v~čase \SI{2}{\second}]{\label{fig:h-w10-5s-num}\includegraphics[scale=0.36]{Results/CloudHeight/w10-5s.eps}} 
+  \qquad 
+  \subfloat[v~čase \SI{7}{\second}]{\label{fig:h-w10-5s-exp}\includegraphics[scale=0.34]{Results/CloudHeight/pvp7-vol10-5s.eps}}
+  \caption{Průběh objemového zlomku pevné fáze}
+  \label{fig:h-w10-5s}
+\end{figure}
+
+\begin{figure}[h!]
+ \centering
+  \subfloat[v~čase \SI{2}{\second}]{\label{fig:h-w10-6s-num}\includegraphics[scale=0.36]{Results/CloudHeight/w10-6s.eps}} 
+  \qquad 
+  \subfloat[v~čase \SI{7}{\second}]{\label{fig:h-w10-6s-exp}\includegraphics[scale=0.305]{Results/CloudHeight/pvp7-vol10-6s.eps}}
+  \caption{Průběh objemového zlomku pevné fáze}
+  \label{fig:h-w10-6s}
+\end{figure}
 
