@@ -9,3 +9,7 @@ syntax: glob
 Results/CloudHeight/pvp7-vol10-6s.eps
 Results/CloudHeight/pvp7-vol10-5s.eps
 Results/CloudHeight/pvp7-vol10-4s.eps
+Results/CloudHeight/w10-6s.eps
+Results/CloudHeight/w10-5s.eps
+Results/CloudHeight/w10-4s.eps
+Results/CloudHeight/axis.eps
