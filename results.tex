@@ -104,32 +104,35 @@ Poslední skupina grafů \ref{fig:cd} zachycuje průběh normalizované hodnoty 
 \section{Výška vznosu pevné fáze}
 Výška suspenzního mraku byla stanovena pro systém tvořený kapalinou \pvpS{} a pevnou fází o koncentraci \volproc{10} při třech různých frekvencí otáčení míchadla. Pro vlastní simulaci byl využit vícefázový přístup Eulerian-Eulerian spolu s Khopkarovým model pro koeficient odporu. Pro potřeby CFD výpočtů \citet{kas08} definovali výšku suspenzního mraku jako vzdálenost mezi dnem nádoby a nejvzdálenějším bodem, který má objemový zlomek zrnité fáze roven průměrné koncentraci v nádrži. Stejný přistup pro učení této výšky byl využit i v následující práci.  
 
-Na obrázku \ref{fig:h-w10-4s-num} je zachycen řez nádobou s konturami objemového zlomku pevné fáze získaný pomocí CFD simulace. Frekvence otáčení míchadla v tomto případě činila \SI{4}{\per\second}. Výška vznosu kuliček z PVC byla, pomocí techniky diskutované výše, stanovena na \SI{24.6}{\centi\meter}. Pro srovnání na obr. \ref{fig:h-w10-4s-exp} je ukázána fotografie pořízenou během experimentu.
+Na obrázku \ref{fig:h-w10-4s-num} je zachycen řez nádobou s konturami objemového zlomku pevné fáze získaný pomocí CFD simulace. Frekvence otáčení míchadla v tomto případě činila \SI{4}{\per\second}. Výška vznosu kuliček z PVC byla, pomocí techniky diskutované výše, stanovena v \SI{24.6}{\centi\meter}. Pro srovnání na obr. \ref{fig:h-w10-4s-exp} je ukázána fotografie pořízená během experimentu. Z ni je dobře patrný vznik rozhraní kapalina-pevná fáze přibližně ve výšce \SI{22}{\centi\meter}, přičemž tato vzdálenost byla stanovena pomocí ocelového metru umístěného od \SI{2}{\centi\meter} nad dnem nádoby.
 
 \begin{figure}[h!]
  \centering
   \subfloat[simulace]{\label{fig:h-w10-4s-num}\includegraphics[scale=0.36]{Results/CloudHeight/w10-4s.eps}} 
   \qquad 
   \subfloat[experiment]{\label{fig:h-w10-4s-exp}\includegraphics[scale=0.35]{Results/CloudHeight/pvp7-vol10-4s.eps}}
-  \caption{Průběh objemového zlomku pevné fáze}
+  \caption{Vznos pevné fáze $\kula{N=\SI{4}{\per\second}}$}
   \label{fig:h-w10-4s}
 \end{figure}
 
-\begin{figure}[h!]
+Vlivem nárůstu rychlosti otáčení míchadla na \SI{5}{\per\second} došlo ke zvýšení výšky suspezního mraku zhruba na \SI{27}{\centi\meter} (viz. obr. \ref{fig:h-w10-5s-exp}). Zmíněný jev byl taktéž pozorován pomocí CFD simulace, což ilustruje řez nádobou \ref{fig:h-w10-5s-num}. Stanovená výška vznosu pevné fáze v tomto případě činila \SI{28.3}{\centi\meter}. 
+\newpage
+
+\begin{figure}[t!]
  \centering
-  \subfloat[v~čase \SI{2}{\second}]{\label{fig:h-w10-5s-num}\includegraphics[scale=0.36]{Results/CloudHeight/w10-5s.eps}} 
+  \subfloat[simulace]{\label{fig:h-w10-5s-num}\includegraphics[scale=0.36]{Results/CloudHeight/w10-5s.eps}} 
   \qquad 
-  \subfloat[v~čase \SI{7}{\second}]{\label{fig:h-w10-5s-exp}\includegraphics[scale=0.34]{Results/CloudHeight/pvp7-vol10-5s.eps}}
-  \caption{Průběh objemového zlomku pevné fáze}
+  \subfloat[experiment]{\label{fig:h-w10-5s-exp}\includegraphics[scale=0.34]{Results/CloudHeight/pvp7-vol10-5s.eps}}
+  \caption{Vznos pevné fáze $\kula{N=\SI{5}{\per\second}}$}
   \label{fig:h-w10-5s}
 \end{figure}
-
+Poslední skupina obrázků
 \begin{figure}[h!]
  \centering
-  \subfloat[v~čase \SI{2}{\second}]{\label{fig:h-w10-6s-num}\includegraphics[scale=0.36]{Results/CloudHeight/w10-6s.eps}} 
+  \subfloat[simulace]{\label{fig:h-w10-6s-num}\includegraphics[scale=0.36]{Results/CloudHeight/w10-6s.eps}} 
   \qquad 
-  \subfloat[v~čase \SI{7}{\second}]{\label{fig:h-w10-6s-exp}\includegraphics[scale=0.305]{Results/CloudHeight/pvp7-vol10-6s.eps}}
-  \caption{Průběh objemového zlomku pevné fáze}
+  \subfloat[experiment]{\label{fig:h-w10-6s-exp}\includegraphics[scale=0.305]{Results/CloudHeight/pvp7-vol10-6s.eps}}
+  \caption{Vznos pevné fáze $\kula{N=\SI{6}{\per\second}}$}
   \label{fig:h-w10-6s}
 \end{figure}
 
