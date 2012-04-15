@@ -15,3 +15,17 @@ Results/CloudHeight/w10-4s.eps
 Results/CloudHeight/axis.eps
 Results/CloudHeight/qa.eps
 octave-core
+Results/CDComp/vol-7s.eps
+Results/CDComp/vol-2s.eps
+Results/CDComp/vel-7s.eps
+Results/CDComp/vel-2s.eps
+Results/CDComp/pin-7s.eps
+Results/CDComp/pin-2s.eps
+Results/CDComp/neu-7s.eps
+Results/CDComp/neu-2s.eps
+Results/CDComp/kho-7s.eps
+Results/CDComp/kho-2s.eps
+Results/CDComp/cd-7s.eps
+Results/CDComp/cd-2s.eps
+Results/CDComp/bru-7s.eps
+Results/CDComp/bru-2s.eps
