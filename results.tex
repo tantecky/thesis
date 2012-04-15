@@ -126,7 +126,8 @@ Vlivem nárůstu rychlosti otáčení míchadla na \SI{5}{\per\second} došlo ke
   \caption{Vznos pevné fáze $\kula{N=\SI{5}{\per\second}}$}
   \label{fig:h-w10-5s}
 \end{figure}
-Poslední skupina obrázků
+Poslední skupina obrázků \ref{fig:h-w10-6s} zachycuje stav suspenze při frekvenci otáčení míchadla \SI{6}{\per\second}. Z obrázku \ref{fig:h-w10-6s-exp} lze vidět, že pevná fáze je praticky rozptýlena v celé nádrži, a proto výška suspezního mraku je téměř totožná s výškou plnění nádoby. Obdobný závěr vyplynul i z výsledků ziskaných pomocí CFD simulace (obr. \ref{fig:h-w10-6s-num}), jenž stanovila výšku tohoto mraku na \SI{28.5}{\centi\meter}.
+
 \begin{figure}[h!]
  \centering
   \subfloat[simulace]{\label{fig:h-w10-6s-num}\includegraphics[scale=0.36]{Results/CloudHeight/w10-6s.eps}} 
@@ -135,4 +136,15 @@ Poslední skupina obrázků
   \caption{Vznos pevné fáze $\kula{N=\SI{6}{\per\second}}$}
   \label{fig:h-w10-6s}
 \end{figure}
+\newpage
 
+V průběhu nestacionární CFD simulace byla kromě výšky vznosu pevné určována kvalita suspenze ($\sigma$ -- vztah \ref{eq:kvasus}). Získané výsledky pro jednotlivé frekvence otáčení míchadla jsou uvedeny v grafu \ref{grf:qa}. Pro lepší přehlednost jsou tyto závislosti zobrazeny po jedné sekundě simulace. Dle očekávání se čas potřebný k dosažení stavu úplné suspendace s rostoucí rychlostí rotace míchadla zkracoval. V případě $N=\SI{4}{\per\second}$ tato doba přibližně činila \SI{5.7}{\second}, kdežto při $N=\SI{6}{\per\second}$ se zkrátila více než dvojnásobně na zhruba \SI{2.5}{\second}. Navíc v čase kolem \SI{6}{\second} byl zaznamenán přechod do stavu homogenní suspendace pro nejvýše zvolenou frekvenci otáčení míchadla.
+
+\begin{grf}[h!]
+ \centering
+  \includegraphics[scale=0.45]{Results/CloudHeight/qa.eps}
+  \caption{Průběh kvality suspenze}
+  \label{grf:qa}
+\end{grf}
+
+\section{Doba homogenizace}
