@@ -6,9 +6,3 @@ for f in *.png;
   echo "Done $new"
 done
 
-for f in *.jpg; 
-  do 
-  new=$(echo "$f" | sed "s/jpg/eps/")
-  convert "$f" "$new"
-  echo "Done $new"
-done
