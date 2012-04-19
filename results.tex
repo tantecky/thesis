@@ -147,5 +147,25 @@ V průběhu nestacionární CFD simulace byla kromě výšky vznosu pevné určo
   \label{grf:qa}
 \end{grf}
 
+\subsection{Srovnání modelů Eulerian-Eulerian a Eulerian-Granular}
+
 \section{Doba homogenizace}
-Doba homogenizace v daných systémech byla vyhodnocena pomocí techniky CFD s využitím dříve napočítaných rychlostních polí. Během vlastního stanovení byla řešena pouze transportní rovnice stopovací látky, což znatelně snížilo výpočetní náročnost celého procesu. V průběhu simulací byly zaznamenávány okamžité hodnoty koncentrací stopovací látky v závislosti na čase. Z uložených dat byla  doba homogenizace posléze určena jako čas potřebný k ustálení této koncentrace v rozmezí +- 5 její rovnovážné hodnoty.
+Doba homogenizace v daných systémech byla vyhodnocena pomocí techniky CFD s využitím dříve napočítaných rychlostních polí. Během vlastního stanovení byla řešena pouze transportní rovnice stopovací látky, což znatelně snížilo výpočetní náročnost celého procesu. V průběhu simulací byly zaznamenávány okamžité hodnoty koncentrací stopovací látky v závislosti na čase. Z uložených dat byla poté doba homogenizace určena jako čas potřebný k ustálení této koncentrace v rozmezí \SI{\pm 5}{\percent} její rovnovážné hodnoty.
+
+Nasimulovaný průběh homogenizace indikační látky v řezu nádobou je znázorněn na obrázcích \ref{fig:t}. Jednalo se o systém tvořený vodou a pevnou fází o koncentraci \volproc{5}, přičemž frekvence otáčení míchadla činila \SI{6}{\per\second}. Na obr. \ref{fig:t0} je dobře vidět místo, kde došlo k nadávkování stopovací látky.
+
+\begin{figure}[h!]
+ \centering
+
+  \subfloat[$t=\SI{0}{\second}$]{\label{fig:t0}\includegraphics[scale=0.38]{Results/MixingTime/voda-6s/t0.eps}}  
+  \qquad             
+  \subfloat[{$t=\SI{2}{\second}$}]{\label{fig:t2}\includegraphics[scale=0.38]{Results/MixingTime/voda-6s/t2.eps}}
+  \\
+  \subfloat[{$t=\SI{5}{\second}$}]{\label{fig:t5}\includegraphics[scale=0.38]{Results/MixingTime/voda-6s/t5.eps}}
+  \qquad
+  \subfloat[{$t=\SI{7}{\second}$}]{\label{fig:t7}\includegraphics[scale=0.38]{Results/MixingTime/voda-6s/t7.eps}}
+  \caption{Koncentrace stopovací látky pro systém voda--PVC \volproc{5} $\kula{N=\SI{6}{\per\second}}$}
+  \label{fig:t}
+\end{figure}
+
+Následují stanovené homogenizační křivky 
