@@ -40,3 +40,8 @@ Results/MixingTime/voda-6s/5/grafy.eps
 Results/MixingTime/voda-6s/15/grafy.eps
 Results/MixingTime/voda-6s/10/grafy.eps
 Results/MixingTime/PVP5-7s/5/grafy.eps
+Results/Velocity/velField.eps
+Results/Velocity/keps-std.eps
+Results/Velocity/keps-real.eps
+Results/Velocity/keps-RNG.eps
+Results/Velocity/RMS.eps
