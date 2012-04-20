@@ -14,7 +14,7 @@ set format y \"{/Arial=12} %1.1f\"" > "./grafy.gnuplot"
 
 echo "plot \\" >> "./grafy.gnuplot"
 
-echo "'cfd.probe' using (\$1-7.521):(\$2 / 6.25e-5) with lines title \"{/Arial=12}simulace\" lw 2.0 ,\\" >> "./grafy.gnuplot"
+echo "'cfd.probe' using (\$1-7.05):(\$2 / 0.00028407539) with lines title \"{/Arial=12}simulace\" lw 2.0 ,\\" >> "./grafy.gnuplot"
 
 for f in pd*; 
   do 

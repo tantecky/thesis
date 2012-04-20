@@ -4,8 +4,8 @@ set xrange [0 : 10]
 set yrange [0 : *]
 #set ytics 0.2
 set xtics 1.0
-set mxtics 3
-set mytics 3
+#set mxtics 3
+#set mytics 3
 set ylabel "c^{*}"
 set xlabel "t (s)"
 set format x "{/Arial=12} %1.1f"

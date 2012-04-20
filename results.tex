@@ -168,4 +168,59 @@ Nasimulovaný průběh homogenizace indikační látky v řezu nádobou je znáz
   \label{fig:t}
 \end{figure}
 
-Následují stanovené homogenizační křivky 
+Následují grafické závislosti bezrozměrné koncentrace stopovací látky na době homogenizace stanovené pomocí techniky CFD. Pro srovnání jsou v grafech vyneseny černou barvou experimentální údaje, které pomocí vodivostní metody stanovila \citet{pav11}. Pro snížení potřebného výpočetního času byly především zkoumány případy s vyšší hodnotou rychlosti rotace míchadla. 
+
+Grafy \ref{fig:homvoda} zachycují výše zmíněné závislosti pro dvoufázový systém reprezentovaný vodou a kuličkami z PVC o koncentraci 5, 10 a \volproc{15} při frekvenci otáčení míchadla \SI{6}{\per\second}. Z vyobrazených průběhů je patrná dobrá shoda mezi experimentálním měřením a výsledky simulací.
+
+\begin{grf}[h!]
+ \centering
+  \subfloat[\volproc{5} PVC]{\label{fig:homvoda-w5}\includegraphics[scale=0.43]{Results/MixingTime/voda-6s/5/grafy.eps}} 
+  \\ 
+  \subfloat[\volproc{10} PVC]{\label{fig:homvoda-w10}\includegraphics[scale=0.43]{Results/MixingTime/voda-6s/10/grafy.eps}}
+\end{grf}
+\newpage
+
+\begin{grf}[t!]
+  \addtocounter{subgrf}{2}
+  \centering
+  \subfloat[\volproc{15} PVC]{\label{fig:homvoda-w15}\includegraphics[scale=0.45]{Results/MixingTime/voda-6s/15/grafy.eps}} 
+  \caption{Homogenizační křivka pro vodnou suspenzi $\kula{N=\SI{6}{\per\second}}$}
+  \label{fig:homvoda}
+\end{grf}
+\noindent Kromě vodné vsádky byl také simulačně určen průběh bezrozměrné koncentrace indikační látky v čase pro kapalinu \pvpP{} obsahující \volproc{5} pevné fáze. Frekvence otáčení míchadla v tomto případě činila \SI{7}{\per\second}. Získaná závislost je uvedena v grafu \ref{grf:hompvp5}.
+\begin{grf}[h!]
+ \centering 
+  \includegraphics[scale=0.45]{Results/MixingTime/PVP5-7s/5/grafy.eps}
+  \caption{Homogenizační křivka pro suspenzi \pvpP{} a \volproc{5} PVC $\kula{N=\SI{7}{\per\second}}$}
+  \label{grf:hompvp5}
+\end{grf}
+\newpage
+
+Všechny
+
+\begin{table}[h!]
+\centering
+\caption{Určené vlastnosti kapalné a pevné fáze}
+\label{tab:mixtime}
+\begin{tabular}{llrc}
+\toprule
+\textbf{Fáze} & \textbf{Veličina} & \textbf{Hodnota} &\textbf{Jednotka} \\
+\midrule
+
+voda \\
+	& hustota & \num{999.50} & \si{\kilogram\per\cubic\meter} \\
+	& dynamická viskozita & \num{1.138} & \si{\milli\pascal\second} \\
+\pvpP \\
+	& hustota & \num{1011.44} & \si{\kilogram\per\cubic\meter} \\
+	& dynamická viskozita & \num{5.050} & \si{\milli\pascal\second} \\
+\pvpS \\
+	& hustota & \num{1024.18} & \si{\kilogram\per\cubic\meter} \\
+	& dynamická viskozita & \num{7.615} & \si{\milli\pascal\second} \\
+PVC \\
+	& hustota & \num{1136.0} & \si{\kilogram\per\cubic\meter} \\
+	& průměr & \num{1.02} & \si{\milli\meter} \\
+	& mezerovitost & \num{0.384} & -- \\
+
+\bottomrule
+\end{tabular}
+\end{table}

@@ -5,8 +5,8 @@ set xrange [0 : 10]
 set yrange [0 : *]
 #set ytics 0.2
 set xtics 1.0
-set mxtics 3
-set mytics 3
+#set mxtics 3
+#set mytics 3
 set ylabel \"c^{*}\"
 set xlabel \"t (s)\"
 set format x \"{/Arial=12} %1.1f\"
@@ -23,5 +23,5 @@ done
 
 sed -i "0,/notitle/s/notitle/title \"\{\/Arial=12\}experiment\"/" "./grafy.gnuplot"   # change only the first match
 lajna="$(cat ./grafy.gnuplot | wc -l)"
-cat "./grafy.gnuplot" | sed -i "$lajna s/,\\\//" "./grafy.gnuplot" && gnuplot "./grafy.gnuplot" && eog "./grafy.png"
+sed -i "$lajna s/,\\\//" "./grafy.gnuplot" && gnuplot "./grafy.gnuplot" && eog "./grafy.png"
 
