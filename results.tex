@@ -196,30 +196,23 @@ Grafy \ref{fig:homvoda} zachycují výše zmíněné závislosti pro dvoufázov�
 \end{grf}
 \newpage
 
-Všechny
+Tabulka \ref{tab:mixtime} obsahuje hodnoty doby homogenizace pro jednotlivé systémy určené jak pomocí techniky CFD, tak na základě experimentálního měření. Ze simulačních výsledků je vidět, že s rostoucím objemovým zlomkem pevné fáze se taktéž zvyšovala doba homogenizace. Údaje získané pomocí vodivostní metody však tento vzrůstající trend úplně nepotvrdily, neboť nejkratší doba homogenizace byla naměřena pro pevnou fází obsahující \volproc{10} PVC. Kromě vodné vsádky byla také použita kapalina \pvpP{}, jenž díky své vyšší dynamické viskozitě vykazovala delší doby homogenizace v porovnání s vodou. Za zmínku také stojí fakt, že hodnoty doby homogenizace určené pomocí CFD jsou téměř vždy vyšší než experimentálně naměřené. Tento jev je způsoben podhodnocováním turbulentních veličin při použití \keps{} turbulentního modelu.
 
 \begin{table}[h!]
 \centering
-\caption{Určené vlastnosti kapalné a pevné fáze}
+\caption{Stanovené doby homogenizace v daných systémech}
 \label{tab:mixtime}
-\begin{tabular}{llrc}
+\begin{tabular}{lcrcc}
 \toprule
-\textbf{Fáze} & \textbf{Veličina} & \textbf{Hodnota} &\textbf{Jednotka} \\
+\textbf{Kapalina} & \textbf{Otáčky} & \textbf{PVC} & \textbf{Experiment} & \textbf{Simulace} \\
 \midrule
 
 voda \\
-	& hustota & \num{999.50} & \si{\kilogram\per\cubic\meter} \\
-	& dynamická viskozita & \num{1.138} & \si{\milli\pascal\second} \\
+	& \SI{6}{\per\second} & \volproc{5}  & \SI{5.4}{\second} & \SI{5.0}{\second} \\
+	& \SI{6}{\per\second} & \volproc{10} &  \SI{5.9}{\second} & \SI{7.2}{\second} \\
+	& \SI{6}{\per\second} & \volproc{15} & \SI{5.6}{\second} & \SI{7.7}{\second} \\
 \pvpP \\
-	& hustota & \num{1011.44} & \si{\kilogram\per\cubic\meter} \\
-	& dynamická viskozita & \num{5.050} & \si{\milli\pascal\second} \\
-\pvpS \\
-	& hustota & \num{1024.18} & \si{\kilogram\per\cubic\meter} \\
-	& dynamická viskozita & \num{7.615} & \si{\milli\pascal\second} \\
-PVC \\
-	& hustota & \num{1136.0} & \si{\kilogram\per\cubic\meter} \\
-	& průměr & \num{1.02} & \si{\milli\meter} \\
-	& mezerovitost & \num{0.384} & -- \\
+	& \SI{7}{\per\second} & \volproc{5} & \SI{5.2}{\second} & \SI{5.7}{\second} \\
 
 \bottomrule
 \end{tabular}
