@@ -1,10 +1,10 @@
 \chapter{Výsledky a diskuze}
-Následující kapitola shrnuje výsledky provedených CFD simulací suspendace v mechanicky míchané nádobě. Navíc kde to situace umožňovala byly získaná data porovnány s dostupným experimentálním měřením.
+Následující kapitola shrnuje výsledky provedených CFD simulací suspendace v mechanicky míchané nádobě. Navíc kde to situace umožňovala byla získaná simulační data porovnána s dostupným experimentálním měřením \citep{pav11}.
 
 \section{Rychlostní pole v nádobě}
 Pro porovnání vlivu zvoleného turbulentního modelu na výsledné rychlostní pole bylo provedeno několik stacionárních simulací míchaní vodné vsádky. 
 
-Na obr. \ref{fig:velfield} jsou znázorněno vektorové pole rychlosti kapaliny v~řezu nádobou pro jednotlivé turbulentní modely a frekvenci otáčení míchadla \SI{7}{\per\second}. Ze všech obrázků je dobře patrný vznik primární cirkulační smyčky která je charakteristická pro axiální míchadla. Navíc si lze také povšimnout tvorby sekundárních cirkulačních smyček v~prostoru pod míchadlem. Tento jev byl například experimentálně pozorován autory \citet{hos10} při zvolené světlé výšce míchadla od $C=T/2$ do $C=T/6$. Důležitý je také fakt, že i při srovnání s výpočetně náročnějším Reynoldsovým napěťovým modelem (obr. \ref{fig:RMS}) se jednotlivá rychlostní pole od sebe významně neliší.
+Na obr. \ref{fig:velfield} jsou znázorněna vektorová pole rychlosti kapaliny v~řezu nádobou pro jednotlivé turbulentní modely a frekvenci otáčení míchadla \SI{7}{\per\second}. Ze všech obrázků je dobře patrný vznik primární cirkulační smyčky, která je charakteristická pro axiální míchadla. Navíc si lze také povšimnout tvorby sekundárních cirkulačních smyček v~prostoru pod míchadlem. Tento jev byl experimentálně pozorován například autory \citet{hos10} při zvolené světlé výšce míchadla od $C=T/2$ do $C=T/6$. Důležitý je také fakt, že i při srovnání s výpočetně náročnějším Reynoldsovým napěťovým modelem (obr. \ref{fig:RMS}) se jednotlivá rychlostní pole od sebe významně neliší.
 
 \begin{figure}[h!]
  \centering
@@ -17,14 +17,14 @@ Na obr. \ref{fig:velfield} jsou znázorněno vektorové pole rychlosti kapaliny 
 \begin{figure}[t!]
   \addtocounter{subfigure}{2}
  \centering
-  \subfloat[Realisable \keps{} ]{\label{fig:real}\includegraphics[scale=0.38]{Results/Velocity/keps-real.eps}}
+  \subfloat[Realizable \keps{} ]{\label{fig:real}\includegraphics[scale=0.38]{Results/Velocity/keps-real.eps}}
   \qquad
   \subfloat[Standardní RMS]{\label{fig:RMS}\includegraphics[scale=0.38]{Results/Velocity/RMS.eps}}
-  \caption{Vektorové pole rychlosti pro různé turbulentní modely}
+  \caption{Vektorová pole rychlosti pro různé turbulentní modely}
   \label{fig:velfield}
 \end{figure}
 
-Graf \ref{grf:velfield} zachycuje závislost mezi celkovou rychlostí pohybu kapaliny a vzdáleností ode dna nádoby ($y$) pro jednotlivé turbulentní modely. Konkretní hodnoty pro tento byly získány ve vzdálenosti \SI{0.5}{\centi\meter} podél jedné z narážek nádoby. Z grafu je dobře patrné, že u dna nádrže dochází nárůstu rychlosti tekutiny vlivem působení primární cirkulační smyčky.
+Graf \ref{grf:velfield} zachycuje závislost mezi celkovou rychlostí pohybu kapaliny a vzdáleností ode dna nádoby ($y$) pro jednotlivé turbulentní modely. Konkretní hodnoty pro tuto závislost byly získány ve vzdálenosti \SI{0.5}{\centi\meter} podél jedné z narážek nádoby. Z grafu je dobře patrné, že u dna nádrže dochází nárůstu rychlosti tekutiny vlivem působení primární cirkulační smyčky.
 
 \begin{grf}[h!]
  \centering
@@ -36,7 +36,7 @@ Graf \ref{grf:velfield} zachycuje závislost mezi celkovou rychlostí pohybu kap
 \section{Srovnání modelů pro koeficient odporu}
 Jednotlivé modely pro koeficient odporu uvedené v podkapitole \ref{kap:cd} byly porovnány během nestacionární simulace systému obsahující jako vsádku \volproc{5} kuliček z PVC a kapalinu \pvpP. Rychlost otáčení míchadla byla v tomto případě opět nastavena na \SI{7}{\per\second}.
 
-Obr. \ref{fig:cd2} zobrazuje kontury objemového zlomku pevné fáze v~řezu míchací nádobou pro vybrané korelace koeficientu odporu. Tyto údaje byly získány v~času simulace \SI{2}{\second}. 
+Obr. \ref{fig:cd2} zobrazuje kontury objemového zlomku pevné fáze v~řezu míchací nádobou pro vybrané korelace koeficientu odporu. Tyto údaje byly získány v~čase simulace \SI{2}{\second}. 
 \begin{figure}[h!]
  \centering
 
@@ -56,9 +56,9 @@ Obr. \ref{fig:cd2} zobrazuje kontury objemového zlomku pevné fáze v~řezu mí
   \label{fig:cd2}
 \end{figure}
 \newpage
-\noindent Z~obrázků je dobře patrné, že přímo pod míchadlem je největší koncentrace pevné fáze vlivem sekundárních cirkulačních smyček, což se podařilo pozorovat i během experimentálního měření.
+\noindent Z~obrázků je dobře patrné, že přímo pod míchadlem je největší koncentrace pevné fáze vlivem působení sekundárních cirkulačních smyček, což se podařilo pozorovat i během experimentálního měření.
 
-Série obrázků \ref{fig:cd7} zachycuje objemový zlomek pevné fáze v~řezu nádobou, avšak v čase simulace \SI{7}{\second}. Částice z PVC jsou již značně rozptýleny, ale stále se pod míchadlem nachází oblasti s jejich zvýšenou koncentrací. Nicméně v celé nádobě jsou rozdíly v distribuci pevné fáze mezi jednotlivými modely pro koeficient odporu poměrně zanedbatelné.
+Série obrázků \ref{fig:cd7} zachycuje objemový zlomek pevné fáze v~řezu nádobou, avšak v čase simulace \SI{7}{\second}. Částice z PVC jsou již značně rozptýleny, ale stále se pod míchadlem nachází oblasti s jejich zvýšenou koncentrací. Nicméně v celé nádobě jsou již rozdíly v distribuci pevné fáze mezi jednotlivými modely pro koeficient odporu poměrně zanedbatelné.
 
 \begin{figure}[h!]
  \centering
@@ -77,8 +77,8 @@ Série obrázků \ref{fig:cd7} zachycuje objemový zlomek pevné fáze v~řezu n
   \label{fig:cd7}
 \end{figure}
 \newpage
-\vspace{-5mm}
-Dále jsou zde uvedeny grafické závislosti objemového zlomku pevné fáze na vzdálenosti ode dna nádoby. Z grafu \ref{fig:vol-2} lze vidět, že s~rostoucí vzdáleností se koncentrace pevné fáze postupně snižuje. Avšak grafická závislosti nemá monotonní průběh, přičemž dochází k~tvorbě esovitého koncentračního profilu. Model koeficientu odporu navržený Brucatem předpovídá nižší koncentraci pevné fáze ve vyšší vzdálenosti ode dna než zbylé tři modely. V~čase \SI{7}{\second} kuličky z~PVC již dosáhly značného vznosu a rozdíly mezi jednotlivými korelace pro koeficient odporu se začínaly vytrácet (viz. graf \ref{fig:vol-7}).
+
+Dále jsou zde uvedeny grafické závislosti objemového zlomku pevné fáze na vzdálenosti ode dna nádoby. Z grafu \ref{fig:vol-2} lze vidět, že s~rostoucí vzdáleností se koncentrace pevné fáze postupně snižuje. Avšak grafická závislosti nemá monotonní průběh, přičemž dochází k~tvorbě esovitého koncentračního profilu. Model pro koeficientu odporu navržený Brucatem předpovídál nižší koncentraci pevné fáze ve vyšší vzdálenosti ode dna než zbylé tři modely. V~čase \SI{7}{\second} kuličky z~PVC již dosáhly značného vznosu a rozdíly mezi jednotlivými korelacemi pro koeficient odporu se začínaly vytrácet (viz. graf \ref{fig:vol-7}).
 \begin{grf}[h!]
  \centering
   \subfloat[v~čase \SI{2}{\second}]{\label{fig:vol-2}\includegraphics[scale=0.39]{Results/CDComp/vol-2s.eps}} 
@@ -89,7 +89,7 @@ Dále jsou zde uvedeny grafické závislosti objemového zlomku pevné fáze na 
 \end{grf}
 \newpage
 
-Poslední skupina grafů \ref{fig:cd} zachycuje průběh normalizované hodnoty koeficientu odporu v závislosti na světlé výšce. Tato normalizace vznikla vydělením koeficientu odporu jeho průměrnou hodnotou v celé nádrži. Údaje v těchto grafech byly stanoveny podél úsečky v blízkosti radiální narážky.  V~obou případech má  koeficientu odporu podobný průběh pro různé korelace, nicméně v čase \SI{7}{\second} (graf \ref{fig:cd-2}) je zřejmé, že korelace dle Brucata se opět nejznatelněji odlišuje.
+Poslední skupina grafů \ref{fig:cd} zachycuje průběh normalizované hodnoty koeficientu odporu v závislosti na světlé výšce. Tato normalizace vznikla vydělením koeficientu odporu jeho průměrnou hodnotou v celé nádrži. Údaje v těchto závislostech byly stanoveny podél úsečky v blízkosti radiální narážky.  V~obou případech má  koeficientu odporu podobný průběh pro různé korelace, nicméně v čase \SI{7}{\second} (graf \ref{fig:cd-2}) je zřejmé, že korelace dle Brucata se opět nejznatelněji odlišuje.
 
 \begin{grf}[h!]
  \centering
@@ -148,6 +148,30 @@ V průběhu nestacionární CFD simulace byla kromě výšky vznosu pevné určo
 \end{grf}
 
 \subsection{Srovnání modelů Eulerian-Eulerian a Eulerian-Granular}
+\newpage
+
+\begin{figure}[h!]
+ \centering
+  \subfloat[simulace]{\label{fig:EE-w5}\includegraphics[scale=0.36]{Results/EEvsEGM/EE-w5-3s.eps}} 
+  \qquad 
+  \subfloat[experiment]{\label{fig:EGM-w5}\includegraphics[scale=0.36]{Results/EEvsEGM/EGM-w5-3s.eps}}
+  \\
+  \subfloat[experiment]{\label{fig:exp-w5}\includegraphics[scale=0.34]{Results/EEvsEGM/PVP7-w5-3s.eps}}
+  \caption{hhh}
+  \label{fig:w5}
+\end{figure}
+\newpage
+
+\begin{figure}[h!]
+ \centering
+  \subfloat[simulace]{\label{fig:EE-w15}\includegraphics[scale=0.36]{Results/EEvsEGM/EE-w15-5s.eps}} 
+  \qquad 
+  \subfloat[experiment]{\label{fig:EGM-w15}\includegraphics[scale=0.36]{Results/EEvsEGM/EGM-w15-5s.eps}}
+  \\
+  \subfloat[experiment]{\label{fig:EGM-w15}\includegraphics[scale=0.34]{Results/EEvsEGM/PVP7-w15-5s.eps}}
+  \caption{hhh}
+  \label{fig:w15}
+\end{figure}
 
 \section{Doba homogenizace}
 Doba homogenizace v daných systémech byla vyhodnocena pomocí techniky CFD s využitím dříve napočítaných rychlostních polí. Během vlastního stanovení byla řešena pouze transportní rovnice stopovací látky, což znatelně snížilo výpočetní náročnost celého procesu. V průběhu simulací byly zaznamenávány okamžité hodnoty koncentrací stopovací látky v závislosti na čase. Z uložených dat byla poté doba homogenizace určena jako čas potřebný k ustálení této koncentrace v rozmezí \SI{\pm 5}{\percent} její rovnovážné hodnoty.
@@ -196,7 +220,7 @@ Grafy \ref{fig:homvoda} zachycují výše zmíněné závislosti pro dvoufázov�
 \end{grf}
 \newpage
 
-Tabulka \ref{tab:mixtime} obsahuje hodnoty doby homogenizace pro jednotlivé systémy určené jak pomocí techniky CFD, tak na základě experimentálního měření. Ze simulačních výsledků je vidět, že s rostoucím objemovým zlomkem pevné fáze se taktéž zvyšovala doba homogenizace. Údaje získané pomocí vodivostní metody však tento vzrůstající trend úplně nepotvrdily, neboť nejkratší doba homogenizace byla naměřena pro pevnou fází obsahující \volproc{10} PVC. Kromě vodné vsádky byla také použita kapalina \pvpP{}, jenž díky své vyšší dynamické viskozitě vykazovala delší doby homogenizace v porovnání s vodou. Za zmínku také stojí fakt, že hodnoty doby homogenizace určené pomocí CFD jsou téměř vždy vyšší než experimentálně naměřené. Tento jev je způsoben podhodnocováním turbulentních veličin při použití \keps{} turbulentního modelu.
+Tabulka \ref{tab:mixtime} obsahuje hodnoty dob homogenizace pro jednotlivé systémy určené jak pomocí techniky CFD, tak na základě experimentálního měření. Ze simulačních výsledků je vidět, že s rostoucím objemovým zlomkem pevné fáze se taktéž zvyšovala doba homogenizace. Údaje získané pomocí vodivostní metody však tento vzrůstající trend úplně nepotvrdily, neboť nejkratší doba homogenizace byla naměřena pro pevnou fází obsahující \volproc{10} PVC. Kromě vodní vsádky byla také použita kapalina \pvpP{}, jenž díky své vyšší dynamické viskozitě vykazovala delší doby homogenizace v porovnání s vodou. Za zmínku také stojí fakt, že hodnoty doby homogenizace určené pomocí CFD jsou téměř vždy vyšší než experimentálně naměřené. Tento jev je způsoben podhodnocováním turbulentních veličin při použití \keps{} turbulentního modelu \citep{ochi08}.
 
 \begin{table}[h!]
 \centering

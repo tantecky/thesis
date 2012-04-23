@@ -3,8 +3,8 @@ set output "vel-2s.png"
 #set yrange [0 : 0.3]
 set ytics 0.03
 set xtics 0.025
-set mxtics 3
-set mytics 3
+#set mxtics 3
+#set mytics 3
 set ylabel "y (m)"
 set xlabel "Rychlost PVC (m/s)"
 set format x "{/Arial=12} %1.3f"
@@ -19,8 +19,8 @@ set output "vel-7s.png"
 #set yrange [0 : 0.3]
 set ytics 0.03
 set xtics 0.025
-set mxtics 3
-set mytics 3
+#set mxtics 3
+#set mytics 3
 set ylabel "y (m)"
 set xlabel "Rychlost PVC (m/s)"
 set format x "{/Arial=12} %1.3f"
@@ -36,8 +36,8 @@ set output "vol-2s.png"
 #set yrange [0 : 0.3]
 set ytics 0.03
 set xtics 0.025
-set mxtics 3
-set mytics 3
+#set mxtics 3
+#set mytics 3
 set ylabel "y (m)"
 set xlabel "Obj. zlomek PVC"
 set format x "{/Arial=12} %1.3f"
@@ -53,8 +53,8 @@ set output "vol-7s.png"
 #set yrange [0 : 0.3]
 set ytics 0.03
 set xtics 0.01
-set mxtics 3
-set mytics 3
+#set mxtics 3
+#set mytics 3
 set ylabel "y (m)"
 set xlabel "Obj. zlomek PVC"
 set format x "{/Arial=12} %1.2f"
@@ -70,8 +70,8 @@ set output "cd-2s.png"
 #set yrange [0 : 0.3]
 set ytics 0.03
 set xtics 0.1
-set mxtics 3
-set mytics 3
+#set mxtics 3
+#set mytics 3
 set key left
 set ylabel "y (m)"
 set xlabel "C_{D} / C_{D,avg}"
@@ -88,8 +88,8 @@ set output "cd-7s.png"
 #set yrange [0 : 0.3]
 set ytics 0.03
 set xtics 0.1
-set mxtics 3
-set mytics 3
+#set mxtics 3
+#set mytics 3
 set key left
 set ylabel "y (m)"
 set xlabel "C_{D} / C_{D,avg}"

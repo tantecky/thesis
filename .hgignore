@@ -45,3 +45,9 @@ Results/Velocity/keps-std.eps
 Results/Velocity/keps-real.eps
 Results/Velocity/keps-RNG.eps
 Results/Velocity/RMS.eps
+Results/EEvsEGM/PVP7-w5-3s.eps
+Results/EEvsEGM/PVP7-w15-5s.eps
+Results/EEvsEGM/EGM-w5-3s.eps
+Results/EEvsEGM/EGM-w15-5s.eps
+Results/EEvsEGM/EE-w5-3s.eps
+Results/EEvsEGM/EE-w15-5s.eps

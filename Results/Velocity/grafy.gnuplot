@@ -3,8 +3,8 @@ set output "velField.png"
 #set yrange [0 : 0.3]
 set ytics 0.03
 set xtics 0.05
-set mxtics 3
-set mytics 3
+#set mxtics 3
+#set mytics 3
 set ylabel "y (m)"
 set xlabel "Rychlost (m/s)"
 set format x "{/Arial=12} %1.2f"

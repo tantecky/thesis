@@ -3,8 +3,8 @@ set output "qa.png"
 #set xrange [0 : 7]
 set ytics 0.2
 set xtics 0.5
-set mxtics 3
-set mytics 3
+#set mxtics 3
+#set mytics 3
 set ylabel "{/Symbol s}"
 set xlabel "t (s)"
 set format x "{/Arial=12} %1.1f"

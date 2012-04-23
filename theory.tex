@@ -92,11 +92,11 @@ Experimentálně studovali výšku suspenzního mraku např. autoři \citet{hic9
 \end{equation}  
 
 \subsection{Doba homogenizace}
-Doba homogenizace $t_{mix}$ je definována jako čas potřebný k~tomu, aby se hodnota normalizované koncentrace stopovací látky $c(t)^{*}$ pohybovala v~předem zvoleném rozmezí. Nejčastěji se volí přípustná hodnota fluktuace \SI{\pm 5}{\percent}, tedy $c(t)^{*} \in \left<\num{0.95};\num{1.05}\right>$. 
+Doba homogenizace $t_{mix}$ je definována jako čas potřebný k~tomu, aby se hodnota normalizované koncentrace stopovací látky $c^{*}$ pohybovala v~předem zvoleném rozmezí. Nejčastěji se volí přípustná hodnota fluktuace \SI{\pm 5}{\percent}, tedy $c^{*} \in \left<\num{0.95};\num{1.05}\right>$. 
 
 Výše zmíněná normalizovaná kocentrace je určena vztahem:
 \begin{equation}
-	c(t)^{*} = \frac{c(t) - c_{0}}{c_{\infty} - c_{0}}
+	c^{*} = \frac{c(t) - c_{0}}{c_{\infty} - c_{0}}
 	\label{eq:bezkon}
 \end{equation}
 
@@ -473,7 +473,7 @@ Symbol $G_{k}$ ve výše uvedených rovnicích má význam produkce turbulentní
    G_{k} = \eta_{t} \left[ \nabla \vec{v}_{m} +  \left( \nabla \vec{v}_{m} \right)^{\mathsf{T}}\right] : \nabla \vec{v}_{m} 
   \label{eq:gk}
 \end{equation} 
-Členy $C_{1\epsilon}$, $C_{2\epsilon}$, a $C_{\eta}$ jsou konstanty modelu a symboly $\sigma_{k}$ resp. $\sigma_{\epsilon}$ značí Prandtlova turbulentní čísla. Hodnoty těchto parametrů byly stanoveny na základě experimentálních měření a jsou uvedeny v~tab. \ref{tab:const}.
+Členy $C_{1\epsilon}$, $C_{2\epsilon}$, a $C_{\eta}$ představují konstanty modelu a symboly $\sigma_{k}$ resp. $\sigma_{\epsilon}$ značí Prandtlova turbulentní čísla. Hodnoty těchto parametrů byly stanoveny na základě experimentálních měření a jsou uvedeny v~tabulce \ref{tab:const}.
 
 \begin{table}[h!]
 \centering
@@ -499,10 +499,10 @@ Pro popis rotace míchadla ve vsádce lze v~současných CFD řešičích využ�
 \end{itemize} 
 
 \paragraph{Specifikace okrajových podmínek}
-Nejstarší metoda simulace rotačního pohybu v~nádobě je založena na určení okrajových podmínek pro míchadlo ze získaných experimentálních  dat. Pomocí metody jako LDV (Laser Doppler Velocimetry) nebo PIV (Particle Image Velocimetry) se určí střední rychlostní pole v~blízkosti lopatek, které se následně zvolí jako okrajová podmínka pro míchadlo v~rámci CFD simulace. Mezi hlavní nevýhody tohoto přístupu patří především  nutnost experimentálního měření a úzký vztah získaných simulačních výsledků se zkoumaným systémem. V~současnosti se již tato technika téměř nepoužívá, neboť byla nahrazena modernějšími metoda diskutovanými níže.
+Nejstarší metoda simulace rotačního pohybu v~nádobě je založena na určení okrajových podmínek pro míchadlo ze získaných experimentálních  dat. Pomocí metod jako LDV (Laser Doppler Velocimetry) nebo PIV (Particle Image Velocimetry) se určí střední rychlostní pole v~blízkosti lopatek, které se následně zvolí jako okrajová podmínka pro míchadlo v~rámci CFD simulace. Mezi hlavní nevýhody tohoto přístupu patří především  nutnost experimentálního měření a úzký vztah získaných simulačních výsledků se zkoumaným systémem. V~současnosti se již tato technika téměř nepoužívá, neboť byla nahrazena modernějšími metodi diskutovanými níže.
 
 \paragraph{Metoda vícenásobných souřadnicových soustav (MRF)}
-Podstatou této metody je rozdělení výpočetní sítě na část rotační a stacionární. Rovnice kontinuity a bilance hybnosti jsou řešeny v~každé doméně zvlášť se zohledněním relativní rychlosti rychlosti podél zvolené osy. V~těchto modifikovaných rovnicích se vyskytují nové členy  Corrilisovy a dostředivé síly. Je třeba poznamenat, že rotační část s~míchadlem se ve skutečnosti ve výpočetní síti nepohybuje. Díky tomuto charakteru je MRF technika především vhodná pro stacionární simulace.
+Podstatou této metody je rozdělení výpočetní sítě na část rotační a stacionární. Rovnice kontinuity a bilance hybnosti jsou řešeny v~každé doméně zvlášť se zohledněním relativní rychlosti rychlosti podél zvolené osy. V~těchto modifikovaných rovnicích se vyskytují nové členy  Corrilisovy a dostředivé síly. Je třeba poznamenat, že rotační část s~míchadlem se během simulace ve výpočetní síti nepohybuje. Díky tomuto charakteru je technika MRF především vhodná pro stacionární výpočty.
 
 \begin{figure}[h!]
 \centering
@@ -512,15 +512,15 @@ Podstatou této metody je rozdělení výpočetní sítě na část rotační a 
 \end{figure} 
 
 \paragraph{Metoda klouzající sítě (SM)}
-Metoda klouzající sítě je nestacionární (časově závislá) technika při které se rotační část výpočetní sítě pohybuje v~průběhu simulace. Pohyb míchadla není však plně spojitý, ale je diskretizován na malé časové kroky (často jedna tisícina sekundy). V~každém takovémto kroku jsou iterativně řešeny modelové rovnice dokud není dosaženo požadovaného konvergenčního kritéria. Během těchto výpočtu jsou informace o~proudění předávány přes rozhraní mezi rotační a stacionární částí. Z~důvodu pohybu výpočetní sítě však buňky jednotlivých domén na rozhraní nemusí k~sobě přesně přiléhat, a proto je třeba pro tento přenos využít interpolace. Technika rotující sítě je nejrigoróznější metoda k~popisu rotace míchadla v~mechanicky míchaných nádobách, což je nicméně vykoupeno vyššími nároky na zpracování získaných výsledků a výpočetní techniku. 
+Metoda klouzající sítě je nestacionární (časově závislá) technika při které se rotační část výpočetní sítě pohybuje v~průběhu simulace. Pohyb míchadla není však plně spojitý, ale je diskretizován na malé časové kroky (např. jedna tisícina sekundy). V~každém jednotlivém kroku jsou iterativně řešeny modelové rovnice dokud není dosaženo požadovaného konvergenčního kritéria. Během těchto výpočtu jsou informace o~proudění předávány přes rozhraní mezi rotační a stacionární částí. Z~důvodu pohybu výpočetní sítě však buňky jednotlivých domén na rozhraní nemusí k~sobě přesně přiléhat, a proto je třeba pro tento přenos využít interpolace. Technika klouzající sítě je nejrigoróznější metoda k~popisu rotace míchadla v~mechanicky míchaných nádobách, což je nicméně vykoupeno vyššími nároky na zpracování získaných výsledků a výpočetní techniku. 
 
 \subsection{Transport složky bez chemické reakce}
-Doba homogenizace v~míchaných nádobách se experimentálně stanovuje měřením časového průběhu koncentrace stopovací látky. Při použití techniky CFD se koncentrace stopovací látky v~každém místě systému získá řešením transportní rovnice. Tato rovnice pro obecnou skalární veličinu $\phi$, jenž nereaguje a nepodléhá fázovým přeměnám má tvar: 
+Dobu homogenizace v~míchaných nádobách lze experimentálně stanovit měřením časového průběhu koncentrace stopovací látky. Při použití techniky CFD se koncentrace stopovací látky v~každém místě systému získá řešením transportní rovnice. Tato rovnice pro obecnou skalární veličinu $\phi$, jenž nereaguje a nepodléhá fázovým přeměnám má tvar: 
 \begin{equation}
 	\pd{\kula{\rho \phi}}{t} + \nabla \cdot \kula{\rho\vec{v}\phi - \tilde{D}\nabla\phi} = 0
 	\label{eq:trans}
 \end{equation}  
-přičemž $\tilde{D}$ značí difuzní koeficient transportované složky. Pro případ vícefázové proudění je třeba mírně modifikovat rov. \ref{eq:trans}, aby zohledňovala tuto skutečnost. V~$i$-té fází při zachování výše uvedených předpokladů je hodnota veličiny v~každém bodě systému určena vztahem:
+přičemž člen $\tilde{D}$ značí difuzní koeficient transportované složky. Pro případ vícefázového proudění je třeba mírně modifikovat rov. \ref{eq:trans}, aby zohledňovala tuto skutečnost. V~$i$-té fází, při zachování výše uvedených předpokladů, je hodnota veličiny v~každém bodě systému určena vztahem:
 \begin{equation}
 	\pd{\kula{\alpha_{i} \rho_{i} \phi_{i}}}{t} + \nabla \cdot \kula{\alpha_{i} \rho_{i}\vec{v}_{i}\phi_{i} - \alpha_{i} \tilde{D}_{i}\nabla\phi_{i}} = 0
 	\label{eq:trans_mix}
