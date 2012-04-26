@@ -111,7 +111,7 @@ Na obrázku \ref{fig:h-w10-4s-num} je zachycen řez nádobou s konturami objemov
   \subfloat[simulace]{\label{fig:h-w10-4s-num}\includegraphics[scale=0.36]{Results/CloudHeight/w10-4s.eps}} 
   \qquad 
   \subfloat[experiment]{\label{fig:h-w10-4s-exp}\includegraphics[scale=0.35]{Results/CloudHeight/pvp7-vol10-4s.eps}}
-  \caption{Vznos pevné fáze $\kula{N=\SI{4}{\per\second}}$}
+  \caption{Vznos pevné fáze, $N=\SI{4}{\per\second}$}
   \label{fig:h-w10-4s}
 \end{figure}
 
@@ -123,7 +123,7 @@ Vlivem nárůstu rychlosti otáčení míchadla na \SI{5}{\per\second} došlo ke
   \subfloat[simulace]{\label{fig:h-w10-5s-num}\includegraphics[scale=0.36]{Results/CloudHeight/w10-5s.eps}} 
   \qquad 
   \subfloat[experiment]{\label{fig:h-w10-5s-exp}\includegraphics[scale=0.34]{Results/CloudHeight/pvp7-vol10-5s.eps}}
-  \caption{Vznos pevné fáze $\kula{N=\SI{5}{\per\second}}$}
+  \caption{Vznos pevné fáze, $N=\SI{5}{\per\second}$}
   \label{fig:h-w10-5s}
 \end{figure}
 Poslední skupina obrázků \ref{fig:h-w10-6s} zachycuje stav suspenze při frekvenci otáčení míchadla \SI{6}{\per\second}. Z obrázku \ref{fig:h-w10-6s-exp} lze vidět, že pevná fáze je praticky rozptýlena v celé nádrži, a proto výška suspezního mraku je téměř totožná s výškou plnění nádoby. Obdobný závěr vyplynul i z výsledků ziskaných pomocí CFD simulace (obr. \ref{fig:h-w10-6s-num}), jenž stanovila výšku tohoto mraku na \SI{28.5}{\centi\meter}.
@@ -133,7 +133,7 @@ Poslední skupina obrázků \ref{fig:h-w10-6s} zachycuje stav suspenze při frek
   \subfloat[simulace]{\label{fig:h-w10-6s-num}\includegraphics[scale=0.36]{Results/CloudHeight/w10-6s.eps}} 
   \qquad 
   \subfloat[experiment]{\label{fig:h-w10-6s-exp}\includegraphics[scale=0.305]{Results/CloudHeight/pvp7-vol10-6s.eps}}
-  \caption{Vznos pevné fáze $\kula{N=\SI{6}{\per\second}}$}
+  \caption{Vznos pevné fáze, $N=\SI{6}{\per\second}$}
   \label{fig:h-w10-6s}
 \end{figure}
 \newpage
@@ -148,30 +148,46 @@ V průběhu nestacionární CFD simulace byla kromě výšky vznosu pevné určo
 \end{grf}
 
 \subsection{Srovnání modelů Eulerian-Eulerian a Eulerian-Granular}
-\newpage
+Kromě modelu Eulerian-Eulerian byl také využit pro srovnání přístup Eulerian-Granular pro popis vícefázového proudění v mechanicky míchané nádobě. Za účelem srovnání těchto technik byly provedeny dvě sady simulací s rozdílnou koncentrací kuliček z PVC (5 a \volproc{15}).
+
+Skupina obrázků \ref{fig:w5} zachycuje distribuci pevné fáze v systému s kapalinou \pvpS{}. Objemový zlomek PVC v tomto případě činil \proc{5} a frekvence otáčení míchadla byla zvolena $\SI{3}{\per\second}$. Obrázky \ref{fig:EE-w5} a \ref{fig:EGM-w5} ukazují řezy nádobou získané pomocí CFD simulace s využitím modelu Eulerian-Eulerian respektive Eulerian-Granular. Z obdržených výsledků si lze povšimnout, že rozložení koncentrace pevné fáze je v obou případech velmi totožné. Tento fakt zdůrazňuje i výška suspenzního mraku, která v případě techniky Eulerian-Eulerian činila \SI{21.9}{\centi\meter} a pro model Eulerian-Granular byla \SI{21.4}{\centi\meter}. Experimentálně byla výška vznosu pevné fáze přibližně stanovena na \SI{23}{\centi\meter} (viz. obrázek \ref{fig:exp-w5}).
 
 \begin{figure}[h!]
  \centering
-  \subfloat[simulace]{\label{fig:EE-w5}\includegraphics[scale=0.36]{Results/EEvsEGM/EE-w5-3s.eps}} 
+  \subfloat[model Eulerian-Eulerian]{\label{fig:EE-w5}\includegraphics[scale=0.36]{Results/EEvsEGM/EE-w5-3s.eps}} 
   \qquad 
-  \subfloat[experiment]{\label{fig:EGM-w5}\includegraphics[scale=0.36]{Results/EEvsEGM/EGM-w5-3s.eps}}
+  \subfloat[model Eulerian-Granular]{\label{fig:EGM-w5}\includegraphics[scale=0.36]{Results/EEvsEGM/EGM-w5-3s.eps}}
   \\
   \subfloat[experiment]{\label{fig:exp-w5}\includegraphics[scale=0.34]{Results/EEvsEGM/PVP7-w5-3s.eps}}
-  \caption{hhh}
+  \caption{Distribuce PVC koncentraci \volproc{5}, $N=\SI{3}{\per\second}$}
   \label{fig:w5}
 \end{figure}
-\newpage
+Další série obrázků \ref{fig:w15} byla získána pro systém obsahující stejnou kapalnou vsádku, avšak koncentrace PVC již představovala \volproc{15}. Rychlost otáčení míchadla byla navíc zvýšena na \SI{5}{\per\second}. Porovnáním obrázků \ref{fig:EE-w15} a \ref{fig:EGM-w15} je vidět, že v oblasti pod míchadlem a v horní části nádoby jsou nejvíce patrné rozdíly mezi jednotlivými modely. Významnější odchylky byly také pozorovány při určení velikosti suspenzního mraku. Výška vznosu pevné fáze byla pomocí přístupu Eulerian-Eulerian stanovena na \SI{28.0}{\centi\meter} a v případě modelu Eulerian-Granular \SI{26.9}{\centi\meter}. Experimentálně určená hodnota opět přibližně činila \SI{23}{\centi\meter}. 
 
 \begin{figure}[h!]
  \centering
-  \subfloat[simulace]{\label{fig:EE-w15}\includegraphics[scale=0.36]{Results/EEvsEGM/EE-w15-5s.eps}} 
+  \subfloat[model Eulerian-Eulerian]{\label{fig:EE-w15}\includegraphics[scale=0.38]{Results/EEvsEGM/EE-w15-5s.eps}} 
   \qquad 
-  \subfloat[experiment]{\label{fig:EGM-w15}\includegraphics[scale=0.36]{Results/EEvsEGM/EGM-w15-5s.eps}}
+  \subfloat[model Eulerian-Granular]{\label{fig:EGM-w15}\includegraphics[scale=0.38]{Results/EEvsEGM/EGM-w15-5s.eps}}
   \\
-  \subfloat[experiment]{\label{fig:EGM-w15}\includegraphics[scale=0.34]{Results/EEvsEGM/PVP7-w15-5s.eps}}
-  \caption{hhh}
+  \subfloat[experiment]{\label{fig:exp-w15}\includegraphics[scale=0.34]{Results/EEvsEGM/PVP7-w15-5s.eps}}
+  \caption{Distribuce PVC koncentraci \volproc{15}, $N=\SI{5}{\per\second}$}
   \label{fig:w15}
 \end{figure}
+
+
+Grafy \ref{fig:eevsegm} zachycují průběh objemového zlomku pevné fáze podél jedné z narážek pro výše dva uvedené případy. Jak je vidět z grafu \ref{fig:ee-3s}, tak pro koncentraci PVC rovnu \volproc{5} jsou získané průběhy pro jednotlivé vícefázové modely téměř totožné. Naopak pro případ trojnásobné koncentrace (graf \ref{fig:egm-5s}) lze již pozorovat rozdíly mezi těmito modely především v horní polovině nádoby. 
+
+
+\begin{grf}[h!]
+ \centering
+  \subfloat[\volproc{5} PVC, $N=\SI{3}{\per\second}$]{\label{fig:ee-3s}\includegraphics[scale=0.40]{Results/EEvsEGM/w5-3s.eps}} 
+  \\ 
+  \subfloat[\volproc{15} PVC, $N=\SI{5}{\per\second}$]{\label{fig:egm-5s}\includegraphics[scale=0.40]{Results/EEvsEGM/w15-5s.eps}}
+  \caption{Průběh objemového zlomku pevné fáze, \pvpS}
+  \label{fig:eevsegm}
+\end{grf}
+\newpage
 
 \section{Doba homogenizace}
 Doba homogenizace v daných systémech byla vyhodnocena pomocí techniky CFD s využitím dříve napočítaných rychlostních polí. Během vlastního stanovení byla řešena pouze transportní rovnice stopovací látky, což znatelně snížilo výpočetní náročnost celého procesu. V průběhu simulací byly zaznamenávány okamžité hodnoty koncentrací stopovací látky v závislosti na čase. Z uložených dat byla poté doba homogenizace určena jako čas potřebný k ustálení této koncentrace v rozmezí \SI{\pm 5}{\percent} její rovnovážné hodnoty.
@@ -188,13 +204,11 @@ Nasimulovaný průběh homogenizace indikační látky v řezu nádobou je znáz
   \subfloat[{$t=\SI{5}{\second}$}]{\label{fig:t5}\includegraphics[scale=0.38]{Results/MixingTime/voda-6s/t5.eps}}
   \qquad
   \subfloat[{$t=\SI{7}{\second}$}]{\label{fig:t7}\includegraphics[scale=0.38]{Results/MixingTime/voda-6s/t7.eps}}
-  \caption{Koncentrace stopovací látky pro systém voda--PVC \volproc{5} $\kula{N=\SI{6}{\per\second}}$}
+  \caption{Koncentrace stopovací látky pro systém voda-PVC \volproc{5}, $N=\SI{6}{\per\second}$}
   \label{fig:t}
 \end{figure}
 
-Následují grafické závislosti bezrozměrné koncentrace stopovací látky na době homogenizace stanovené pomocí techniky CFD. Pro srovnání jsou v grafech vyneseny černou barvou experimentální údaje, které pomocí vodivostní metody stanovila \citet{pav11}. Pro snížení potřebného výpočetního času byly především zkoumány případy s vyšší hodnotou rychlosti rotace míchadla. 
-
-Grafy \ref{fig:homvoda} zachycují výše zmíněné závislosti pro dvoufázový systém reprezentovaný vodou a kuličkami z PVC o koncentraci 5, 10 a \volproc{15} při frekvenci otáčení míchadla \SI{6}{\per\second}. Z vyobrazených průběhů je patrná dobrá shoda mezi experimentálním měřením a výsledky simulací.
+Následují grafické závislosti bezrozměrné koncentrace stopovací látky na době homogenizace stanovené pomocí techniky CFD. Pro srovnání jsou v grafech vyneseny černou barvou experimentální údaje, které pomocí vodivostní metody stanovila \citet{pav11}. Pro snížení potřebného výpočetního času byly především zkoumány případy s vyšší hodnotou rychlosti rotace míchadla. Grafy \ref{fig:homvoda} zachycují výše zmíněné závislosti pro dvoufázový systém reprezentovaný vodou a kuličkami z PVC o koncentraci 5, 10 a \volproc{15} při frekvenci otáčení míchadla \SI{6}{\per\second}. Z vyobrazených průběhů je patrná dobrá shoda mezi experimentálním měřením a výsledky simulací.
 
 \begin{grf}[h!]
  \centering
@@ -208,14 +222,14 @@ Grafy \ref{fig:homvoda} zachycují výše zmíněné závislosti pro dvoufázov�
   \addtocounter{subgrf}{2}
   \centering
   \subfloat[\volproc{15} PVC]{\label{fig:homvoda-w15}\includegraphics[scale=0.45]{Results/MixingTime/voda-6s/15/grafy.eps}} 
-  \caption{Homogenizační křivka pro vodnou suspenzi $\kula{N=\SI{6}{\per\second}}$}
+  \caption{Homogenizační křivka pro vodnou suspenzi, $N=\SI{6}{\per\second}$}
   \label{fig:homvoda}
 \end{grf}
 \noindent Kromě vodné vsádky byl také simulačně určen průběh bezrozměrné koncentrace indikační látky v čase pro kapalinu \pvpP{} obsahující \volproc{5} pevné fáze. Frekvence otáčení míchadla v tomto případě činila \SI{7}{\per\second}. Získaná závislost je uvedena v grafu \ref{grf:hompvp5}.
 \begin{grf}[h!]
  \centering 
   \includegraphics[scale=0.45]{Results/MixingTime/PVP5-7s/5/grafy.eps}
-  \caption{Homogenizační křivka pro suspenzi \pvpP{} a \volproc{5} PVC $\kula{N=\SI{7}{\per\second}}$}
+  \caption{Homogenizační křivka pro suspenzi \pvpP{} a \volproc{5} PVC, $N=\SI{7}{\per\second}$}
   \label{grf:hompvp5}
 \end{grf}
 \newpage
