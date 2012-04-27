@@ -7,8 +7,6 @@
 $b$ & šířka narážky & \si{\meter} \\
 $C$ & vzdálenost míchadla ode dna nádoby (světlá výška) & \si{\meter} \\
 $c$ & kocentrace stopovací látky & \si{\kilogram\per\cubic\meter} \\
-$c_{0}$ & počáteční kocentrace stopovací látky & \si{\kilogram\per\cubic\meter} \\
-$c_{\infty}$ & konečná kocentrace stopovací látky & \si{\kilogram\per\cubic\meter} \\
 $c_{i}$ & střední koncentrace pevné fáze v daném bodě & \si{\kilogram\per\cubic\meter} \\
 $C_{D0}$ & koeficient odporu podle Schillera-Naumanna & -- \\ 
 $C_{D}$ & koeficient odporu &  -- \\
@@ -32,18 +30,19 @@ $H$ & výška plnění nádoby & \si{\meter} \\
 $\vec{\vec{I}}$ & jednotkový tenzor & -- \\
 $k$ & turbulentní kinetická energie & \si{\meter\squared\per\second\squared}\\
 $K$ & koeficient mezifázového sdílení hybnosti & \si{\kilogram\per\cubic\meter\per\second} \\
+$l$ & charakteristická délka & \si{\meter} \\
 $m$ & hmotnost & \si{\kilogram} \\
 $N$ & frekvence otáčení míchadla & \si{\per\second} \\
-
+$N_{js}$ & kritická frekvence otáčení míchadla & \si{\per\second} \\
 
 \end{tabularx}
 \begin{tabularx}{\textwidth}{@{}p{2.5cm} X r@{}}
 
-$N_{js}$ & kritická frekvence otáčení míchadla & \si{\per\second} \\
+
 $p$ & tlak & \si{\pascal} \\
 $\vec{R}$ & vektor mezifázové odporové síly působící na objemový element & \si{\newton\per\cubic\meter} \\
-$Re$ & Reynoldsovo číslo & -- \\
-$Re_{M}$ & Reynoldsovo číslo pro míchání & -- \\
+$Re = \frac{\rho v l}{\eta}$ & Reynoldsovo číslo & -- \\
+$Re_{M} = \frac{\rho D^{2} N}{\eta} $ & Reynoldsovo číslo pro míchání & -- \\
 $r_{s}$ & restituční koeficient & -- \\
 $S$ & Zwieteringova konstanta & -- \\
 $t$ & čas & \si{\second} \\
@@ -75,6 +74,8 @@ $\eta_{t}$ & turbulentní viskozita & \si{\pascal\second}\\
 $\Theta$ & teplota zrnité fáze & \si{\meter\squared\per\second\squared} \\
 $\nu$ & kinematická viskozita & \si{\meter\squared\per\second}\\
 $\rho$ & hustota & \si{\kilogram\per\cubic\meter} \\
+\end{tabularx}
+\begin{tabularx}{\textwidth}{@{}p{2.5cm} X r@{}}
 $\sigma$ & kvalita suspenze & -- \\
 $\sigma_{ii}$ & normálové napětí ve směru osy $i$ & \si{\pascal} \\
 $\tau_{ij}$ & tečné napětí působící ve směru osy $j$ a kolmé k ose $i$ & \si{\pascal} \\
@@ -101,6 +102,8 @@ $l$ & kapalina & \\
 $m$ & směs & \\
 $p$ & pevná částice & \\
 $s$ & pevná fáze & \\
+$0$ & počáteční hodnota & \\
+$\infty$ & konečná hodnota & \\
 \end{tabularx}
 
 \subsubsection*{Zkratky}
@@ -108,11 +111,13 @@ $s$ & pevná fáze & \\
 	
 CFD & computational fluid dynamics  \\
 DNS & direct numerical simulation \\
-FDM & computational fluid dynamics  \\
-FEM & computational fluid dynamics  \\
-FVM & computational fluid dynamics  \\
+FDM & finite difference method  \\
+FEM & finite element method  \\
+FVM & finite volume method  \\
 LDV & laser Doppler velocimetry  \\
 LES & large eddy simulation \\
+\end{tabularx}
+\begin{tabularx}{\textwidth}{@{}p{2.5cm} X }
 MRF & multiple reference frames \\
 PBT & pitched blade turbine \\
 PDA & phase Doppler anemometry \\
