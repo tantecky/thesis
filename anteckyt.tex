@@ -9,13 +9,14 @@
 \usepackage{booktabs} %pro hezke tabulky v dokumentu
 \usepackage[small,bf,belowskip=0.2cm]{caption} %změna stylu popisku a mezery před a za
 \usepackage{siunitx} %pro sazbu fyzikálních jednotek
-\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2cm]{geometry} %nastaveni okraju a vzdalenosti cislovani
+\usepackage[top=2.5cm, bottom=2.5cm, left=3.5cm, right=2cm]{geometry} %nastaveni okraju a vzdalenosti cislovani
 \usepackage{subfig} %subfloat je nejaky divny, takze navrat k subfig-u
 \usepackage{enumitem} %pro umravnění mezer v enumerate + změnu popisků
 \usepackage{amsmath} %pro rozšířené možnosti sazby mat. symbolů
 \usepackage{multirow} %pro viceradkove tabulky
 \usepackage{commath} %pro správnou sazbu diferenciálů
 \usepackage{float} %pro vlastní float objekty
+\usepackage{pdfpages} %pro vkladani pdfek
 %pro zdrojaky
 \usepackage{listingsutf8}
 
@@ -83,6 +84,8 @@
 	\pagestyle{empty} 
 	\selectlanguage{czech}
 	\include{title}
+	\includepdf{images/Title-1-edit.PDF}
+	\includepdf{images/Title-2-edit.PDF}
 	\setlength{\baselineskip}{1.5\baselineskip}
 	\include{summary_cz}
 	\selectlanguage{english}
@@ -90,7 +93,9 @@
 	\selectlanguage{czech}
 	\normalsize{}
 	\include{declaration}
+	\setlength{\baselineskip}{1.5\baselineskip}
 	\include{thx}
+	\normalsize{}
 	\tableofcontents
 	\pagestyle{plain}
 	\setlength{\baselineskip}{1.5\baselineskip}
