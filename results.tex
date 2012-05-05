@@ -1,5 +1,5 @@
 \chapter{Výsledky a diskuze}
-Následující kapitola shrnuje výsledky provedených CFD simulací suspendace v~mechanicky míchané nádobě. Navíc kde to situace umožňovala byla získaná simulační data porovnána s~dostupným experimentálním měřením \citep{pav11}.
+Následující kapitola shrnuje výsledky provedených CFD simulací suspendace v~mechanicky míchané nádobě. Navíc, kde to situace umožňovala, byla získaná simulační data porovnána s~dostupným experimentálním měřením \citep{pav11}.
 
 \section{Rychlostní pole v~nádobě}
 Pro porovnání vlivu zvoleného turbulentního modelu na výsledné rychlostní pole bylo provedeno několik stacionárních simulací míchaní vodné vsádky. 
@@ -29,7 +29,7 @@ Graf \ref{grf:velfield} zachycuje závislost mezi celkovou rychlostí pohybu kap
 \begin{grf}[h!]
  \centering
   \includegraphics[scale=0.42]{Results/Velocity/velField.eps}
-  \caption{Průběh velikosti rychlosti tekutiny v~nádobě}
+  \caption{Průběh rychlosti tekutiny v~nádobě}
   \label{grf:velfield}
 \end{grf}
 \newpage
@@ -59,7 +59,7 @@ Obrázky \ref{fig:cd2} zobrazují kontury objemového zlomku pevné fáze v~řez
 \newpage
 \noindent Z~obrázků je dobře patrné, že přímo pod míchadlem je největší koncentrace pevné fáze vlivem působení sekundárních cirkulačních smyček, což se podařilo pozorovat i během experimentálního měření.
 
-Série obrázků \ref{fig:cd7} zachycuje objemový zlomek pevné fáze v~řezu nádobou, avšak v~čase simulace \SI{7}{\second}. Částice z~PVC jsou již značně rozptýleny, ale stále se pod míchadlem nachází oblasti s~jejich zvýšenou koncentrací. Nicméně v~celé nádobě jsou již rozdíly v~distribuci pevné fáze mezi jednotlivými modely pro koeficient odporu poměrně zanedbatelné.
+Série obrázků \ref{fig:cd7} zachycuje objemový zlomek pevné fáze v~řezu nádobou, avšak v~čase simulace \SI{7}{\second}. Částice z~PVC jsou již značně rozptýleny, ale stále se pod míchadlem nachází oblasti s~jejich zvýšenou koncentrací. Nicméně v~celé nádobě jsou již rozdíly v~distribuci pevné fáze mezi jednotlivými modely pro výpočet koeficient odporu poměrně zanedbatelné.
 
 \begin{figure}[h!]
  \centering
@@ -90,7 +90,7 @@ Dále jsou zde uvedeny grafické závislosti objemového zlomku pevné fáze na 
 \end{grf}
 \newpage
 
-Poslední skupina grafů \ref{fig:cd} zachycuje průběh normalizované hodnoty koeficientu odporu v~závislosti na světlé výšce. Tato normalizace vznikla vydělením koeficientu odporu jeho průměrnou hodnotou v~celé nádrži. Údaje v~těchto závislostech byly stanoveny podél úsečky v~blízkosti radiální narážky.  V~obou případech má  koeficientu odporu podobný průběh pro různé korelace, nicméně v~čase \SI{7}{\second} (graf \ref{fig:cd-2}) je zřejmé, že korelace dle Brucata se opět nejznatelněji odlišuje.
+Poslední skupina grafů \ref{fig:cd} zachycuje průběh normalizované hodnoty koeficientu odporu v~závislosti na světlé výšce. Tato normalizace vznikla vydělením koeficientu odporu jeho průměrnou hodnotou v~celé nádrži. Údaje v~těchto závislostech byly stanoveny podél úsečky v~blízkosti radiální narážky.  V~obou případech má  koeficientu odporu podobný průběh pro různé korelace. Nicméně v~čase \SI{7}{\second} (graf \ref{fig:cd-2}) je zřejmé, že korelace dle Brucata se opět nejznatelněji odlišuje.
 
 \begin{grf}[h!]
  \centering
@@ -127,7 +127,7 @@ Vlivem nárůstu rychlosti otáčení míchadla na \SI{5}{\per\second} došlo ke
   \caption{Vznos pevné fáze, $N=\SI{5}{\per\second}$}
   \label{fig:h-w10-5s}
 \end{figure}
-Poslední skupina obrázků \ref{fig:h-w10-6s} zachycuje stav suspenze při frekvenci otáčení míchadla \SI{6}{\per\second}. Z~obrázku \ref{fig:h-w10-6s-exp} lze vidět, že pevná fáze je prakticky rozptýlena v~celé nádrži, a proto je výška suspezního mraku téměř totožná s~výškou plnění nádoby. Obdobný závěr vyplynul i z~výsledků ziskaných pomocí CFD simulace (obrázek \ref{fig:h-w10-6s-num}), jenž stanovila výšku tohoto mraku na \SI{28.5}{\centi\meter}.
+Poslední skupina obrázků \ref{fig:h-w10-6s} zachycuje stav suspenze při frekvenci otáčení míchadla \SI{6}{\per\second}. Z~obrázku \ref{fig:h-w10-6s-exp} lze vidět, že pevná fáze je prakticky rozptýlena v~celé nádrži, a proto je výška suspenzního mraku téměř totožná s~výškou plnění nádoby. Obdobný závěr vyplynul i z~výsledků ziskaných pomocí CFD simulace (obrázek \ref{fig:h-w10-6s-num}), jenž stanovila výšku tohoto mraku na \SI{28.5}{\centi\meter}.
 
 \begin{figure}[h!]
  \centering
@@ -139,7 +139,7 @@ Poslední skupina obrázků \ref{fig:h-w10-6s} zachycuje stav suspenze při frek
 \end{figure}
 \newpage
 
-V~průběhu nestacionární CFD simulace byla kromě výšky vznosu pevné určována kvalita suspenze ($\sigma$ -- vztah \ref{eq:kvasus}). Získané výsledky pro jednotlivé frekvence otáčení míchadla jsou uvedeny v~grafu \ref{grf:qa}. Pro lepší přehlednost jsou tyto závislosti zobrazeny po jedné sekundě simulace. Dle očekávání se doba potřebná k~dosažení stavu úplné suspendace zkracoval s~rostoucí rychlostí rotace míchadla. V~případě $N=\SI{4}{\per\second}$ tato doba přibližně činila \SI{5.7}{\second}, kdežto při otáčkách $\SI{6}{\per\second}$ se zkrátila více než dvojnásobně na zhruba \SI{2.5}{\second}. Navíc v~čase kolem \SI{6}{\second} byl zaznamenán přechod do stavu homogenní suspendace pro nejvýše zvolenou frekvenci otáčení míchadla. 
+V~průběhu nestacionární CFD simulace byla kromě výšky vznosu pevné určována kvalita suspenze ($\sigma$ -- vztah \ref{eq:kvasus}). Získané výsledky pro jednotlivé frekvence otáčení míchadla jsou uvedeny v~grafu \ref{grf:qa}. Pro lepší přehlednost jsou tyto závislosti zobrazeny po jedné sekundě simulace. Dle očekávání se doba potřebná k~dosažení stavu úplné suspendace zkracoval s~rostoucí rychlostí rotace míchadla. V~případě $N=\SI{4}{\per\second}$ tato doba přibližně činila \SI{5.7}{\second}, kdežto při otáčkách $\SI{6}{\per\second}$ se zkrátila více než dvojnásobně na zhruba (\SI{2.5}{\second}). Navíc v~čase kolem \SI{6}{\second} byl zaznamenán přechod do stavu homogenní suspendace pro nejvýše zvolenou frekvenci otáčení míchadla. 
 
 \begin{grf}[h!]
  \centering
@@ -163,7 +163,7 @@ Skupina obrázků \ref{fig:w5} zachycuje distribuci pevné fáze v~systému s~ka
   \caption{Distribuce PVC o~koncentraci \volproc{5}, $N=\SI{3}{\per\second}$}
   \label{fig:w5}
 \end{figure}
-Další série obrázků \ref{fig:w15} byla získána pro systém obsahující stejnou kapalnou vsádku, avšak koncentrace PVC již představovala \volproc{15}. Rychlost otáčení míchadla byla navíc zvýšena na \SI{5}{\per\second}. Porovnáním obrázků \ref{fig:EE-w15} a \ref{fig:EGM-w15} je vidět, že v~oblasti pod míchadlem a v~horní části nádoby jsou nejvíce patrné rozdíly mezi jednotlivými modely. Významnější odchylky byly také pozorovány při určení výšky suspenzního mraku. Zmíněná výška vznosu pevné fáze byla pomocí přístupu Eulerian-Eulerian stanovena na \SI{28.0}{\centi\meter} a v~případě modelu Eulerian-Granular \SI{26.9}{\centi\meter}. Experimentálně určená hodnota opět přibližně činila \SI{23}{\centi\meter}. 
+Další série obrázků \ref{fig:w15} byla získána pro systém obsahující stejnou kapalnou vsádku, avšak koncentrace PVC již představovala \volproc{15}. Rychlost otáčení míchadla byla navíc zvýšena na \SI{5}{\per\second}. Porovnáním obrázků \ref{fig:EE-w15} a \ref{fig:EGM-w15} je vidět, že v~oblasti pod míchadlem a v~horní části nádoby jsou nejvíce patrné rozdíly mezi jednotlivými modely. Významnější odchylky byly také pozorovány při určení výšky suspenzního mraku. Zmíněná výška vznosu pevné fáze byla pomocí přístupu Eulerian-Eulerian stanovena na \SI{28.0}{\centi\meter} a v~případě modelu Eulerian-Granular byla \SI{26.9}{\centi\meter}. Experimentálně určená hodnota opět přibližně činila \SI{23}{\centi\meter}. 
 
 \begin{figure}[h!]
  \centering
@@ -177,7 +177,7 @@ Další série obrázků \ref{fig:w15} byla získána pro systém obsahující s
 \end{figure}
 
 
-Grafy \ref{fig:eevsegm} zachycují průběh objemového zlomku pevné fáze podél jedné z~narážek pro výše dva uvedené případy. Jak je vidět z~grafu \ref{fig:ee-3s}, tak pro koncentraci PVC rovnu \volproc{5} jsou získané průběhy pro jednotlivé vícefázové modely téměř totožné. Naopak v~případě trojnásobné koncentrace (graf \ref{fig:egm-5s}) lze již pozorovat rozdíly mezi těmito modely především v~horní polovině nádoby. 
+Grafy \ref{fig:eevsegm} zachycují průběh objemového zlomku pevné fáze podél jedné z~narážek pro dva výše uvedené případy. Jak je vidět z~grafu \ref{fig:ee-3s}, tak pro koncentraci PVC rovnu \volproc{5} jsou získané průběhy pro jednotlivé vícefázové modely téměř totožné. Naopak v~případě trojnásobné koncentrace (graf \ref{fig:egm-5s}) lze již pozorovat rozdíly mezi těmito modely především v~horní polovině nádoby. 
 
 
 \begin{grf}[h!]
@@ -235,7 +235,7 @@ Následují grafické závislosti mezi bezrozměrnou koncentrací stopovací lá
 \end{grf}
 \newpage
 
-Tabulka \ref{tab:mixtime} obsahuje hodnoty dob homogenizací pro jednotlivé systémy určené jak pomocí techniky CFD, tak na základě experimentálního měření. Ze simulačních výsledků je vidět, že s~rostoucím objemovým zlomkem pevné fáze se taktéž zvyšovala doba homogenizace. Údaje získané pomocí vodivostní metody však tento vzrůstající trend úplně nepotvrdily, neboť nejkratší doba homogenizace byla naměřena pro pevnou fází obsahující \volproc{10} PVC. Kromě vodní vsádky byla také použita kapalina \pvpP{}, jenž díky své vyšší dynamické viskozitě vykazovala delší dobu homogenizace v~porovnání s~vodou. Za zmínku také stojí fakt, že hodnoty doby homogenizace určené pomocí CFD jsou téměř vždy vyšší než experimentálně naměřené. Tento jev je způsoben podhodnocením turbulentních veličin při použití \keps{} turbulentního modelu \citep{ochi08}.
+Tabulka \ref{tab:mixtime} obsahuje hodnoty dob homogenizací pro jednotlivé systémy určené jak pomocí techniky CFD, tak na základě experimentálního měření. Ze simulačních výsledků je vidět, že s~rostoucím objemovým zlomkem pevné fáze se taktéž zvyšovala doba homogenizace. Údaje získané pomocí vodivostní metody však tento vzrůstající trend úplně nepotvrdily, neboť nejkratší doba homogenizace byla naměřena pro pevnou fází obsahující \volproc{10} PVC. Kromě vodní vsádky byla také použita kapalina \pvpP{}, jenž díky své vyšší dynamické viskozitě vykazovala delší dobu homogenizace v~porovnání s~vodou. Za zmínku také stojí fakt, že hodnoty dob homogenizací určené pomocí CFD jsou téměř vždy vyšší než experimentálně naměřené. Tento jev je způsoben podhodnocením turbulentních veličin při použití \keps{} turbulentního modelu \citep{ochi08}.
 
 \begin{table}[h!]
 \centering
